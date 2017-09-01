@@ -80,7 +80,7 @@ var header_banner = (function () {
         console.log(step);
         window.clearInterval(autoTimer);
         autoTimer = window.setInterval(function () {
-            if(step>=imgList.length-1){
+            if(step>imgList.length-1){
                  step=0;
             };
             change(imgList[step]);
@@ -106,6 +106,7 @@ var header_banner = (function () {
                 window.clearInterval(autoTimer);
                step=this.imgIndex;;
                 change(imgList[step]);
+                step++;
             }
             cur.onmouseleave=function () {
                auto();
