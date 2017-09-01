@@ -5,149 +5,248 @@
     <title>腾讯视频-中国领先的在线视频媒体平台,海量高清视频在线观看</title>
     <link rel="stylesheet" href="css/reset.min.css">
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="https://vm.gtimg.cn">
+    <!--<link rel="stylesheet" href="https://vm.gtimg.cn">-->
 </head>
 <body>
 <!--这是头部-->
-    <div class="header">
-        <!--顶部搜索栏-->
-        <div class="header-top">
-          <h1 class="logo">
-               <a href="">
-                   <span></span>
-               </a>
-           </h1>
-          <div class="selectBox">
-                <input type="text" onclick="javascript: value=null;" class="selectInput" value="浪花一朵朵">
+<div class="header">
+    <!--顶部搜索栏-->
+    <h1 class="logo">
+        <a href="">
+            <span></span>
+        </a></h1>
+    <div class="header-top">
+
+        <div class="selectBox">
+            <input type="text" onclick="javascript: value=null;" class="selectInput" value="浪花一朵朵">
+            <div class="secSelBox">
+                <div class="secSelBox-top clear">
+                    <span>历史记录</span>
+                    <a href=""
+                       onmouseenter="document.getElementsByClassName('secSelBox')[0].getElementsByTagName('img')[0].src='css/images/header/nav_top/clearHis_hover.png'"
+                       onmouseleave="document.getElementsByClassName('secSelBox')[0].getElementsByTagName('img')[0].src='css/images/header/nav_top/clearHis.png'">
+                        <img src="css/images/header/nav_top/clearHis.png" alt="">
+                        <span>清除记录</span>
+                    </a>
+                </div>
+                <div class="secSelBox-content">
+                    <ul class="hisTags clear">
+                        <li>浪花一朵朵</li>
+                        <li>我就是试试搜索</li>
+                        <li>我就是试试搜索</li>
+                    </ul>
+                </div>
+                <div class="secSelBox-bottom">
+                    <div class="hotSelect clear">
+                        <span>热门搜索</span>
+                        <a href="">更多热搜></a>
+                    </div>
+                    <ul class="hotInfo">
+                        <li><span style="background-color:#ff0d29">1</span><span>战狼2</span></li>
+                        <li><span style="background-color:#ff920b">2</span><span>浪花一朵朵</span></li>
+                        <li><span style="background-color:#ffc600">3</span><span>我们的爱</span></li>
+                        <li><span style="background-color:gray">4</span><span>无心法师</span></li>
+                        <li><span style="background-color:gray">5</span><span>中餐厅</span></li>
+                        <li><span style="background-color:gray">6</span><span>极限挑战第3季</span></li>
+                        <li><span style="background-color:gray">7</span><span>鬼吹灯之黄皮子坟</span></li>
+                        <li><span style="background-color:gray">8</span><span>双世宠妃</span></li>
+                    </ul>
+                </div>
+            </div>
+            <a href="">
+                <img src="css/images/header/nav_top/sorImg.png" alt="">
+            </a>
+            <button>
+                <img src="css/images/header/nav_top/seleImg.png" alt="">
+                <span>全网搜</span>
+            </button>
+
+        </div>
+        <div class="rightNav">
+            <div class="vipBox">
                 <a href="">
-                    <img src="css/images/header/nav_top/sorImg.png" alt="">
+                    <img src="css/images/header/nav_top/vipImg.png" alt="">
+                    <span style="color: yellow">VIP</span>
                 </a>
-                <button>
-                    <img src="css/images/header/nav_top/seleImg.png" alt="">
-                    <span>全网搜</span>
-                </button>
-          </div>
-          <div class="rightNav">
-                <div class="vipBox">
-                    <a href="">
-                        <img src="css/images/header/nav_top/vipImg.png" alt="">
-                        <span style="color: yellow">VIP</span>
-                    </a>
-                </div>
-                <div class="hisBox">
-                    <a href="">
-                        <img src="css/images/header/nav_top/hisImg.png" alt="">
-                        <span>看过</span>
-                    </a>
-                </div>
-                <div class="pusBox">
-                    <a href="">
-                        <img src="css/images/header/nav_top/pushImg.png" alt="">
-                        <span>上传</span>
-                    </a>
-                </div>
-                <div class="dowBox">
-                    <a href="">
-                        <img src="css/images/header/nav_top/winImg.png" alt="">
-                        <span>下载客户端</span>
-                    </a>
-                </div>
-                <div class="userBox">
-                    <a href="">
-                        <img src="css/images/header/nav_top/user.png" alt="">
-                        <span></span>
-                    </a>
-                </div>
+            </div>
+            <div class="hisBox">
+                <a href="">
+                    <img src="css/images/header/nav_top/hisImg.png" alt="">
+                    <span>看过</span>
+                </a>
+            </div>
+            <div class="pusBox">
+                <a href="">
+                    <img src="css/images/header/nav_top/pushImg.png" alt="">
+                    <span>上传</span>
+                </a>
+            </div>
+            <div class="dowBox">
+                <a href="">
+                    <img src="css/images/header/nav_top/winImg.png" alt="">
+                    <span>下载客户端</span>
+                </a>
+            </div>
+            <div class="userBox">
+                <a href="">
+                    <img src="css/images/header/nav_top/user.png" alt="">
+                    <span></span>
+                </a>
+            </div>
 
-          </div>
-        </div>
-        <!--轮播图区域-->
-        <div class="header-banner">
-            <img src="css/images/header/banner/test.jpg" alt="">
-            <div class="banner-nav"></div>
-        </div>
-         <!--填充遮挡块-->
-        <div class="mask"></div>
-        <!--导航栏-->
-        <div class="nav"></div>
-    </div>
-
-    <!--这是中部内容-->
-    <div class="content">
-        <!--今日热门-->
-        <div class="today-popular"></div>
-        <!--回顾辉煌坚定信念-->
-        <div class="review-of-glory"></div>
-        <!--武庚纪-->
-        <div class="wuGengJi"></div>
-        <!--原创精选-->
-        <div class="original"></div>
-        <!--你的专属频道-->
-        <div class="exclusive-channel"></div>
-        <!--再看一遍-->
-        <div class="seeAgain"></div>
-        <!--强势接档-->
-        <div class="strong-pick"></div>
-        <!--同步剧场-->
-        <div class="synchronous-theatre">
-              <!--花絮剧透预告片-->
-            <div class="ST-prevue"></div>
-        </div>
-        <!--综艺-->
-        <div class="variety">
-                <!--预告花絮-->
-            <div class="V-prevue"></div>
-        </div>
-        <!--中部广告区域-->
-        <div class="advertisingContent">
-              <!--广告左-->
-            <div class="adC-left"></div>
-            <!--广告右-->
-            <div class="adC-right"></div>
-        </div>
-        <!--电影-->
-        <div class="films"></div>
-        <!--资讯预告片-->
-        <div class="information"></div>
-        <!--VIP会员-->
-        <div class="VIP"></div>
-        <!--动漫精选-->
-        <div class="cartoon"></div>
-        <!--少儿动画-->
-        <div class="children-cartoon"></div>
-        <!--英美剧-->
-        <div class="BA-drama"></div>
-        <!--韩剧-->
-        <div class="K-drama"></div>
-        <!--纪录片-->
-        <div class="documentaire"></div>
-        <!--精选标签-->
-        <div class="tag"></div>
-        <!--为你推荐-->
-        <div class="recommend">
-            <!--展开更多推荐-->
-            <div class="getMore"></div>
-        </div>
-        <!--最强笑点-->
-        <div class="jokes"></div>
-        <!--游戏-->
-        <div class="game"></div>
-        <!--汽车资讯-->
-        <div class="carInformation"></div>
-        <!--旅游精选-->
-        <div class="travelInformation"></div>
-        <!--生活资讯-->
-        <div class="lifeInformation"></div>
-        <!--底部广告区域-->
-        <div class="advertisingTop">
-            <!--广告左-->
-            <div class="adT-left"></div>
-            <!--广告右-->
-            <div class="adT-right"></div>
         </div>
     </div>
-    <!--这是底部栏-->
-    <div class="footer"></div>
+    <!--轮播图区域-->
+    <div class="header-banner">
+        <ul class="imgBox" id="imgBox">
+        </ul>
+        <div class="banner-nav">
+            <ul class="rightNavBox" id="rightNavBox">
+
+            </ul>
+        </div>
+        <!--填充遮挡块-->
+        <div class="mask">
+            <div class="nav">
+                <div class="nav_1">
+                    <a href="">电视剧</a>
+                    <a href="">美剧</a>
+                    <a href="">韩剧</a>
+                    <a href="">电影</a>
+                    <a href="">VIP影院</a>
+                    <a href="">微电影</a>
+                </div>
+                <div class="nav_2">
+                    <a href="">综艺</a>
+                    <a href="">娱乐</a>
+                    <a href="">搞笑</a>
+                    <a href="">动漫</a>
+                    <a href="">少儿</a>
+                    <a href="">纪录片</a>
+                </div>
+                <div class="nav_3">
+                    <a href="">音乐</a>
+                    <a href="">直播</a>
+                    <a href="">演唱会</a>
+                    <a href="">体育</a>
+                    <a href="">NBA</a>
+                    <a href="">游戏</a>
+                </div>
+                <div class="nav_4">
+                    <a href="">新闻</a>
+                    <a href="">科技</a>
+                    <a href="">财经</a>
+                    <a href="">房产</a>
+                    <a href="">生活</a>
+                    <a href="">时尚</a>
+                    <a href="">旅游</a>
+                    <a href="">育儿</a>
+                </div>
+                <div class="nav_5">
+                    <a href="">原创</a>
+                    <a href="">拍客</a>
+                    <a href="">精品课</a>
+                    <a href="">汽车</a>
+                    <a href="">影评 </a>
+                    <a href="">儒释道</a>
+                </div>
+                <div class="nav_6">
+                    <a href="">
+                        <img src="css/images/header/nav_content/sorImg.png" alt="">
+                        <span>热搜榜</span>
+                    </a>
+                    <a href="">
+                        <img src="css/images/header/nav_content/video.png" alt="">
+                        <span>片库</span>
+                    </a>
+                    <a href="">
+                        <img src="css/images/header/nav_content/down.png" alt="">
+                        <span>下载应用</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!--导航栏-->
+
+
+<!--这是中部内容-->
+<div class="content">
+    <!--今日热门-->
+    <div class="today-popular"></div>
+    <!--回顾辉煌坚定信念-->
+    <div class="review-of-glory"></div>
+    <!--武庚纪-->
+    <div class="wuGengJi"></div>
+    <!--原创精选-->
+    <div class="original"></div>
+    <!--你的专属频道-->
+    <div class="exclusive-channel"></div>
+    <!--再看一遍-->
+    <div class="seeAgain"></div>
+    <!--强势接档-->
+    <div class="strong-pick"></div>
+    <!--同步剧场-->
+    <div class="synchronous-theatre">
+        <!--花絮剧透预告片-->
+        <div class="ST-prevue"></div>
+    </div>
+    <!--综艺-->
+    <div class="variety">
+        <!--预告花絮-->
+        <div class="V-prevue"></div>
+    </div>
+    <!--中部广告区域-->
+    <div class="advertisingContent">
+        <!--广告左-->
+        <div class="adC-left"></div>
+        <!--广告右-->
+        <div class="adC-right"></div>
+    </div>
+    <!--电影-->
+    <div class="films"></div>
+    <!--资讯预告片-->
+    <div class="information"></div>
+    <!--VIP会员-->
+    <div class="VIP"></div>
+    <!--动漫精选-->
+    <div class="cartoon"></div>
+    <!--少儿动画-->
+    <div class="children-cartoon"></div>
+    <!--英美剧-->
+    <div class="BA-drama"></div>
+    <!--韩剧-->
+    <div class="K-drama"></div>
+    <!--纪录片-->
+    <div class="documentaire"></div>
+    <!--精选标签-->
+    <div class="tag"></div>
+    <!--为你推荐-->
+    <div class="recommend">
+        <!--展开更多推荐-->
+        <div class="getMore"></div>
+    </div>
+    <!--最强笑点-->
+    <div class="jokes"></div>
+    <!--游戏-->
+    <div class="game"></div>
+    <!--汽车资讯-->
+    <div class="carInformation"></div>
+    <!--旅游精选-->
+    <div class="travelInformation"></div>
+    <!--生活资讯-->
+    <div class="lifeInformation"></div>
+    <!--底部广告区域-->
+    <div class="advertisingTop">
+        <!--广告左-->
+        <div class="adT-left"></div>
+        <!--广告右-->
+        <div class="adT-right"></div>
+    </div>
+</div>
+<!--这是底部栏-->
+<div class="footer"></div>
 </body>
-<script type="text/javascript"></script>
+<script type="text/javascript" src="js/index.js"></script>
 </html>

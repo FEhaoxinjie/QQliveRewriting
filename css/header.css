@@ -4,26 +4,31 @@
 /*logo区域*/
 .header{
     width: 100%;
-    /*background-color: coral;*/
+    height: 100%;
 }
 .header .header-top{
-    width: 1300px;
+    width: 100%;
+    min-width: 1300px;;
     margin: 0 auto;
     position: relative;
-    z-index: 1;
+    height: 100px;
+    background:linear-gradient(to bottom,rgba(000,000,000,0) 0,rgba(000,000,000,.1) 10%,rgba(000,000,000,.1) 50%,rgba(000,000,000,.01) 88%,rgba(000,000,000,.0) 95%,rgba(000,000,000,0) 100%);
+    box-shadow: 0 0 0 0 #999;
 }
-.header .header-top .logo{
+.header .logo{
     width: 230px;
-    margin:0.9px 0 0 32px;
+    position: absolute;
+    left: 9.8%;
+    top: 0.1%;
 }
-.header .header-top .logo a{
-    display: inline-block;
+.header .logo a{
+    display: block;
     width: 230px;
     height: 49px;
     background:  url(https://vm.gtimg.cn/tencentvideo/vstyle/web/v5/style/img/common/sprite_head_logo.svg) no-repeat;
     background-position: 9px 13.5px;
 }
-.header .header-top .logo a span{
+.header .logo a span{
     float: right;
     width: 80px;
     height: 49px;
@@ -36,26 +41,32 @@
     width: 400px;
     height: 40px;
     position: absolute;
-    left: 50%;
-    top: 11px;
-    background-color: rgba(238,238,209,0.2);
-    margin-left: -138px;
+    left: 54%;
+    top: 12px;
+    background-color: rgba(255,255,255,.4);
+    margin-left: -200px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    z-index: 5;
 }
 .header .header-top .selectBox .selectInput{
-    color: white;
+    color:rgba(255,255,255,1);
     box-sizing: border-box;
     outline: none;
     border: none;
     background-color: transparent;
-    font-size: 16px;
+    font-size: 17px;
     margin-left: 15px;
     width: 244px;
     height: 40px;
     line-height: 40px;
+    padding: 0 0 0 5px;
+}
+.header .header-top .selectBox>input:focus + .secSelBox {
+    display: block;
+
 }
 .header .header-top .selectBox>a{
     display: block;
@@ -100,20 +111,125 @@
     width: 60px;
     color: white;
 }
+.header .selectBox .secSelBox{
+    display: none;
+    position: absolute;
+    left: 15px;
+    width: 283px;
+    max-height: 455px;
+    background:rgba(255,255,255,.98);
+    color: #999;
+    box-sizing: border-box;
+}
+.header .selectBox .secSelBox a{
+    float: right;
+    color: #999;
+    display: block;
+}
+.header .selectBox .secSelBox a:hover{
+    color: #000;
+}
+.header .selectBox .secSelBox .secSelBox-top{
+    padding: 10px ;
+    max-height: 10%;
+}
+.header .selectBox .secSelBox .secSelBox-top>span{
+    float:left;
+    font-size: 14px;
+}
+
+.header .selectBox .secSelBox .secSelBox-top>a>span,.header .selectBox .secSelBox .secSelBox-top>a>img{
+    float: left;
+}
+.header .selectBox .secSelBox .secSelBox-top>a>span{
+    line-height: 20px;
+}
+.header .selectBox .secSelBox .secSelBox-top>a>img{
+    width: 20px;
+    height: 20px;
+}
+.header .selectBox .secSelBox .secSelBox-content{
+    max-height: 20%;
+}
+.header .selectBox .secSelBox .secSelBox-content .hisTags{
+    width: 100%;
+}
+.header .selectBox .secSelBox .secSelBox-content .hisTags li{
+    color: #000000;
+    margin: 0 5px 5px 5px;
+    float: left;
+    width:38%;
+    background-color: #f8f8f8;
+    padding: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.header .selectBox .secSelBox .secSelBox-content .hisTags li:hover{
+    background-color: #f0f0f0;
+}
+.header .selectBox .secSelBox .secSelBox-bottom .hotSelect{
+    padding: 8px;
+}
+.header .selectBox .secSelBox .secSelBox-bottom .hotSelect>span{
+    float: left;
+    font-size: 14px;
+}
+.header .selectBox .secSelBox .secSelBox-bottom .hotSelect a{
+    float: right;
+}
+.header .selectBox .secSelBox .secSelBox-bottom .hotInfo{
+    width: 100%;
+    font-size: 14px;
+    color: #000000;
+}
+.header .selectBox .secSelBox .secSelBox-bottom .hotInfo li{
+    padding: 5px 0 5px 8px;
+    cursor: pointer;
+}
+.header .selectBox .secSelBox .secSelBox-bottom .hotInfo li:nth-last-of-type(1){
+    padding-bottom: 20px;
+}
+.header .selectBox .secSelBox .secSelBox-bottom .hotInfo li:hover{
+    background-color: #f0f0f0;
+}
+.header .selectBox .secSelBox .secSelBox-bottom .hotInfo span:nth-of-type(1){
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    line-height: 22px;
+}
+.header .selectBox .secSelBox .secSelBox-bottom .hotInfo span:nth-of-type(2){
+    margin-left: 5px;
+}
+.header .selectBox .secSelBox .secSelBox-bottom .hotInfo span{
+    margin-left: 2px;
+    border-radius: 2px;
+}
+
+
+
+
+
+    /*右侧快捷导航*/
 .header .header-top .rightNav{
     width: 300px;
     position: absolute;
-    right: 0px;
+    right:7%;
     top: 16px;
+    z-index: 4;
 }
 .header .header-top .rightNav>div{
     height: 43px;
     float:left;
-    margin-left: 20px;
+    margin-left: 19px;
 
 }
 .header .header-top .rightNav>.hisBox,.dowBox,.pusBox{
-    opacity: 0.6;
+    opacity: 0.7;
 }
 .header .header-top .rightNav>.hisBox:hover,.dowBox:hover,.pusBox:hover{
     opacity: 1;
@@ -126,8 +242,14 @@
 .header .header-top .rightNav>div>a>img{
     display: block;
     margin: auto;
-    width: 20px;
+    width: 21px;
+    height: 21px;
+}
+.header .header-top .rightNav>.vipBox>a>img{
+    width: 21px;
     height: 20px;
+}
+.header .header-top .rightNav>.dowBox>a>img{
 }
 .header .header-top .rightNav>.userBox>a>img{
     width: 40px;
@@ -139,7 +261,8 @@
     text-align: center;
     display: block;
     line-height: 20px;
-    color: #EEEEEE;
+    color: white;
+    /*white-space: nowrap;*/
 }
 
 
@@ -147,9 +270,146 @@
 .header .header-banner{
     position: absolute;
     top:0;
-    z-index: 0;
+    z-index: -1;
     width: 100%;
+    min-width: 1300px;
+    height: 580px;
 }
-.header .header-banner img{
+.header .header-banner .imgBox{
+    min-width: 100%;
+    height: 100%;
+}
+.header .header-banner .imgBox li{
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
+    height: 100%;
+}
+.header .header-banner .imgBox li>a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.header .header-banner .imgBox li>a>img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.header .header-banner .imgBox li a>img{
+    opacity: 0;
+}
+.header .header-banner .banner-nav{
+    width: 240px;
+    height: 442px;
+    background:linear-gradient(to bottom,rgba(255,255,255,0) 0,rgba(255,255,255,.7) 18%,rgba(255,255,255,.9) 50%,rgba(255,255,255,.7) 88%,rgba(255,255,255,.3) 95%,rgba(255,255,255,0) 100%);
+    position: absolute;
+    right: 160px;
+    top: 60px;
+    z-index: 10;
+}
+.header .header-banner .banner-nav .rightNavBox{
+    margin: 75px 0 10px 0;
+}
+.header .header-banner .banner-nav .rightNavBox li{
+    font-size: 14px;
+    padding: 6px 15px 6px 15px;
+}
+.header .header-banner .banner-nav .rightNavBox li:nth-of-type(1){
+       margin-top: -30px;
+}
+.header .header-banner .banner-nav .rightNavBox li.hover{
+    padding: 10px 15px 12px 15px;
+    background-color:rgba(255,255,255,1);
+    cursor: pointer;
+}
+.header .header-banner .banner-nav .rightNavBox li.hover>.navTitle{
+    display: block;
+    color: #ff6824;
+    font-size: 25px;
+}
+.header .header-banner .banner-nav .rightNavBox li.hover>.navTitle:after{
+    content:'';
+}
+.header .header-banner .banner-nav li .navTitle:after{
+    content: ':';
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/*遮挡板*/
+.header .header-banner .mask{
+    width: 100%;
+    height:15%;
+    min-height: 50px;
+    background:linear-gradient(to top,#fff,rgba(255,255,255,.75));
+    position: absolute;
+    bottom: -18px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+/*导航栏*/
+.header .nav{
+    width: 1300px;
+    text-align: center;
+    display: inline-block;
+    margin: -1px 0  0 58px;
+}
+.header .nav .nav_1{
+    width: 193px;
+     padding-right: 10px;
+    margin: 0;
+}
+
+.header .nav div{
+    float: left;
+   display: inline-block;
+    height: 60px;
+}
+.header .nav div a{
+    float: left;
+    padding: 0 6px;
+    margin: 0 6px;
+    font-size: 14px;
+    line-height: 30px;
+    color: #000000;
+}
+.header .nav div a:nth-of-type(1),.header .nav div:not(.nav_4) a:nth-of-type(4){
+        font-weight: bold;
+}
+.header .nav div a:hover{
+    color: #ff2804;
+}
+.header .nav div:not(.nav_1){
+    width: 192px;
+     padding: 0 1px;
+}
+.header .nav div:not(.nav_6){
+   border-right: 1px solid #cccccc;
+
+}
+.header .nav .nav_4{
+    width: 220px !important;
+
+}
+.header .nav .nav_4>a:nth-of-type(5){
+     font-weight: bold;
+}
+.header .nav .nav_6{
+    width: 220px !important;
+    margin-left: 30px;
+}
+.header .nav .nav_6 a{
+    float: left;
+    margin: 13px 15px 0 0;
+}
+.header .nav .nav_6 a>img{
+    display: inline-block;
+       width: 20px;
+        height: 20px;
+}
+.header .nav .nav_6>a>span{
+    margin-top: -8px;
+    display: block;
 }

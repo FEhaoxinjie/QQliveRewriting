@@ -4,10 +4,10 @@ body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, button,
 }
 
 body {
-    background-color: #cccccc;
+    background-color: white;
     font-size: 12px;
     font-style: normal;
-    font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif
+    font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif;
 }
 
 small {
