@@ -375,7 +375,7 @@
     line-height: 30px;
     color: #000000;
 }
-.header .nav div a:nth-of-type(1),.header .nav div:not(.nav_4) a:nth-of-type(4){
+.header .nav div:not(.nav_6) a:nth-of-type(1),.header .nav div:not(.nav_4) a:nth-of-type(4){
         font-weight: bold;
 }
 .header .nav div a:hover{
