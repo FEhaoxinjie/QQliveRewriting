@@ -1,51 +1,55 @@
-
 /*header-top区域*/
 
 /*logo区域*/
-.header{
+.header {
     width: 100%;
     height: 100%;
 }
-.header .header-top{
+
+.header .header-top {
     width: 100%;
     min-width: 1300px;;
     margin: 0 auto;
     position: relative;
     height: 100px;
-    background:linear-gradient(to bottom,rgba(000,000,000,0) 0,rgba(000,000,000,.1) 10%,rgba(000,000,000,.1) 50%,rgba(000,000,000,.01) 88%,rgba(000,000,000,.0) 95%,rgba(000,000,000,0) 100%);
+    background: linear-gradient(to bottom, rgba(000, 000, 000, 0) 0, rgba(000, 000, 000, .1) 10%, rgba(000, 000, 000, .1) 50%, rgba(000, 000, 000, .01) 88%, rgba(000, 000, 000, .0) 95%, rgba(000, 000, 000, 0) 100%);
     box-shadow: 0 0 0 0 #999;
     z-index: 1;
 }
-.header .logo{
+
+.header .logo {
     width: 230px;
     position: absolute;
     left: 9.8%;
     top: 0.1%;
     z-index: 1;
 }
-.header .logo a{
+
+.header .logo a {
     display: block;
     width: 230px;
     height: 49px;
-    background:  url(https://vm.gtimg.cn/tencentvideo/vstyle/web/v5/style/img/common/sprite_head_logo.svg) no-repeat;
+    background: url(https://vm.gtimg.cn/tencentvideo/vstyle/web/v5/style/img/common/sprite_head_logo.svg) no-repeat;
     background-position: 9px 13.5px;
 }
-.header .logo a span{
+
+.header .logo a span {
     float: right;
     width: 80px;
     height: 49px;
     display: inline-block;
-    background:  url(https://vm.gtimg.cn/tencentvideo/vstyle/web/v5/style/img/common/logo_solgan_white.svg) 0 0 no-repeat;
+    background: url(https://vm.gtimg.cn/tencentvideo/vstyle/web/v5/style/img/common/logo_solgan_white.svg) 0 0 no-repeat;
     background-position: 2px 8px;
 }
+
 /*搜索框*/
-.header .header-top .selectBox{
+.header .header-top .selectBox {
     width: 400px;
     height: 40px;
     position: absolute;
     left: 54%;
     top: 12px;
-    background-color: rgba(255,255,255,.4);
+    background-color: rgba(255, 255, 255, .4);
     margin-left: -200px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -53,8 +57,9 @@
     border-bottom-right-radius: 20px;
     z-index: 5;
 }
-.header .header-top .selectBox .selectInput{
-    color:rgba(255,255,255,1);
+
+.header .header-top .selectBox .selectInput {
+    color: rgba(255, 255, 255, 1);
     box-sizing: border-box;
     outline: none;
     border: none;
@@ -66,11 +71,13 @@
     line-height: 40px;
     padding: 0 0 0 5px;
 }
-.header .header-top .selectBox>input:focus + .secSelBox {
+
+.header .header-top .selectBox > input:focus + .secSelBox {
     display: block;
 
 }
-.header .header-top .selectBox>a{
+
+.header .header-top .selectBox > a {
     display: block;
     position: absolute;
     right: 113px;
@@ -78,11 +85,13 @@
     width: 20px;
     height: 20px;
 }
-.header .header-top .selectBox>a>img {
+
+.header .header-top .selectBox > a > img {
     width: 100%;
     height: 100%;
 }
-.header .header-top .selectBox>button{
+
+.header .header-top .selectBox > button {
     float: right;
     width: 106px;
     height: 40px;
@@ -92,19 +101,22 @@
     cursor: pointer;
     position: relative;
     left: 5px;
-    background: linear-gradient(to right,#ff850b 0,#ff5945 100%);
+    background: linear-gradient(to right, #ff850b 0, #ff5945 100%);
 }
-.header .header-top .selectBox>button:hover{
+
+.header .header-top .selectBox > button:hover {
     background: #ff5930;
 }
-.header .header-top .selectBox>button>img{
+
+.header .header-top .selectBox > button > img {
     position: absolute;
     left: 10px;
     top: 4px;
     display: inline-block;
     width: 32px;
 }
-.header-top .selectBox>button>span{
+
+.header-top .selectBox > button > span {
     font-size: 16px;
     position: absolute;
     left: 36px;
@@ -113,54 +125,64 @@
     width: 60px;
     color: white;
 }
-.header .selectBox .secSelBox{
+
+.header .selectBox .secSelBox {
     display: none;
     position: absolute;
     left: 15px;
     width: 283px;
     max-height: 455px;
-    background:rgba(255,255,255,.98);
+    background: rgba(255, 255, 255, .98);
     color: #999;
     box-sizing: border-box;
 }
-.header .selectBox .secSelBox a{
+
+.header .selectBox .secSelBox a {
     float: right;
     color: #999;
     display: block;
 }
-.header .selectBox .secSelBox a:hover{
+
+.header .selectBox .secSelBox a:hover {
     color: #000;
 }
-.header .selectBox .secSelBox .secSelBox-top{
-    padding: 10px ;
+
+.header .selectBox .secSelBox .secSelBox-top {
+    padding: 10px;
     max-height: 10%;
 }
-.header .selectBox .secSelBox .secSelBox-top>span{
-    float:left;
+
+.header .selectBox .secSelBox .secSelBox-top > span {
+    float: left;
     font-size: 14px;
 }
 
-.header .selectBox .secSelBox .secSelBox-top>a>span,.header .selectBox .secSelBox .secSelBox-top>a>img{
+.header .selectBox .secSelBox .secSelBox-top > a > span, .header .selectBox .secSelBox .secSelBox-top > a > img {
     float: left;
 }
-.header .selectBox .secSelBox .secSelBox-top>a>span{
+
+.header .selectBox .secSelBox .secSelBox-top > a > span {
     line-height: 20px;
 }
-.header .selectBox .secSelBox .secSelBox-top>a>img{
+
+.header .selectBox .secSelBox .secSelBox-top > a > img {
     width: 20px;
     height: 20px;
 }
-.header .selectBox .secSelBox .secSelBox-content{
+
+.header .selectBox .secSelBox .secSelBox-content {
     max-height: 20%;
 }
-.header .selectBox .secSelBox .secSelBox-content .hisTags{
+
+.header .selectBox .secSelBox .secSelBox-content .hisTags {
     width: 100%;
 }
-.header .selectBox .secSelBox .secSelBox-content .hisTags li{
+
+.header .selectBox .secSelBox .secSelBox-content .hisTags li {
     color: #000000;
     margin: 0 5px 5px 5px;
     float: left;
-    width:38%;
+    width: 38%;
     background-color: #f8f8f8;
     padding: 10px;
     white-space: nowrap;
@@ -169,91 +191,102 @@
     border-radius: 2px;
     cursor: pointer;
 }
-.header .selectBox .secSelBox .secSelBox-content .hisTags li:hover{
+
+.header .selectBox .secSelBox .secSelBox-content .hisTags li:hover {
     background-color: #f0f0f0;
 }
-.header .selectBox .secSelBox .secSelBox-bottom .hotSelect{
+
+.header .selectBox .secSelBox .secSelBox-bottom .hotSelect {
     padding: 8px;
 }
-.header .selectBox .secSelBox .secSelBox-bottom .hotSelect>span{
+
+.header .selectBox .secSelBox .secSelBox-bottom .hotSelect > span {
     float: left;
     font-size: 14px;
 }
-.header .selectBox .secSelBox .secSelBox-bottom .hotSelect a{
+
+.header .selectBox .secSelBox .secSelBox-bottom .hotSelect a {
     float: right;
 }
-.header .selectBox .secSelBox .secSelBox-bottom .hotInfo{
+
+.header .selectBox .secSelBox .secSelBox-bottom .hotInfo {
     width: 100%;
     font-size: 14px;
     color: #000000;
 }
-.header .selectBox .secSelBox .secSelBox-bottom .hotInfo li{
+
+.header .selectBox .secSelBox .secSelBox-bottom .hotInfo li {
     padding: 5px 0 5px 8px;
     cursor: pointer;
 }
-.header .selectBox .secSelBox .secSelBox-bottom .hotInfo li:nth-last-of-type(1){
+
+.header .selectBox .secSelBox .secSelBox-bottom .hotInfo li:nth-last-of-type(1) {
     padding-bottom: 20px;
 }
-.header .selectBox .secSelBox .secSelBox-bottom .hotInfo li:hover{
+
+.header .selectBox .secSelBox .secSelBox-bottom .hotInfo li:hover {
     background-color: #f0f0f0;
 }
-.header .selectBox .secSelBox .secSelBox-bottom .hotInfo span:nth-of-type(1){
+
+.header .selectBox .secSelBox .secSelBox-bottom .hotInfo span:nth-of-type(1) {
     display: inline-block;
     width: 22px;
     height: 22px;
     text-align: center;
     line-height: 22px;
 }
-.header .selectBox .secSelBox .secSelBox-bottom .hotInfo span:nth-of-type(2){
+
+.header .selectBox .secSelBox .secSelBox-bottom .hotInfo span:nth-of-type(2) {
     margin-left: 5px;
 }
-.header .selectBox .secSelBox .secSelBox-bottom .hotInfo span{
+
+.header .selectBox .secSelBox .secSelBox-bottom .hotInfo span {
     margin-left: 2px;
     border-radius: 2px;
 }
 
-
-
-
-
-    /*右侧快捷导航*/
-.header .header-top .rightNav{
+/*右侧快捷导航*/
+.header .header-top .rightNav {
     width: 300px;
     position: absolute;
-    right:7%;
+    right: 7%;
     top: 16px;
     z-index: 4;
 }
-.header .header-top .rightNav>div{
+
+.header .header-top .rightNav > div {
     height: 43px;
-    float:left;
+    float: left;
     margin-left: 19px;
     position: relative;
 
 }
-.header .header-top .rightNav>.hisBox>a,.dowBox>a,.pusBox{
+
+.header .header-top .rightNav > .hisBox > a, .dowBox > a, .pusBox {
     opacity: 0.7;
 }
-.header .header-top .rightNav>.hisBox>a:hover,.dowBox>a:hover,.pusBox:hover{
+
+.header .header-top .rightNav > .hisBox > a:hover, .dowBox > a:hover, .pusBox:hover {
     opacity: 1;
 }
 
-.header .header-top .rightNav>.hisBox,.dowBox{
+.header .header-top .rightNav > .hisBox, .dowBox {
     position: relative;
 }
 
 /*快捷入口悬浮窗开始*/
-.header .header-top .rightNav .hisBox:before{
+.header .header-top .rightNav .hisBox:before {
     display: none;
     position: absolute;
-     left: 3px;
+    left: 3px;
     top: 37px;
     content: '';
     border: 8px solid transparent;
     border-bottom: 8px solid #ff6824;
 }
-.header .header-top .rightNav .hisBox:after{
-      display:none;
+
+.header .header-top .rightNav .hisBox:after {
+    display: none;
     position: absolute;
     left: 4.5px;
     top: 40.5px;
@@ -262,18 +295,22 @@
     border: 6.5px solid transparent;
     border-bottom: 6.5px solid #ffffff;
 }
-.header .header-top .rightNav .hisBox:hover:after{
-      display: block;
-}
-.header .header-top .rightNav .hisBox:hover:before{
-      display: block;
-}
-.header .header-top .rightNav .hisBox:hover>.hisBoxInfo{
+
+.header .header-top .rightNav .hisBox:hover:after {
     display: block;
 }
-.header .header-top .rightNav .hisBox .hisBoxInfo{
+
+.header .header-top .rightNav .hisBox:hover:before {
+    display: block;
+}
+
+.header .header-top .rightNav .hisBox:hover > .hisBoxInfo {
+    display: block;
+}
+
+.header .header-top .rightNav .hisBox .hisBoxInfo {
     position: absolute;
-   display: none;
+    display: none;
     right: -165px;
     top: 50px;
     width: 350px;
@@ -282,16 +319,18 @@
     padding: 25px 15px;
     z-index: 0;
 }
-.header .header-top .rightNav .hisBox .hisBoxInfo *:not(.loginMore){
+
+.header .header-top .rightNav .hisBox .hisBoxInfo *:not(.loginMore) {
     box-sizing: border-box;
 }
 
-.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox{
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox {
     border-left: 1px solid #f1f1f1;
     position: relative;
     font-size: 14px;
 }
-.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox>i:nth-of-type(1){
+
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox > i:nth-of-type(1) {
     display: block;
     position: absolute;
     left: -3.5px;
@@ -301,7 +340,8 @@
     border-radius: 50%;
     background-color: #1bc200;
 }
-.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox>i:nth-of-type(2){
+
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox > i:nth-of-type(2) {
     display: block;
     position: absolute;
     left: -3.5px;
@@ -311,118 +351,139 @@
     border-radius: 50%;
     background-color: #999999;
 }
-.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox>a,span{
+
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox > a, span {
     color: #000000;
 }
-.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox a{
+
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox a {
     padding: 5px 15px;
 }
-.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox div>span{
+
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox div > span {
     padding: 5px 15px;
 }
-.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox a:not(.loginMore):hover{
+
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox a:not(.loginMore):hover {
     background-color: #dddddd;
 }
-.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox a:not(.loginMore):hover>span:nth-of-type(2)>span:nth-of-type(1){
-    display:none;
+
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox a:not(.loginMore):hover > span:nth-of-type(2) > span:nth-of-type(1) {
+    display: none;
 
 }
-.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox a:not(.loginMore)>span:nth-of-type(2)>span:nth-of-type(2){
+
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox a:not(.loginMore) > span:nth-of-type(2) > span:nth-of-type(2) {
     display: none;
     background-image: url(images/header/nav_top/his_close.png);
 }
-.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox a:not(.loginMore)>span:nth-of-type(2)>span:nth-of-type(2):hover{
+
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox a:not(.loginMore) > span:nth-of-type(2) > span:nth-of-type(2):hover {
     background-image: url(images/header/nav_top/his_close2.png);
 }
-.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox a:not(.loginMore):hover>span:nth-of-type(2)>span:nth-of-type(2){
+
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox a:not(.loginMore):hover > span:nth-of-type(2) > span:nth-of-type(2) {
     display: block;
     background-size: 16px 16px;
     height: 16px;
     width: 16px;
     /*color: red;*/
 }
-.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox a>span:nth-of-type(2){
-       color: #999999 !important;
+
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox a > span:nth-of-type(2) {
+    color: #999999 !important;
 }
-.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox a span:nth-of-type(2)>span{
+
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox a span:nth-of-type(2) > span {
     color: #999999;
 }
-.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox .todayBox{
+
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox .todayBox {
     position: relative;
     top: -13px;
 }
-.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox .todayBox>span,a{
-          display: block;
+
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox .todayBox > span, a {
+    display: block;
 }
-.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox .todayBox>span{
+
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox .todayBox > span {
     /*font-size: 14px;*/
-   color: #1bc200;
+    color: #1bc200;
     position: relative;
     /*top: -13px;*/
 }
-.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox a>span:nth-of-type(1){
-   display: inline-block;
+
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox a > span:nth-of-type(1) {
+    display: inline-block;
     width: 200px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
 }
-.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox .todayBox a>span:nth-of-type(2){
+
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox .todayBox a > span:nth-of-type(2) {
     float: right;
 }
 
-.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox .longAgo{
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox .longAgo {
     position: relative;
     top: -10px;
 }
-.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox .longAgo>span,a{
+
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox .longAgo > span, a {
     display: block;
 }
-.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox .longAgo a>span:nth-of-type(2){
+
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox .longAgo a > span:nth-of-type(2) {
     float: right;
 }
 
-.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox .loginMore{
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox .loginMore {
     display: block;
     width: 100px;
     height: 25px;
     line-height: 25px;
     color: #fff;
     margin: 0 auto;
-    background: -webkit-linear-gradient(left,#ff850b 0,#ff5945 100%);
+    background: -webkit-linear-gradient(left, #ff850b 0, #ff5945 100%);
     text-align: center;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
     border-bottom-left-radius: 30px;
 }
-.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox .loginMore:hover{
+
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox .loginMore:hover {
     background: #ff6824;
 }
 
-.header .header-top .rightNav .dowBox{
+.header .header-top .rightNav .dowBox {
     position: relative;
 }
-.header .header-top .rightNav .dowBox:before{
+
+.header .header-top .rightNav .dowBox:before {
     display: none;
     position: absolute;
     left: 22px;
-    top: 30px;
+    top: 32px;
     content: '';
     border: 8px solid transparent;
     border-bottom: 8px solid #ff6824;
 }
-.header .header-top .rightNav .dowBox:after{
-    display:none;
+
+.header .header-top .rightNav .dowBox:after {
+    display: none;
     position: absolute;
     left: 23.5px;
-    top: 35px;
+    top: 36px;
     height: 0;
     content: '';
-    border:6.5px solid transparent;
-    border-bottom: 7px solid #ffffff;
+    border: 6.5px solid transparent;
+    border-bottom: 6.5px solid #ffffff;
 }
-.header .header-top .rightNav .dowBox .dowBoxInfo{
+
+.header .header-top .rightNav .dowBox .dowBoxInfo {
     display: none;
     position: absolute;
     left: -88px;
@@ -432,84 +493,98 @@
     font-size: 14px;
     border-top: 1.5px solid #ff6824;
 }
-.header .header-top .rightNav .dowBox:hover .dowBoxInfo{
-       display: block;
-}
-.header .header-top .rightNav .dowBox:hover:after{
+
+.header .header-top .rightNav .dowBox:hover .dowBoxInfo {
     display: block;
 }
-.header .header-top .rightNav .dowBox:hover:before{
+
+.header .header-top .rightNav .dowBox:hover:after {
     display: block;
 }
-.header .header-top .rightNav .dowBox .dowBoxInfo>div>img{
+
+.header .header-top .rightNav .dowBox:hover:before {
+    display: block;
+}
+
+.header .header-top .rightNav .dowBox .dowBoxInfo > div > img {
     width: 18px;
     height: 18px;
 }
-.header .header-top .rightNav .dowBox .dowBoxInfo>div img{
+
+.header .header-top .rightNav .dowBox .dowBoxInfo > div img {
     float: left;
 }
-.header .header-top .rightNav .dowBox .dowBoxInfo>div{
+
+.header .header-top .rightNav .dowBox .dowBoxInfo > div {
     padding: 5px;
     margin: 10px 10px 10px 15px;
 }
-.header .header-top .rightNav .dowBox .dowBoxInfo div span{
+
+.header .header-top .rightNav .dowBox .dowBoxInfo div span {
     padding-left: 10px;
 }
 
-.header .header-top .rightNav .dowBox .dowBoxInfo>div:nth-of-type(4){
+.header .header-top .rightNav .dowBox .dowBoxInfo > div:nth-of-type(4) {
 
 }
-.header .header-top .rightNav .dowBox .dowBoxInfo>div:nth-of-type(1)>span{
+
+.header .header-top .rightNav .dowBox .dowBoxInfo > div:nth-of-type(1) > span {
     color: #ff6824;
 }
-.header .header-top .rightNav .dowBox .dowBoxInfo>a{
+
+.header .header-top .rightNav .dowBox .dowBoxInfo > a {
     width: 100px;
-    display:block;
+    display: block;
     height: 25px;
     line-height: 25px;
     color: #fff;
-    margin: 0  auto 20px auto;
+    margin: 0 auto 20px auto;
     text-align: center;
-    background: -webkit-linear-gradient(left,#ff850b 0,#ff5945 100%);
+    background: -webkit-linear-gradient(left, #ff850b 0, #ff5945 100%);
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
     border-bottom-left-radius: 30px;
 }
 
-
-.header .header-top .rightNav div>a{
+.header .header-top .rightNav div > a {
     display: inline-block;
     width: 100%;
     height: 100%;
 }
-.header .header-top .rightNav>div>a>img{
+
+.header .header-top .rightNav > div > a > img {
     display: block;
     margin: auto;
     width: 21px;
     height: 21px;
 }
-.header .header-top .rightNav>.vipBox>a>img{
+
+.header .header-top .rightNav > .vipBox > a > img {
     width: 21px;
     height: 20px;
 }
-.header .header-top .rightNav>.dowBox>a{
+
+.header .header-top .rightNav > .dowBox > a {
     position: relative;
 }
-.header .header-top .rightNav>.userBox>a>img{
+
+.header .header-top .rightNav > .userBox > a > img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     margin: -5px 0 0 -15px;
 }
-.header .header-top .rightNav>div>a>span{
+
+.header .header-top .rightNav > div > a > span {
     text-align: center;
     display: block;
     line-height: 20px;
     color: white;
     /*white-space: nowrap;*/
 }
-.header .header-top .rightNav>.dowBox>a>span:nth-of-type(2){
+
+.header .header-top .rightNav > .dowBox > a > span:nth-of-type(2) {
     position: absolute;
     right: 0;
     top: -6px;
@@ -520,82 +595,95 @@
     white-space: nowrap;
 }
 
-    /*轮播区域*/
-.header .header-banner{
+/*轮播区域*/
+.header .header-banner {
     position: absolute;
-    top:0;
+    top: 0;
     z-index: 0;
     width: 100%;
     min-width: 1300px;
     height: 580px;
 }
-.header .header-banner .imgBox{
+
+.header .header-banner .imgBox {
     min-width: 100%;
     height: 100%;
 }
-.header .header-banner .imgBox li{
+
+.header .header-banner .imgBox li {
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
 }
-.header .header-banner .imgBox li>a{
+
+.header .header-banner .imgBox li > a {
     display: block;
     width: 100%;
     height: 100%;
 }
-.header .header-banner .imgBox li>a>img{
+
+.header .header-banner .imgBox li > a > img {
     display: block;
     width: 100%;
     height: 100%;
 }
-.header .header-banner .imgBox li a>img{
+
+.header .header-banner .imgBox li a > img {
     opacity: 0;
 }
-.header .header-banner .banner-nav{
+
+.header .header-banner .banner-nav {
     width: 240px;
     height: 442px;
-    background:linear-gradient(to bottom,rgba(255,255,255,0) 0,rgba(255,255,255,.7) 18%,rgba(255,255,255,.9) 50%,rgba(255,255,255,.7) 88%,rgba(255,255,255,.3) 95%,rgba(255,255,255,0) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .7) 18%, rgba(255, 255, 255, .9) 50%, rgba(255, 255, 255, .7) 88%, rgba(255, 255, 255, .3) 95%, rgba(255, 255, 255, 0) 100%);
     position: absolute;
     right: 160px;
     top: 60px;
 }
-.header .header-banner .banner-nav .rightNavBox{
+
+.header .header-banner .banner-nav .rightNavBox {
     margin: 75px 0 10px 0;
 }
-.header .header-banner .banner-nav .rightNavBox li{
+
+.header .header-banner .banner-nav .rightNavBox li {
     font-size: 14px;
     padding: 6px 15px 6px 15px;
 }
-.header .header-banner .banner-nav .rightNavBox li:nth-of-type(1){
-       margin-top: -30px;
+
+.header .header-banner .banner-nav .rightNavBox li:nth-of-type(1) {
+    margin-top: -30px;
 }
-.header .header-banner .banner-nav .rightNavBox li.hover{
+
+.header .header-banner .banner-nav .rightNavBox li.hover {
     padding: 10px 15px 12px 15px;
-    background-color:rgba(255,255,255,1);
+    background-color: rgba(255, 255, 255, 1);
     cursor: pointer;
 }
-.header .header-banner .banner-nav .rightNavBox li.hover>.navTitle{
+
+.header .header-banner .banner-nav .rightNavBox li.hover > .navTitle {
     display: block;
     color: #ff6824;
     font-size: 25px;
 }
-.header .header-banner .banner-nav .rightNavBox li.hover>.navTitle:after{
-    content:'';
+
+.header .header-banner .banner-nav .rightNavBox li.hover > .navTitle:after {
+    content: '';
 }
-.header .header-banner .banner-nav li .navTitle:after{
+
+.header .header-banner .banner-nav li .navTitle:after {
     content: ':';
     font-size: 14px;
     font-weight: bold;
 }
 
 /*遮挡板*/
-.header .header-banner .mask{
+.header .header-banner .mask {
     width: 100%;
-    height:15%;
+    height: 15%;
     min-height: 50px;
-    background:linear-gradient(to top,#fff,rgba(255,255,255,.75));
+    background: linear-gradient(to top, #fff, rgba(255, 255, 255, .75));
     position: absolute;
     bottom: -18px;
     text-align: center;
@@ -603,24 +691,26 @@
 }
 
 /*导航栏*/
-.header .nav{
+.header .nav {
     width: 1300px;
     text-align: center;
     display: inline-block;
-    margin: -1px 0  0 58px;
+    margin: -1px 0 0 58px;
 }
-.header .nav .nav_1{
+
+.header .nav .nav_1 {
     width: 193px;
-     padding-right: 10px;
+    padding-right: 10px;
     margin: 0;
 }
 
-.header .nav div{
+.header .nav div {
     float: left;
-   display: inline-block;
+    display: inline-block;
     height: 60px;
 }
-.header .nav div a{
+
+.header .nav div a {
     float: left;
     padding: 0 6px;
     margin: 0 6px;
@@ -628,44 +718,55 @@
     line-height: 30px;
     color: #000000;
 }
-.header .nav div:not(.nav_6) a:nth-of-type(1),.header .nav div:not(.nav_4) a:nth-of-type(4){
-        font-weight: bold;
+
+.header .nav div:not(.nav_6) a:nth-of-type(1), .header .nav div:not(.nav_4) a:nth-of-type(4) {
+    font-weight: bold;
 }
-.header .nav div a:hover{
+
+.header .nav div a:hover {
     color: #ff2804;
 }
-.header .nav div{
+
+.header .nav div {
     width: 210px;
-     padding: 0 1px;
+    padding: 0 1px;
 }
-.header .nav div:nth-of-type(2){
+
+.header .nav div:nth-of-type(2) {
     width: 200px;
 }
-.header .nav div:not(.nav_6){
-   border-right: 1px solid #cccccc;
+
+.header .nav div:not(.nav_6) {
+    border-right: 1px solid #cccccc;
 
 }
-.header .nav .nav_4{
+
+.header .nav .nav_4 {
     /*width: 220px !important;*/
 
 }
-.header .nav .nav_4>a:nth-of-type(5){
-     font-weight: bold;
+
+.header .nav .nav_4 > a:nth-of-type(5) {
+    font-weight: bold;
 }
-.header .nav .nav_6{
+
+.header .nav .nav_6 {
     /*width: 220px !important;*/
     /*margin-left: 20px;*/
 }
-.header .nav .nav_6 a{
+
+.header .nav .nav_6 a {
     float: left;
     margin: 10px 15px 0 0;
 }
-.header .nav .nav_6 a>img{
+
+.header .nav .nav_6 a > img {
     display: inline-block;
-       width: 20px;
-        height: 20px;
+    width: 20px;
+    height: 20px;
 }
-.header .nav .nav_6>a>span{
+
+.header .nav .nav_6 > a > span {
     margin-top: -8px;
     display: block;
 }
