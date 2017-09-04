@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>腾讯视频-中国领先的在线视频媒体平台,海量高清视频在线观看</title>
     <link rel="stylesheet" href="css/reset.min.css">
     <link rel="stylesheet" href="css/header.css">
-    <!--<link rel="stylesheet" href="https://vm.gtimg.cn">-->
+    <link rel="stylesheet" href="https://vm.gtimg.cn">
 </head>
 <body>
 <!--这是头部-->
-<div class="header">
+<div class="header" id="header">
     <!--顶部搜索栏-->
     <h1 class="logo">
         <a href="">
@@ -69,11 +69,59 @@
                     <span style="color: yellow">VIP</span>
                 </a>
             </div>
-            <div class="hisBox">
+            <div class="hisBox" id="hisBox">
                 <a href="">
                     <img src="css/images/header/nav_top/hisImg.png" alt="">
                     <span>看过</span>
                 </a>
+                <div class="hisBoxInfo">
+                    <div class="infoBox">
+                        <i></i>
+                        <i></i>
+                        <div class="todayBox">
+                            <span>昨天</span>
+                            <a href="">
+                                <span>告别单身</span>
+                            <span>
+                                <span>已看完</span>
+                                <span></span>
+                            </span>
+                            </a>
+                        </div>
+                        <div class="longAgo">
+                            <span>更早</span>
+                            <a href="">
+                                <span>最新主题：看好你的钱</span>
+                             <span>
+                                <span>已看完</span>
+                                <span></span>
+                            </span>
+                            </a>
+                            <a href="">
+                                <span>浅水有大鱼，让人心动 </span>
+                             <span>
+                                <span>已看完</span>
+                                <span></span>
+                            </span>
+                            </a>
+                            <a href="">
+                                <span>小老虎好可怜，被金毛收拾得服服帖帖滴！ </span>
+                             <span>
+                                <span>已看完</span>
+                                <span></span>
+                            </span>
+                            </a>
+                            <a href="">
+                                <span>小狮子与小老虎打架，太萌了！ </span>
+                             <span>
+                                <span>已看完</span>
+                                <span></span>
+                            </span>
+                            </a>
+                        </div>
+                        <a href="javascript:;" class="loginMore" id="loginMore">登录查看更多</a>
+                    </div>
+                </div>
             </div>
             <div class="pusBox">
                 <a href="">
@@ -85,7 +133,15 @@
                 <a href="">
                     <img src="css/images/header/nav_top/winImg.png" alt="">
                     <span>下载客户端</span>
+                    <span>送VIP</span>
                 </a>
+                <div class="dowBoxInfo">
+                    <div><img src="css/images/header/nav_top/dowInfo_vip.png" alt=""><span>连续签到5天送VIP</span></div>
+                    <div><img src="css/images/header/nav_top/dowInfo_fast.png" alt=""><span>三倍流畅播放</span></div>
+                    <div><img src="css/images/header/nav_top/dowInfo_HD.png" alt=""><span>1080P蓝光画质</span></div>
+                    <div><img src="css/images/header/nav_top/dowInfo_time.png" alt=""><span>新剧提前看</span></div>
+                    <a href="">立即体验</a>
+                </div>
             </div>
             <div class="userBox">
                 <a href="">
@@ -97,12 +153,11 @@
         </div>
     </div>
     <!--轮播图区域-->
-    <div class="header-banner">
+    <div class="header-banner" id="header_banner">
         <ul class="imgBox" id="imgBox">
         </ul>
         <div class="banner-nav">
             <ul class="rightNavBox" id="rightNavBox">
-
             </ul>
         </div>
         <!--填充遮挡块-->
@@ -166,9 +221,9 @@
                 </div>
             </div>
         </div>
-        </div>
     </div>
-    <!--导航栏-->
+</div>
+<!--导航栏-->
 
 
 <!--这是中部内容-->

@@ -108,6 +108,7 @@ var header_banner = (function () {
                 change(imgList[step]);
                 step++;
             }
+            console.dir(cur);
             cur.onmouseleave=function () {
                auto();
             }

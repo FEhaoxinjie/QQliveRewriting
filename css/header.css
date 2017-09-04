@@ -14,12 +14,14 @@
     height: 100px;
     background:linear-gradient(to bottom,rgba(000,000,000,0) 0,rgba(000,000,000,.1) 10%,rgba(000,000,000,.1) 50%,rgba(000,000,000,.01) 88%,rgba(000,000,000,.0) 95%,rgba(000,000,000,0) 100%);
     box-shadow: 0 0 0 0 #999;
+    z-index: 1;
 }
 .header .logo{
     width: 230px;
     position: absolute;
     left: 9.8%;
     top: 0.1%;
+    z-index: 1;
 }
 .header .logo a{
     display: block;
@@ -226,14 +228,256 @@
     height: 43px;
     float:left;
     margin-left: 19px;
+    position: relative;
 
 }
-.header .header-top .rightNav>.hisBox,.dowBox,.pusBox{
+.header .header-top .rightNav>.hisBox>a,.dowBox>a,.pusBox{
     opacity: 0.7;
 }
-.header .header-top .rightNav>.hisBox:hover,.dowBox:hover,.pusBox:hover{
+.header .header-top .rightNav>.hisBox>a:hover,.dowBox>a:hover,.pusBox:hover{
     opacity: 1;
 }
+
+.header .header-top .rightNav>.hisBox,.dowBox{
+    position: relative;
+}
+
+/*快捷入口悬浮窗开始*/
+.header .header-top .rightNav .hisBox:before{
+    display: none;
+    position: absolute;
+     left: 3px;
+    top: 37px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom: 8px solid #ff6824;
+}
+.header .header-top .rightNav .hisBox:after{
+      display:none;
+    position: absolute;
+    left: 4.5px;
+    top: 40.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom: 6.5px solid #ffffff;
+}
+.header .header-top .rightNav .hisBox:hover:after{
+      display: block;
+}
+.header .header-top .rightNav .hisBox:hover:before{
+      display: block;
+}
+.header .header-top .rightNav .hisBox:hover>.hisBoxInfo{
+    display: block;
+}
+.header .header-top .rightNav .hisBox .hisBoxInfo{
+    position: absolute;
+   display: none;
+    right: -165px;
+    top: 50px;
+    width: 350px;
+    border-top: 1.5px solid #ff6824;
+    background-color: #ffffff;
+    padding: 25px 15px;
+    z-index: 0;
+}
+.header .header-top .rightNav .hisBox .hisBoxInfo *:not(.loginMore){
+    box-sizing: border-box;
+}
+
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox{
+    border-left: 1px solid #f1f1f1;
+    position: relative;
+    font-size: 14px;
+}
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox>i:nth-of-type(1){
+    display: block;
+    position: absolute;
+    left: -3.5px;
+    top: -2px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #1bc200;
+}
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox>i:nth-of-type(2){
+    display: block;
+    position: absolute;
+    left: -3.5px;
+    top: 65px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #999999;
+}
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox>a,span{
+    color: #000000;
+}
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox a{
+    padding: 5px 15px;
+}
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox div>span{
+    padding: 5px 15px;
+}
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox a:not(.loginMore):hover{
+    background-color: #dddddd;
+}
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox a:not(.loginMore):hover>span:nth-of-type(2)>span:nth-of-type(1){
+    display:none;
+
+}
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox a:not(.loginMore)>span:nth-of-type(2)>span:nth-of-type(2){
+    display: none;
+    background-image: url(images/header/nav_top/his_close.png);
+}
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox a:not(.loginMore)>span:nth-of-type(2)>span:nth-of-type(2):hover{
+    background-image: url(images/header/nav_top/his_close2.png);
+}
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox a:not(.loginMore):hover>span:nth-of-type(2)>span:nth-of-type(2){
+    display: block;
+    background-size: 16px 16px;
+    height: 16px;
+    width: 16px;
+    /*color: red;*/
+}
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox a>span:nth-of-type(2){
+       color: #999999 !important;
+}
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox a span:nth-of-type(2)>span{
+    color: #999999;
+}
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox .todayBox{
+    position: relative;
+    top: -13px;
+}
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox .todayBox>span,a{
+          display: block;
+}
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox .todayBox>span{
+    /*font-size: 14px;*/
+   color: #1bc200;
+    position: relative;
+    /*top: -13px;*/
+}
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox a>span:nth-of-type(1){
+   display: inline-block;
+    width: 200px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox .todayBox a>span:nth-of-type(2){
+    float: right;
+}
+
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox .longAgo{
+    position: relative;
+    top: -10px;
+}
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox .longAgo>span,a{
+    display: block;
+}
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox .longAgo a>span:nth-of-type(2){
+    float: right;
+}
+
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox .loginMore{
+    display: block;
+    width: 100px;
+    height: 25px;
+    line-height: 25px;
+    color: #fff;
+    margin: 0 auto;
+    background: -webkit-linear-gradient(left,#ff850b 0,#ff5945 100%);
+    text-align: center;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.header .header-top .rightNav .hisBox .hisBoxInfo .infoBox .loginMore:hover{
+    background: #ff6824;
+}
+
+.header .header-top .rightNav .dowBox{
+    position: relative;
+}
+.header .header-top .rightNav .dowBox:before{
+    display: none;
+    position: absolute;
+    left: 22px;
+    top: 30px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom: 8px solid #ff6824;
+}
+.header .header-top .rightNav .dowBox:after{
+    display:none;
+    position: absolute;
+    left: 23.5px;
+    top: 35px;
+    height: 0;
+    content: '';
+    border:6.5px solid transparent;
+    border-bottom: 7px solid #ffffff;
+}
+.header .header-top .rightNav .dowBox .dowBoxInfo{
+    display: none;
+    position: absolute;
+    left: -88px;
+    top: 46px;
+    width: 190px;
+    background-color: #ffffff;
+    font-size: 14px;
+    border-top: 1.5px solid #ff6824;
+}
+.header .header-top .rightNav .dowBox:hover .dowBoxInfo{
+       display: block;
+}
+.header .header-top .rightNav .dowBox:hover:after{
+    display: block;
+}
+.header .header-top .rightNav .dowBox:hover:before{
+    display: block;
+}
+.header .header-top .rightNav .dowBox .dowBoxInfo>div>img{
+    width: 18px;
+    height: 18px;
+}
+.header .header-top .rightNav .dowBox .dowBoxInfo>div img{
+    float: left;
+}
+.header .header-top .rightNav .dowBox .dowBoxInfo>div{
+    padding: 5px;
+    margin: 10px 10px 10px 15px;
+}
+.header .header-top .rightNav .dowBox .dowBoxInfo div span{
+    padding-left: 10px;
+}
+
+.header .header-top .rightNav .dowBox .dowBoxInfo>div:nth-of-type(4){
+
+}
+.header .header-top .rightNav .dowBox .dowBoxInfo>div:nth-of-type(1)>span{
+    color: #ff6824;
+}
+.header .header-top .rightNav .dowBox .dowBoxInfo>a{
+    width: 100px;
+    display:block;
+    height: 25px;
+    line-height: 25px;
+    color: #fff;
+    margin: 0  auto 20px auto;
+    text-align: center;
+    background: -webkit-linear-gradient(left,#ff850b 0,#ff5945 100%);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+
 .header .header-top .rightNav div>a{
     display: inline-block;
     width: 100%;
@@ -249,7 +493,8 @@
     width: 21px;
     height: 20px;
 }
-.header .header-top .rightNav>.dowBox>a>img{
+.header .header-top .rightNav>.dowBox>a{
+    position: relative;
 }
 .header .header-top .rightNav>.userBox>a>img{
     width: 40px;
@@ -264,13 +509,22 @@
     color: white;
     /*white-space: nowrap;*/
 }
-
+.header .header-top .rightNav>.dowBox>a>span:nth-of-type(2){
+    position: absolute;
+    right: 0;
+    top: -6px;
+    background-color: #ff6824;
+    font-size: 10px;
+    line-height: 15px;
+    width: 27px;
+    white-space: nowrap;
+}
 
     /*轮播区域*/
 .header .header-banner{
     position: absolute;
     top:0;
-    z-index: -1;
+    z-index: 0;
     width: 100%;
     min-width: 1300px;
     height: 580px;
@@ -306,7 +560,6 @@
     position: absolute;
     right: 160px;
     top: 60px;
-    z-index: 10;
 }
 .header .header-banner .banner-nav .rightNavBox{
     margin: 75px 0 10px 0;
@@ -381,28 +634,31 @@
 .header .nav div a:hover{
     color: #ff2804;
 }
-.header .nav div:not(.nav_1){
-    width: 192px;
+.header .nav div{
+    width: 210px;
      padding: 0 1px;
+}
+.header .nav div:nth-of-type(2){
+    width: 200px;
 }
 .header .nav div:not(.nav_6){
    border-right: 1px solid #cccccc;
 
 }
 .header .nav .nav_4{
-    width: 220px !important;
+    /*width: 220px !important;*/
 
 }
 .header .nav .nav_4>a:nth-of-type(5){
      font-weight: bold;
 }
 .header .nav .nav_6{
-    width: 220px !important;
-    margin-left: 30px;
+    /*width: 220px !important;*/
+    /*margin-left: 20px;*/
 }
 .header .nav .nav_6 a{
     float: left;
-    margin: 13px 15px 0 0;
+    margin: 10px 15px 0 0;
 }
 .header .nav .nav_6 a>img{
     display: inline-block;
