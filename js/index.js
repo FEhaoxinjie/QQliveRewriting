@@ -25,21 +25,23 @@ var header_banner = (function () {
             bannerNavStr = ``;
         for (var i = 0; i < bannerData.length; i++) {
             var cur = bannerData[i];
-            bannerStr += `<li><a ><img style="background-color: ${cur.background}" data-src="${cur.img}"></a></li>`;
+            bannerStr += `<li><a style="background-color: ${cur.background}"><img  data-src="${cur.img}"></a></li>`;
             bannerNavStr += `<li><span class="navTitle">${cur.navTitle}</span><span class="navDesc">${cur.navDesc}</span></li>`;
         }
         imgBox.innerHTML = bannerStr;
         rightNavBox.innerHTML = bannerNavStr;
 
         imgList = imgBox.getElementsByTagName('img');
+        liList=imgBox.getElementsByTagName('li');
         focusList = rightNavBox.getElementsByTagName('li');
     }
 
     function windOnload() {
-        lazyImg(imgList[0]);
-        imgList[0].style.opacity = 1;
+        liList[step].style.zIndex=0;
+        change(imgList[step]);
+        focusList[step].classList.add('hover')
         step = 1;
-        focusList[0].classList.add('hover')
+
 
     }
 
@@ -59,9 +61,22 @@ var header_banner = (function () {
     }
 
     function change(oImg) {
-        var opaStep = 0.06,
+        console.log(oImg);
+        var opaStep =0.1,
             total = 0;
         lazyImg(oImg);
+        for (var i = 0; i < focusList.length; i++) {
+            var cur = focusList[i], obj = imgList[i],item=liList[i];
+            i === step ? (function () {
+                cur.classList.add('hover');
+                item.style.zIndex = 0;
+            })() : (function () {
+                window.clearInterval(obj.timer);
+                item.style.zIndex = -1;
+                obj.style.opacity = 0;
+                cur.classList.remove('hover');
+            })()
+        }
         window.clearInterval(oImg.timer);
         oImg.timer = setInterval(function () {
             if (oImg.style.opacity >= 1) {
@@ -71,22 +86,11 @@ var header_banner = (function () {
             total += opaStep;
             oImg.style.opacity = total;
         }, 17)
-        for (var i = 0; i < focusList.length; i++) {
-            var cur = focusList[i], obj = imgList[i];
-            i === step ? (function () {
-                cur.classList.add('hover');
-                obj.style.zIndex = 1;
-            })() : (function () {
-                obj.style.zIndex = 0;
-                obj.style.opacity = 0;
-                cur.classList.remove('hover');
-            })()
-        }
+
 
     }
 
     function auto() {
-        console.log(step);
         window.clearInterval(autoTimer);
         autoTimer = window.setInterval(function () {
             if (step > imgList.length - 1) {
@@ -116,12 +120,11 @@ var header_banner = (function () {
             cur.onmouseenter = function () {
                 window.clearInterval(autoTimer);
                 step = this.imgIndex;
-                ;
                 change(imgList[step]);
                 step++;
             }
-            console.dir(cur);
             cur.onmouseleave = function () {
+                window.clearInterval(autoTimer);
                 auto();
             }
         }
