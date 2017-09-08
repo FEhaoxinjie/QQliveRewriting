@@ -281,7 +281,7 @@
     top: 37px;
     content: '';
     border: 8px solid transparent;
-    border-bottom: 8px solid #ff6824;
+    border-bottom-color: #ff6824;
 }
 
 .header .header-top .rightNav .hisBox:after {
@@ -292,14 +292,14 @@
     height: 0;
     content: '';
     border: 6.5px solid transparent;
-    border-bottom: 6.5px solid #ffffff;
-}
-
-.header .header-top .rightNav .hisBox:hover:after {
-    display: block;
+    border-bottom-color: #ffffff;
 }
 
 .header .header-top .rightNav .hisBox:hover:before {
+    display: block;
+}
+
+.header .header-top .rightNav .hisBox:hover:after {
     display: block;
 }
 
@@ -723,6 +723,8 @@
     background: #ff6824;
 }
 
+/*快捷入口悬浮窗结束*/
+
 /*轮播区域*/
 .header .header-banner {
     z-index: 0;
@@ -733,8 +735,8 @@
 }
 
 .header .header-banner .imgBox {
-    min-width: 100%;
-    height: 100%;
+    width: 100%;
+    min-height: 100%;
 }
 
 .header .header-banner .imgBox li {
@@ -769,7 +771,7 @@
     position: absolute;
     right: 10.5%;
     top: 60px;
-    z-index: 9999;
+    z-index: 10;
 }
 
 .header .header-banner .banner-nav .rightNavBox {
@@ -820,26 +822,26 @@
 }
 
 /*导航栏*/
-.header .nav {
+.header .mask .nav {
     width: 1300px;
     text-align: center;
     display: inline-block;
     margin: -1px 0 0 58px;
 }
 
-.header .nav .nav_1 {
+.header .mask .nav .nav_1 {
     width: 193px;
     padding-right: 10px;
     margin: 0;
 }
 
-.header .nav > div {
+.header .mask .nav > div {
     float: left;
     display: inline-block;
     height: 60px;
 }
 
-.header .nav > div a {
+.header .mask .nav > div a {
     position: relative;
     float: left;
     padding: 0 6px;
@@ -849,104 +851,116 @@
     color: #000000;
 }
 
-.header .nav > div:not(.nav_6) > a:nth-of-type(1), .header .nav > div:not(.nav_4) > a:nth-of-type(4) {
+.header .mask .nav > div:not(.nav_6) > a:nth-of-type(1), .header .nav > div:not(.nav_4) > a:nth-of-type(4) {
     font-weight: bold;
 }
 
-.header .nav > div a:hover {
+.header .mask .nav > div > a:hover {
     color: #ff2804;
 }
 
-.header .nav > div {
+.header .mask .nav > div {
     width: 210px;
     padding: 0 1px;
 }
 
-.header .nav > div:nth-of-type(2) {
+.header .mask .nav > div:nth-of-type(2) {
     width: 200px;
 }
 
-.header .nav > div:not(.nav_6) {
+.header .mask .nav > div:not(.nav_6) {
     border-right: 1px solid #cccccc;
 
 }
 
-.header .nav .nav_4 {
+.header .mask .nav .nav_4 {
     /*width: 220px !important;*/
 
 }
 
-.header .nav .nav_4 > a:nth-of-type(5) {
+.header .mask .nav .nav_4 > a:nth-of-type(5) {
     font-weight: bold;
 }
 
-.header .nav .nav_6 {
-    /*width: 220px !important;*/
-    /*margin-left: 20px;*/
-}
-
-.header .nav .nav_6 a {
+.header .mask .nav .nav_6 a {
     float: left;
     margin: 10px 15px 0 0;
 }
 
-.header .nav .nav_6 a > img {
+.header .mask .nav .nav_6 a:hover span {
+    color: #ff6824;
+}
+
+.header .mask .nav .nav_6 a > img {
     display: inline-block;
     width: 20px;
     height: 20px;
 }
 
-.header .nav .nav_6 > a > span {
+.header .mask .nav .nav_6 > a > span {
     margin-top: -8px;
     display: block;
 }
 
 /*导航栏二级菜单开始*/
-.header .nav .nav_1 a:nth-of-type(1):hover .teleplayInfo {
-    display: block;
-}
 
-.header .nav .nav_1 a:nth-of-type(1):hover .teleplayInfo:before {
-    display: block;
-}
-
-.header .nav .nav_1 a:nth-of-type(1):hover .teleplayInfo:after {
-    display: block;
-}
-
-.header .nav .nav_1 a:nth-of-type(1) .teleplayInfo:before {
+/*电视剧二级菜单开始*/
+.header .nav .nav_1 a:nth-of-type(1) .teleplayInfo.arrowTop:before {
     position: absolute;
     left: 25px;
-    bottom: -16px;
+    top: -16.5px;
     content: '';
     border: 8px solid transparent;
-    border-top: 8px solid #ff6824;
-    display: none;
+    border-bottom-color: #ff6824;
 }
 
-.header .nav .nav_1 a:nth-of-type(1) .teleplayInfo:after {
+.header .nav .nav_1 a:nth-of-type(1) .teleplayInfo.arrowTop:after {
     position: absolute;
     left: 26.5px;
-    bottom: -11px;
+    top: -12.5px;
     height: 0;
     content: '';
     border: 6.5px solid transparent;
-    border-top: 6.5px solid #ffffff;
-    display: none;
+    border-bottom-color: #ffffff;
+}
+
+.header .nav .nav_1 a:nth-of-type(1) .teleplayInfo.arrowBottom:before {
+    position: absolute;
+    left: 25px;
+    bottom: -16px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+}
+
+.header .nav .nav_1 a:nth-of-type(1) .teleplayInfo.arrowBottom:after {
+    position: absolute;
+    left: 26px;
+    bottom: -13px;
+    height: 0;
+    content: '';
+    border: 7px solid transparent;
+    border-top-color: #ffffff;
 }
 
 .header .nav .nav_1 a:nth-of-type(1) .teleplayInfo {
     width: 390px;
-    border-bottom: 1.5px solid #ff6824;
+    border: 1.5px solid transparent;
     position: absolute;
     left: -10px;
-    top: -185px;
     font-weight: normal;
     font-size: 14px;
-    padding: 0 10px;
-    background: rgba(255, 255, 255, .9);
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
     text-align: left;
+    z-index: 999;
     display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_1 a:nth-of-type(1):hover .teleplayInfo {
+    display: block;
 }
 
 .header .nav .nav_1 a:nth-of-type(1) .teleplayInfo > span:nth-of-type(1) {
@@ -955,9 +969,16 @@
     margin: 0 5px;
 }
 
+.header .nav .nav_1 a:nth-of-type(1) .teleplayInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
 .header .nav .nav_1 a:nth-of-type(1) .teleplayInfo > div {
     width: 100%;
-    padding: 0 2px;
+    padding: 0 1px;
 }
 
 .header .nav .nav_1 a:nth-of-type(1) .teleplayInfo > div span {
@@ -975,3 +996,2594 @@
 .header .nav .nav_1 a:nth-of-type(1) .teleplayInfo > div span:hover {
     color: #ff6824;
 }
+
+/*电视剧二级菜单结束*/
+
+/*美剧二级菜单开始*/
+.header .nav .nav_1 a:nth-of-type(2) .usaTVInfo.arrowTop:before {
+    position: absolute;
+    left: 20px;
+    top: -16.5px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom-color: #ff6824;
+}
+
+.header .nav .nav_1 a:nth-of-type(2) .usaTVInfo.arrowTop:after {
+    position: absolute;
+    left: 21.5px;
+    top: -12.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom-color: #ffffff;
+}
+
+.header .nav .nav_1 a:nth-of-type(2) .usaTVInfo.arrowBottom:before {
+    position: absolute;
+    left: 20px;
+    bottom: -16px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+}
+
+.header .nav .nav_1 a:nth-of-type(2) .usaTVInfo.arrowBottom:after {
+    position: absolute;
+    left: 21px;
+    bottom: -13px;
+    height: 0;
+    content: '';
+    border: 7px solid transparent;
+    border-top-color: #ffffff;
+}
+
+.header .nav .nav_1 a:nth-of-type(2) .usaTVInfo {
+    width: 390px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    left: -10px;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_1 a:nth-of-type(2):hover .usaTVInfo {
+    display: block;
+}
+
+.header .nav .nav_1 a:nth-of-type(2) .usaTVInfo > span:nth-of-type(1) {
+    color: #ff6824;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.header .nav .nav_1 a:nth-of-type(2) .usaTVInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.header .nav .nav_1 a:nth-of-type(2) .usaTVInfo > div {
+    width: 100%;
+    padding: 0 1px;
+}
+
+.header .nav .nav_1 a:nth-of-type(2) .usaTVInfo > div span {
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.header .nav .nav_1 a:nth-of-type(2) .usaTVInfo > div span:hover {
+    color: #ff6824;
+}
+
+/*美剧二级菜单结束*/
+
+/*韩剧二级菜单开始*/
+.header .nav .nav_1 a:nth-of-type(3) .korTVInfo.arrowTop:before {
+    position: absolute;
+    left: 20px;
+    top: -16.5px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom-color: #ff6824;
+}
+
+.header .nav .nav_1 a:nth-of-type(3) .korTVInfo.arrowTop:after {
+    position: absolute;
+    left: 21px;
+    top: -12.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom-color: #ffffff;
+}
+
+.header .nav .nav_1 a:nth-of-type(3) .korTVInfo.arrowBottom:before {
+    position: absolute;
+    left: 20px;
+    bottom: -16px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+}
+
+.header .nav .nav_1 a:nth-of-type(3) .korTVInfo.arrowBottom:after {
+    position: absolute;
+    left: 20.5px;
+    bottom: -13px;
+    height: 0;
+    content: '';
+    border: 7px solid transparent;
+    border-top-color: #ffffff;
+}
+
+.header .nav .nav_1 a:nth-of-type(3) .korTVInfo {
+    width: 390px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    left: -10px;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_1 a:nth-of-type(3):hover .korTVInfo {
+    display: block;
+}
+
+.header .nav .nav_1 a:nth-of-type(3) .korTVInfo > span:nth-of-type(1) {
+    color: #ff6824;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.header .nav .nav_1 a:nth-of-type(3) .korTVInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.header .nav .nav_1 a:nth-of-type(3) .korTVInfo > div {
+    width: 100%;
+    padding: 0 1px;
+}
+
+.header .nav .nav_1 a:nth-of-type(3) .korTVInfo > div span {
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.header .nav .nav_1 a:nth-of-type(3) .korTVInfo > div span:hover {
+    color: #ff6824;
+}
+
+/*韩剧二级菜单结束*/
+
+/*电影二级菜单开始*/
+.header .nav .nav_1 a:nth-of-type(4) .movieInfo.arrowTop:before {
+    position: absolute;
+    left: 20px;
+    top: -16.5px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom-color: #ff6824;
+}
+
+.header .nav .nav_1 a:nth-of-type(4) .movieInfo.arrowTop:after {
+    position: absolute;
+    left: 21.5px;
+    top: -12.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom-color: #ffffff;
+}
+
+.header .nav .nav_1 a:nth-of-type(4) .movieInfo.arrowBottom:before {
+    position: absolute;
+    left: 20px;
+    bottom: -16px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+}
+
+.header .nav .nav_1 a:nth-of-type(4) .movieInfo.arrowBottom:after {
+    position: absolute;
+    left: 21px;
+    bottom: -13px;
+    height: 0;
+    content: '';
+    border: 7px solid transparent;
+    border-top-color: #ffffff;
+}
+
+.header .nav .nav_1 a:nth-of-type(4) .movieInfo {
+    width: 390px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    left: -10px;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_1 a:nth-of-type(4):hover .movieInfo {
+    display: block;
+}
+
+.header .nav .nav_1 a:nth-of-type(4) .movieInfo > span:nth-of-type(1) {
+    color: #ff6824;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.header .nav .nav_1 a:nth-of-type(4) .movieInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.header .nav .nav_1 a:nth-of-type(4) .movieInfo > div {
+    width: 100%;
+    padding: 0 1px;
+}
+
+.header .nav .nav_1 a:nth-of-type(4) .movieInfo > div span {
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.header .nav .nav_1 a:nth-of-type(4) .movieInfo > div span:hover {
+    color: #ff6824;
+}
+
+/*电影二级菜单结束*/
+
+/*VIP电影二级菜单开始*/
+.header .nav .nav_1 a:nth-of-type(5) .vipMovieInfo.arrowTop:before {
+    position: absolute;
+    left: 25px;
+    top: -16.5px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom-color: #ff6824;
+}
+
+.header .nav .nav_1 a:nth-of-type(5) .vipMovieInfo.arrowTop:after {
+    position: absolute;
+    left: 26.5px;
+    top: -12.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom-color: #ffffff;
+}
+
+.header .nav .nav_1 a:nth-of-type(5) .vipMovieInfo.arrowBottom:before {
+    position: absolute;
+    left: 25px;
+    bottom: -17px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+}
+
+.header .nav .nav_1 a:nth-of-type(5) .vipMovieInfo.arrowBottom:after {
+    position: absolute;
+    left: 26px;
+    bottom: -14px;
+    height: 0;
+    content: '';
+    border: 7px solid transparent;
+    border-top-color: #ffffff;
+}
+
+.header .nav .nav_1 a:nth-of-type(5) .vipMovieInfo {
+    width: 390px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    left: -10px;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_1 a:nth-of-type(5):hover .vipMovieInfo {
+    display: block;
+}
+
+.header .nav .nav_1 a:nth-of-type(5) .vipMovieInfo > span:nth-of-type(1) {
+    color: #ff6824;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.header .nav .nav_1 a:nth-of-type(5) .vipMovieInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.header .nav .nav_1 a:nth-of-type(5) .vipMovieInfo > div {
+    width: 100%;
+    padding: 0 1px;
+}
+
+.header .nav .nav_1 a:nth-of-type(5) .vipMovieInfo > div span {
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.header .nav .nav_1 a:nth-of-type(5) .vipMovieInfo > div span:hover {
+    color: #ff6824;
+}
+
+/*VIP电影二级菜单结束*/
+
+/*微电影二级菜单开始*/
+.header .nav .nav_1 a:nth-of-type(6) .smallMovieInfo.arrowTop:before {
+    position: absolute;
+    left: 25px;
+    top: -16.5px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom-color: #ff6824;
+}
+
+.header .nav .nav_1 a:nth-of-type(6) .smallMovieInfo.arrowTop:after {
+    position: absolute;
+    left: 26.5px;
+    top: -12.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom-color: #ffffff;
+}
+
+.header .nav .nav_1 a:nth-of-type(6) .smallMovieInfo.arrowBottom:before {
+    position: absolute;
+    left: 25px;
+    bottom: -16px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+}
+
+.header .nav .nav_1 a:nth-of-type(6) .smallMovieInfo.arrowBottom:after {
+    position: absolute;
+    left: 26px;
+    bottom: -13px;
+    height: 0;
+    content: '';
+    border: 7px solid transparent;
+    border-top-color: #ffffff;
+}
+
+.header .nav .nav_1 a:nth-of-type(6) .smallMovieInfo {
+    width: 390px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    left: -10px;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_1 a:nth-of-type(6):hover .smallMovieInfo {
+    display: block;
+}
+
+.header .nav .nav_1 a:nth-of-type(6) .smallMovieInfo > span:nth-of-type(1) {
+    color: #ff6824;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.header .nav .nav_1 a:nth-of-type(6) .smallMovieInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.header .nav .nav_1 a:nth-of-type(6) .smallMovieInfo > div {
+    width: 100%;
+    padding: 0 1px;
+}
+
+.header .nav .nav_1 a:nth-of-type(6) .smallMovieInfo > div span {
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.header .nav .nav_1 a:nth-of-type(6) .smallMovieInfo > div span:hover {
+    color: #ff6824;
+}
+
+/*微电影二级菜单结束*/
+
+/*综艺二级菜单开始*/
+.header .nav .nav_2 a:nth-of-type(1) .varietyInfo.arrowTop:before {
+    position: absolute;
+    left: 20px;
+    top: -16.5px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom-color: #ff6824;
+}
+
+.header .nav .nav_2 a:nth-of-type(1) .varietyInfo.arrowTop:after {
+    position: absolute;
+    left: 21.5px;
+    top: -12.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom-color: #ffffff;
+}
+
+.header .nav .nav_2 a:nth-of-type(1) .varietyInfo.arrowBottom:before {
+    position: absolute;
+    left: 20px;
+    bottom: -16px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+}
+
+.header .nav .nav_2 a:nth-of-type(1) .varietyInfo.arrowBottom:after {
+    position: absolute;
+    left: 21px;
+    bottom: -13px;
+    height: 0;
+    content: '';
+    border: 7px solid transparent;
+    border-top-color: #ffffff;
+}
+
+.header .nav .nav_2 a:nth-of-type(1) .varietyInfo {
+    width: 390px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    left: -10px;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_2 a:nth-of-type(1):hover .varietyInfo {
+    display: block;
+}
+
+.header .nav .nav_2 a:nth-of-type(1) .varietyInfo > span:nth-of-type(1) {
+    color: #ff6824;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.header .nav .nav_2 a:nth-of-type(1) .varietyInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.header .nav .nav_2 a:nth-of-type(1) .varietyInfo > div {
+    width: 100%;
+    padding: 0 1px;
+}
+
+.header .nav .nav_2 a:nth-of-type(1) .varietyInfo > div span {
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.header .nav .nav_2 a:nth-of-type(1) .varietyInfo > div span:hover {
+    color: #ff6824;
+}
+
+/*综艺电影二级菜单结束*/
+
+/*娱乐二级菜单开始*/
+.header .nav .nav_2 a:nth-of-type(2) .recreationInfo.arrowTop:before {
+    position: absolute;
+    left: 20px;
+    top: -16.5px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom-color: #ff6824;
+}
+
+.header .nav .nav_2 a:nth-of-type(2) .recreationInfo.arrowTop:after {
+    position: absolute;
+    left: 21.5px;
+    top: -12.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom-color: #ffffff;
+
+}
+
+.header .nav .nav_2 a:nth-of-type(2) .recreationInfo.arrowBottom:before {
+    position: absolute;
+    left: 20px;
+    bottom: -16px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+}
+
+.header .nav .nav_2 a:nth-of-type(2) .recreationInfo.arrowBottom:after {
+    position: absolute;
+    left: 21px;
+    bottom: -13px;
+    height: 0;
+    content: '';
+    border: 7px solid transparent;
+    border-top-color: #ffffff;
+}
+
+.header .nav .nav_2 a:nth-of-type(2) .recreationInfo {
+    width: 390px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    left: -10px;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_2 a:nth-of-type(2):hover .recreationInfo {
+    display: block;
+}
+
+.header .nav .nav_2 a:nth-of-type(2) .recreationInfo > span:nth-of-type(1) {
+    color: #ff6824;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.header .nav .nav_2 a:nth-of-type(2) .recreationInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.header .nav .nav_2 a:nth-of-type(2) .recreationInfo > div {
+    width: 100%;
+    padding: 0 1px;
+}
+
+.header .nav .nav_2 a:nth-of-type(2) .recreationInfo > div span {
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.header .nav .nav_2 a:nth-of-type(2) .recreationInfo > div span:hover {
+    color: #ff6824;
+}
+
+/*娱乐二级菜单结束*/
+
+/*搞笑二级菜单开始*/
+
+.header .nav .nav_2 a:nth-of-type(3) .funnyInfo.arrowTop:before {
+    position: absolute;
+    left: 20px;
+    top: -16.5px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom-color: #ff6824;
+}
+
+.header .nav .nav_2 a:nth-of-type(3) .funnyInfo.arrowTop:after {
+    position: absolute;
+    left: 21.5px;
+    top: -12.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom-color: #ffffff;
+}
+
+.header .nav .nav_2 a:nth-of-type(3) .funnyInfo.arrowBottom:before {
+    position: absolute;
+    left: 20px;
+    bottom: -16px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+}
+
+.header .nav .nav_2 a:nth-of-type(3) .funnyInfo.arrowBottom:after {
+    position: absolute;
+    left: 21px;
+    bottom: -13px;
+    height: 0;
+    content: '';
+    border: 7px solid transparent;
+    border-top-color: #ffffff;
+}
+
+.header .nav .nav_2 a:nth-of-type(3) .funnyInfo {
+    width: 390px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    left: -10px;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_2 a:nth-of-type(3):hover .funnyInfo {
+    display: block;
+}
+
+.header .nav .nav_2 a:nth-of-type(3) .funnyInfo > span:nth-of-type(1) {
+    color: #ff6824;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.header .nav .nav_2 a:nth-of-type(3) .funnyInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.header .nav .nav_2 a:nth-of-type(3) .funnyInfo > div {
+    width: 100%;
+    padding: 0 1px;
+}
+
+.header .nav .nav_2 a:nth-of-type(3) .funnyInfo > div span {
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.header .nav .nav_2 a:nth-of-type(3) .funnyInfo > div span:hover {
+    color: #ff6824;
+}
+
+/*搞笑二级菜单结束*/
+
+/*动漫二级菜单开始*/
+.header .nav .nav_2 a:nth-of-type(4) .comicInfo.arrowTop:before {
+    position: absolute;
+    left: 20px;
+    top: -16.5px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom-color: #ff6824;
+}
+
+.header .nav .nav_2 a:nth-of-type(4) .comicInfo.arrowTop:after {
+    position: absolute;
+    left: 21.5px;
+    top: -12.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom-color: #ffffff;
+}
+
+.header .nav .nav_2 a:nth-of-type(4) .comicInfo.arrowBottom:before {
+    position: absolute;
+    left: 20px;
+    bottom: -16px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+
+}
+
+.header .nav .nav_2 a:nth-of-type(4) .comicInfo.arrowBottom:after {
+    position: absolute;
+    left: 21px;
+    bottom: -13px;
+    height: 0;
+    content: '';
+    border: 7px solid transparent;
+    border-top-color: #ffffff;
+}
+
+.header .nav .nav_2 a:nth-of-type(4) .comicInfo {
+    width: 390px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    left: -10px;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_2 a:nth-of-type(4):hover .comicInfo {
+    display: block;
+}
+
+.header .nav .nav_2 a:nth-of-type(4) .comicInfo > span:nth-of-type(1) {
+    color: #ff6824;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.header .nav .nav_2 a:nth-of-type(4) .comicInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.header .nav .nav_2 a:nth-of-type(4) .comicInfo > div {
+    width: 100%;
+    padding: 0 1px;
+}
+
+.header .nav .nav_2 a:nth-of-type(4) .comicInfo > div span {
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.header .nav .nav_2 a:nth-of-type(4) .comicInfo > div span:hover {
+    color: #ff6824;
+}
+
+/*动漫二级菜单结束*/
+
+/*少儿二级菜单开始*/
+
+.header .nav .nav_2 a:nth-of-type(5) .childrenInfo.arrowTop:before {
+    position: absolute;
+    left: 20px;
+    top: -16.5px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom-color: #ff6824;
+}
+
+.header .nav .nav_2 a:nth-of-type(5) .childrenInfo.arrowTop:after {
+    position: absolute;
+    left: 21.5px;
+    top: -12.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom-color: #ffffff;
+
+}
+
+.header .nav .nav_2 a:nth-of-type(5) .childrenInfo.arrowBottom:before {
+    position: absolute;
+    left: 20px;
+    bottom: -16px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+}
+
+.header .nav .nav_2 a:nth-of-type(5) .childrenInfo.arrowBottom:after {
+    position: absolute;
+    left: 21px;
+    bottom: -13px;
+    height: 0;
+    content: '';
+    border: 7px solid transparent;
+    border-top-color: #ffffff;
+}
+
+.header .nav .nav_2 a:nth-of-type(5) .childrenInfo {
+    width: 390px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    left: -10px;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_2 a:nth-of-type(5):hover .childrenInfo {
+    display: block;
+}
+
+.header .nav .nav_2 a:nth-of-type(5) .childrenInfo > span:nth-of-type(1) {
+    color: #ff6824;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.header .nav .nav_2 a:nth-of-type(5) .childrenInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.header .nav .nav_2 a:nth-of-type(5) .childrenInfo > div {
+    width: 100%;
+    padding: 0 1px;
+}
+
+.header .nav .nav_2 a:nth-of-type(5) .childrenInfo > div span {
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.header .nav .nav_2 a:nth-of-type(5) .childrenInfo > div span:hover {
+    color: #ff6824;
+}
+
+/*少儿二级菜单结束*/
+
+/*纪录片电影二级菜单开始*/
+
+.header .nav .nav_2 a:nth-of-type(6) .documentaryInfo.arrowTop:before {
+    position: absolute;
+    left: 25px;
+    top: -16.5px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom-color: #ff6824;
+}
+
+.header .nav .nav_2 a:nth-of-type(6) .documentaryInfo.arrowTop:after {
+    position: absolute;
+    left: 26.5px;
+    top: -12.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom-color: #ffffff;
+}
+
+.header .nav .nav_2 a:nth-of-type(6) .documentaryInfo.arrowBottom:before {
+    position: absolute;
+    left: 25px;
+    bottom: -16px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+}
+
+.header .nav .nav_2 a:nth-of-type(6) .documentaryInfo.arrowBottom:after {
+    position: absolute;
+    left: 26px;
+    bottom: -13px;
+    height: 0;
+    content: '';
+    border: 7px solid transparent;
+    border-top-color: #ffffff;
+}
+
+.header .nav .nav_2 a:nth-of-type(6) .documentaryInfo {
+    width: 390px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    left: -10px;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_2 a:nth-of-type(6):hover .documentaryInfo {
+    display: block;
+}
+
+.header .nav .nav_2 a:nth-of-type(6) .documentaryInfo > span:nth-of-type(1) {
+    color: #ff6824;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.header .nav .nav_2 a:nth-of-type(6) .documentaryInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.header .nav .nav_2 a:nth-of-type(6) .documentaryInfo > div {
+    width: 100%;
+    padding: 0 1px;
+}
+
+.header .nav .nav_2 a:nth-of-type(6) .documentaryInfo > div span {
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.header .nav .nav_2 a:nth-of-type(6) .documentaryInfo > div span:hover {
+    color: #ff6824;
+}
+
+/*纪录片二级菜单结束*/
+
+/*音乐二级菜单开始*/
+
+.header .nav .nav_3 a:nth-of-type(1) .musicInfo.arrowTop:before {
+    position: absolute;
+    left: 20px;
+    top: -16.5px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom-color: #ff6824;
+}
+
+.header .nav .nav_3 a:nth-of-type(1) .musicInfo.arrowTop:after {
+    position: absolute;
+    left: 21.5px;
+    top: -12.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom-color: #ffffff;
+}
+
+.header .nav .nav_3 a:nth-of-type(1) .musicInfo.arrowBottom:before {
+    position: absolute;
+    left: 20px;
+    bottom: -16px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+}
+
+.header .nav .nav_3 a:nth-of-type(1) .musicInfo.arrowBottom:after {
+    position: absolute;
+    left: 21px;
+    bottom: -13px;
+    height: 0;
+    content: '';
+    border: 7px solid transparent;
+    border-top-color: #ffffff;
+}
+
+.header .nav .nav_3 a:nth-of-type(1) .musicInfo {
+    width: 390px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    left: -10px;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_3 a:nth-of-type(1):hover .musicInfo {
+    display: block;
+}
+
+.header .nav .nav_3 a:nth-of-type(1) .musicInfo > span:nth-of-type(1) {
+    color: #ff6824;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.header .nav .nav_3 a:nth-of-type(1) .musicInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.header .nav .nav_3 a:nth-of-type(1) .musicInfo > div {
+    width: 100%;
+    padding: 0 1px;
+}
+
+.header .nav .nav_3 a:nth-of-type(1) .musicInfo > div span {
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.header .nav .nav_3 a:nth-of-type(1) .musicInfo > div span:hover {
+    color: #ff6824;
+}
+
+/*音乐二级菜单结束*/
+
+/*演唱会二级菜单开始*/
+
+.header .nav .nav_3 a:nth-of-type(3) .vocalConcertInfo.arrowTop:before {
+    position: absolute;
+    left: 25px;
+    top: -16.5px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom-color: #ff6824;
+}
+
+.header .nav .nav_3 a:nth-of-type(3) .vocalConcertInfo.arrowTop:after {
+    position: absolute;
+    left: 26.5px;
+    top: -12.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom-color: #ffffff;
+}
+
+.header .nav .nav_3 a:nth-of-type(3) .vocalConcertInfo.arrowBottom:before {
+    position: absolute;
+    left: 25px;
+    bottom: -16px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+}
+
+.header .nav .nav_3 a:nth-of-type(3) .vocalConcertInfo.arrowBottom:after {
+    position: absolute;
+    left: 26px;
+    bottom: -13px;
+    height: 0;
+    content: '';
+    border: 7px solid transparent;
+    border-top-color: #ffffff;
+}
+
+.header .nav .nav_3 a:nth-of-type(3) .vocalConcertInfo {
+    width: 390px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    left: -10px;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_3 a:nth-of-type(3):hover .vocalConcertInfo {
+    display: block;
+}
+
+.header .nav .nav_3 a:nth-of-type(3) .vocalConcertInfo > span:nth-of-type(1) {
+    color: #ff6824;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.header .nav .nav_3 a:nth-of-type(3) .vocalConcertInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.header .nav .nav_3 a:nth-of-type(2) .vocalConcertInfo > div {
+    width: 100%;
+    padding: 0 1px;
+}
+
+.header .nav .nav_3 a:nth-of-type(3) .vocalConcertInfo > div span {
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.header .nav .nav_3 a:nth-of-type(3) .vocalConcertInfo > div span:hover {
+    color: #ff6824;
+}
+
+/*演唱会二级菜单结束*/
+
+/*体育二级菜单开始*/
+
+.header .nav .nav_3 a:nth-of-type(4) .sportsInfo.arrowTop:before {
+    position: absolute;
+    left: 20px;
+    top: -16.5px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom-color: #ff6824;
+}
+
+.header .nav .nav_3 a:nth-of-type(4) .sportsInfo.arrowTop:after {
+    position: absolute;
+    left: 21.5px;
+    top: -12.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom-color: #ffffff;
+
+}
+
+.header .nav .nav_3 a:nth-of-type(4) .sportsInfo.arrowBottom:before {
+    position: absolute;
+    left: 20px;
+    bottom: -16px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+}
+
+.header .nav .nav_3 a:nth-of-type(4) .sportsInfo.arrowBottom:after {
+    position: absolute;
+    left: 21px;
+    bottom: -13px;
+    height: 0;
+    content: '';
+    border: 7px solid transparent;
+    border-top-color: #ffffff;
+}
+
+.header .nav .nav_3 a:nth-of-type(4) .sportsInfo {
+    width: 390px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    left: -10px;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_3 a:nth-of-type(4):hover .sportsInfo {
+    display: block;
+}
+
+.header .nav .nav_3 a:nth-of-type(4) .sportsInfo > span:nth-of-type(1) {
+    color: #ff6824;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.header .nav .nav_3 a:nth-of-type(4) .sportsInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.header .nav .nav_3 a:nth-of-type(4) .sportsInfo > div {
+    width: 100%;
+    padding: 0 1px;
+}
+
+.header .nav .nav_3 a:nth-of-type(4) .sportsInfo > div span {
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.header .nav .nav_3 a:nth-of-type(4) .sportsInfo > div span:hover {
+    color: #ff6824;
+}
+
+/*体育二级菜单结束*/
+
+/*游戏二级菜单开始*/
+
+.header .nav .nav_3 a:nth-of-type(6) .gameInfo.arrowTop:before {
+    position: absolute;
+    left: 20px;
+    top: -16.5px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom-color: #ff6824;
+}
+
+.header .nav .nav_3 a:nth-of-type(6) .gameInfo.arrowTop:after {
+    position: absolute;
+    left: 21.5px;
+    top: -12.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom-color: #ffffff;
+}
+
+.header .nav .nav_3 a:nth-of-type(6) .gameInfo.arrowBottom:before {
+    position: absolute;
+    left: 20px;
+    bottom: -16px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+}
+
+.header .nav .nav_3 a:nth-of-type(6) .gameInfo.arrowBottom:after {
+    position: absolute;
+    left: 21px;
+    bottom: -13px;
+    height: 0;
+    content: '';
+    border: 7px solid transparent;
+    border-top-color: #ffffff;
+}
+
+.header .nav .nav_3 a:nth-of-type(6) .gameInfo {
+    width: 390px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    left: -10px;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_3 a:nth-of-type(6):hover .gameInfo {
+    display: block;
+}
+
+.header .nav .nav_3 a:nth-of-type(6) .gameInfo > span:nth-of-type(1) {
+    color: #ff6824;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.header .nav .nav_3 a:nth-of-type(6) .gameInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.header .nav .nav_3 a:nth-of-type(6) .gameInfo > div {
+    width: 100%;
+    padding: 0 1px;
+}
+
+.header .nav .nav_3 a:nth-of-type(6) .gameInfo > div span {
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.header .nav .nav_3 a:nth-of-type(6) .gameInfo > div span:hover {
+    color: #ff6824;
+}
+
+/*游戏二级菜单结束*/
+
+/*新闻二级菜单开始*/
+
+.header .nav .nav_4 a:nth-of-type(1) .newsInfo.arrowTop:before {
+    position: absolute;
+    left: 20px;
+    top: -16.5px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom-color: #ff6824;
+}
+
+.header .nav .nav_4 a:nth-of-type(1) .newsInfo.arrowTop:after {
+    position: absolute;
+    left: 21.5px;
+    top: -12.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom-color: #ffffff;
+}
+
+.header .nav .nav_4 a:nth-of-type(1) .newsInfo.arrowBottom:before {
+    position: absolute;
+    left: 20px;
+    bottom: -16px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+}
+
+.header .nav .nav_4 a:nth-of-type(1) .newsInfo.arrowBottom:after {
+    position: absolute;
+    left: 21px;
+    bottom: -13px;
+    height: 0;
+    content: '';
+    border: 7px solid transparent;
+    border-top-color: #ffffff;
+}
+
+.header .nav .nav_4 a:nth-of-type(1) .newsInfo {
+    width: 390px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    left: -10px;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_4 a:nth-of-type(1):hover .newsInfo {
+    display: block;
+}
+
+.header .nav .nav_4 a:nth-of-type(1) .newsInfo > span:nth-of-type(1) {
+    color: #ff6824;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.header .nav .nav_4 a:nth-of-type(1) .newsInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.header .nav .nav_4 a:nth-of-type(1) .newsInfo > div {
+    width: 100%;
+    padding: 0 1px;
+}
+
+.header .nav .nav_4 a:nth-of-type(1) .newsInfo > div span {
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.header .nav .nav_4 a:nth-of-type(1) .newsInfo > div span:hover {
+    color: #ff6824;
+}
+
+/*新闻二级菜单结束*/
+
+/*科技二级菜单开始*/
+
+.header .nav .nav_4 a:nth-of-type(2) .scienceInfo.arrowTop:before {
+    position: absolute;
+    left: 20px;
+    top: -16.5px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom-color: #ff6824;
+}
+
+.header .nav .nav_4 a:nth-of-type(2) .scienceInfo.arrowTop:after {
+    position: absolute;
+    left: 21.5px;
+    top: -12.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom-color: #ffffff;
+}
+
+.header .nav .nav_4 a:nth-of-type(2) .scienceInfo.arrowBottom:before {
+    position: absolute;
+    left: 20px;
+    bottom: -16px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+}
+
+.header .nav .nav_4 a:nth-of-type(2) .scienceInfo.arrowBottom:after {
+    position: absolute;
+    left: 21px;
+    bottom: -13px;
+    height: 0;
+    content: '';
+    border: 7px solid transparent;
+    border-top-color: #ffffff;
+}
+
+.header .nav .nav_4 a:nth-of-type(2) .scienceInfo {
+    width: 390px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    left: -10px;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_4 a:nth-of-type(2):hover .scienceInfo {
+    display: block;
+}
+
+.header .nav .nav_4 a:nth-of-type(2) .scienceInfo > span:nth-of-type(1) {
+    color: #ff6824;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.header .nav .nav_4 a:nth-of-type(2) .scienceInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.header .nav .nav_4 a:nth-of-type(2) .scienceInfo > div {
+    width: 100%;
+    padding: 0 1px;
+}
+
+.header .nav .nav_4 a:nth-of-type(2) .scienceInfo > div span {
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.header .nav .nav_4 a:nth-of-type(2) .scienceInfo > div span:hover {
+    color: #ff6824;
+}
+
+/*科技二级菜单结束*/
+
+/*财经二级菜单开始*/
+
+.header .nav .nav_4 a:nth-of-type(3) .financeInfo.arrowTop:before {
+    position: absolute;
+    left: 20px;
+    top: -16.5px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom-color: #ff6824;
+}
+
+.header .nav .nav_4 a:nth-of-type(3) .financeInfo.arrowTop:after {
+    position: absolute;
+    left: 21.5px;
+    top: -12.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom-color: #ffffff;
+}
+
+.header .nav .nav_4 a:nth-of-type(3) .financeInfo.arrowBottom:before {
+    position: absolute;
+    left: 20px;
+    bottom: -16px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+}
+
+.header .nav .nav_4 a:nth-of-type(3) .financeInfo.arrowBottom:after {
+    position: absolute;
+    left: 21px;
+    bottom: -13px;
+    height: 0;
+    content: '';
+    border: 7px solid transparent;
+    border-top-color: #ffffff;
+}
+
+.header .nav .nav_4 a:nth-of-type(3) .financeInfo {
+    width: 390px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    left: -10px;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_4 a:nth-of-type(3):hover .financeInfo {
+    display: block;
+}
+
+.header .nav .nav_4 a:nth-of-type(3) .financeInfo > span:nth-of-type(1) {
+    color: #ff6824;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.header .nav .nav_4 a:nth-of-type(3) .financeInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.header .nav .nav_4 a:nth-of-type(3) .financeInfo > div {
+    width: 100%;
+    padding: 0 1px;
+}
+
+.header .nav .nav_4 a:nth-of-type(3) .financeInfo > div span {
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.header .nav .nav_4 a:nth-of-type(3) .financeInfo > div span:hover {
+    color: #ff6824;
+}
+
+/*财经二级菜单结束*/
+
+/*房产二级菜单开始*/
+
+.header .nav .nav_4 a:nth-of-type(4) .houseInfo.arrowTop:before {
+    position: absolute;
+    left: 20px;
+    top: -16.5px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom-color: #ff6824;
+}
+
+.header .nav .nav_4 a:nth-of-type(4) .houseInfo.arrowTop:after {
+    position: absolute;
+    left: 21.5px;
+    top: -12.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom-color: #ffffff;
+}
+
+.header .nav .nav_4 a:nth-of-type(4) .houseInfo.arrowBottom:before {
+    position: absolute;
+    left: 20px;
+    bottom: -16px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+}
+
+.header .nav .nav_4 a:nth-of-type(4) .houseInfo.arrowBottom:after {
+    position: absolute;
+    left: 21px;
+    bottom: -13px;
+    height: 0;
+    content: '';
+    border: 7px solid transparent;
+    border-top-color: #ffffff;
+}
+
+.header .nav .nav_4 a:nth-of-type(4) .houseInfo {
+    width: 390px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    left: -10px;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_4 a:nth-of-type(4):hover .houseInfo {
+    display: block;
+}
+
+.header .nav .nav_4 a:nth-of-type(4) .houseInfo > span:nth-of-type(1) {
+    color: #ff6824;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.header .nav .nav_4 a:nth-of-type(4) .houseInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.header .nav .nav_4 a:nth-of-type(4) .houseInfo > div {
+    width: 100%;
+    padding: 0 1px;
+}
+
+.header .nav .nav_4 a:nth-of-type(4) .houseInfo > div span {
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.header .nav .nav_4 a:nth-of-type(4) .houseInfo > div span:hover {
+    color: #ff6824;
+}
+
+/*房产二级菜单结束*/
+
+/*生活二级菜单开始*/
+
+.header .nav .nav_4 a:nth-of-type(5) .lifeInfo.arrowTop:before {
+    position: absolute;
+    left: 20px;
+    top: -16.5px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom-color: #ff6824;
+}
+
+.header .nav .nav_4 a:nth-of-type(5) .lifeInfo.arrowTop:after {
+    position: absolute;
+    left: 21.5px;
+    top: -12.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom-color: #ffffff;
+}
+
+.header .nav .nav_4 a:nth-of-type(5) .lifeInfo.arrowBottom:before {
+    position: absolute;
+    left: 20px;
+    bottom: -16px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+}
+
+.header .nav .nav_4 a:nth-of-type(5) .lifeInfo.arrowBottom:after {
+    position: absolute;
+    left: 21px;
+    bottom: -13px;
+    height: 0;
+    content: '';
+    border: 7px solid transparent;
+    border-top-color: #ffffff;
+}
+
+.header .nav .nav_4 a:nth-of-type(5) .lifeInfo {
+    width: 390px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    left: -10px;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_4 a:nth-of-type(5):hover .lifeInfo {
+    display: block;
+}
+
+.header .nav .nav_4 a:nth-of-type(5) .lifeInfo > span:nth-of-type(1) {
+    color: #ff6824;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.header .nav .nav_4 a:nth-of-type(5) .lifeInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.header .nav .nav_4 a:nth-of-type(5) .lifeInfo > div {
+    width: 100%;
+    padding: 0 1px;
+}
+
+.header .nav .nav_4 a:nth-of-type(5) .lifeInfo > div span {
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.header .nav .nav_4 a:nth-of-type(5) .lifeInfo > div span:hover {
+    color: #ff6824;
+}
+
+/*生活二级菜单结束*/
+
+/*时尚二级菜单开始*/
+
+.header .nav .nav_4 a:nth-of-type(6) .fashionInfo.arrowTop:before {
+    position: absolute;
+    left: 20px;
+    top: -16.5px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom-color: #ff6824;
+}
+
+.header .nav .nav_4 a:nth-of-type(6) .fashionInfo.arrowTop:after {
+    position: absolute;
+    left: 21.5px;
+    top: -12.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom-color: #ffffff;
+}
+
+.header .nav .nav_4 a:nth-of-type(6) .fashionInfo.arrowBottom:before {
+    position: absolute;
+    left: 20px;
+    bottom: -16px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+}
+
+.header .nav .nav_4 a:nth-of-type(6) .fashionInfo.arrowBottom:after {
+    position: absolute;
+    left: 21px;
+    bottom: -13px;
+    height: 0;
+    content: '';
+    border: 7px solid transparent;
+    border-top-color: #ffffff;
+}
+
+.header .nav .nav_4 a:nth-of-type(6) .fashionInfo {
+    width: 390px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    left: -10px;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_4 a:nth-of-type(6):hover .fashionInfo {
+    display: block;
+}
+
+.header .nav .nav_4 a:nth-of-type(6) .fashionInfo > span:nth-of-type(1) {
+    color: #ff6824;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.header .nav .nav_4 a:nth-of-type(6) .fashionInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.header .nav .nav_4 a:nth-of-type(6) .fashionInfo > div {
+    width: 100%;
+    padding: 0 1px;
+}
+
+.header .nav .nav_4 a:nth-of-type(6) .fashionInfo > div span {
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.header .nav .nav_4 a:nth-of-type(6) .fashionInfo > div span:hover {
+    color: #ff6824;
+}
+
+/*时尚二级菜单结束*/
+
+/*旅游二级菜单开始*/
+
+.header .nav .nav_4 a:nth-of-type(7) .tourismInfo.arrowTop:before {
+    position: absolute;
+    left: 20px;
+    top: -16.5px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom-color: #ff6824;
+}
+
+.header .nav .nav_4 a:nth-of-type(7) .tourismInfo.arrowTop:after {
+    position: absolute;
+    left: 21.5px;
+    top: -12.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom-color: #ffffff;
+}
+
+.header .nav .nav_4 a:nth-of-type(7) .tourismInfo.arrowBottom:before {
+    position: absolute;
+    left: 20px;
+    bottom: -16px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+}
+
+.header .nav .nav_4 a:nth-of-type(7) .tourismInfo.arrowBottom:after {
+    position: absolute;
+    left: 21px;
+    bottom: -13px;
+    height: 0;
+    content: '';
+    border: 7px solid transparent;
+    border-top-color: #ffffff;
+}
+
+.header .nav .nav_4 a:nth-of-type(7) .tourismInfo {
+    width: 390px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    left: -10px;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_4 a:nth-of-type(7):hover .tourismInfo {
+    display: block;
+}
+
+.header .nav .nav_4 a:nth-of-type(7) .tourismInfo > span:nth-of-type(1) {
+    color: #ff6824;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.header .nav .nav_4 a:nth-of-type(7) .tourismInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.header .nav .nav_4 a:nth-of-type(7) .tourismInfo > div {
+    width: 100%;
+    padding: 0 1px;
+}
+
+.header .nav .nav_4 a:nth-of-type(7) .tourismInfo > div span {
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.header .nav .nav_4 a:nth-of-type(7) .tourismInfo > div span:hover {
+    color: #ff6824;
+}
+
+/*旅游二级菜单结束*/
+
+/*育儿二级菜单开始*/
+
+.header .nav .nav_4 a:nth-of-type(8) .parentingInfo.arrowTop:before {
+    position: absolute;
+    left: 20px;
+    top: -16.5px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom-color: #ff6824;
+}
+
+.header .nav .nav_4 a:nth-of-type(8) .parentingInfo.arrowTop:after {
+    position: absolute;
+    left: 21.5px;
+    top: -12.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom-color: #ffffff;
+}
+
+.header .nav .nav_4 a:nth-of-type(8) .parentingInfo.arrowBottom:before {
+    position: absolute;
+    left: 20px;
+    bottom: -16px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+}
+
+.header .nav .nav_4 a:nth-of-type(8) .parentingInfo.arrowBottom:after {
+    position: absolute;
+    left: 21px;
+    bottom: -13px;
+    height: 0;
+    content: '';
+    border: 7px solid transparent;
+    border-top-color: #ffffff;
+}
+
+.header .nav .nav_4 a:nth-of-type(8) .parentingInfo {
+    width: 390px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    left: -10px;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_4 a:nth-of-type(8):hover .parentingInfo {
+    display: block;
+}
+
+.header .nav .nav_4 a:nth-of-type(8) .parentingInfo > span:nth-of-type(1) {
+    color: #ff6824;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.header .nav .nav_4 a:nth-of-type(8) .parentingInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.header .nav .nav_4 a:nth-of-type(8) .parentingInfo > div {
+    width: 100%;
+    padding: 0 1px;
+}
+
+.header .nav .nav_4 a:nth-of-type(8) .parentingInfo > div span {
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.header .nav .nav_4 a:nth-of-type(8) .parentingInfo > div span:hover {
+    color: #ff6824;
+}
+
+/*育儿二级菜单结束*/
+
+/*原创二级菜单开始*/
+
+.header .nav .nav_5 a:nth-of-type(1) .originalInfo.arrowTop:before {
+    position: absolute;
+    left: 20px;
+    top: -16.5px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom-color: #ff6824;
+}
+
+.header .nav .nav_5 a:nth-of-type(1) .originalInfo.arrowTop:after {
+    position: absolute;
+    left: 21.5px;
+    top: -12.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom-color: #ffffff;
+}
+
+.header .nav .nav_5 a:nth-of-type(1) .originalInfo.arrowBottom:before {
+    position: absolute;
+    left: 20px;
+    bottom: -16px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+}
+
+.header .nav .nav_5 a:nth-of-type(1) .originalInfo.arrowBottom:after {
+    position: absolute;
+    left: 21px;
+    bottom: -13px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-top-color: #ffffff;
+}
+
+.header .nav .nav_5 a:nth-of-type(1) .originalInfo {
+    width: 390px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    left: -10px;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_5 a:nth-of-type(1):hover .originalInfo {
+    display: block;
+}
+
+.header .nav .nav_5 a:nth-of-type(1) .originalInfo > span:nth-of-type(1) {
+    color: #ff6824;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.header .nav .nav_5 a:nth-of-type(1) .originalInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.header .nav .nav_5 a:nth-of-type(1) .originalInfo > div {
+    width: 100%;
+    padding: 0 1px;
+}
+
+.header .nav .nav_5 a:nth-of-type(1) .originalInfo > div span {
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.header .nav .nav_5 a:nth-of-type(1) .originalInfo > div span:hover {
+    color: #ff6824;
+}
+
+/*原创二级菜单结束*/
+
+/*拍客二级菜单开始*/
+
+.header .nav .nav_5 a:nth-of-type(2) .shootInfo.arrowTop:before {
+    position: absolute;
+    left: 20px;
+    top: -16.5px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom-color: #ff6824;
+}
+
+.header .nav .nav_5 a:nth-of-type(2) .shootInfo.arrowTop:after {
+    position: absolute;
+    left: 21.5px;
+    top: -12.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom-color: #ffffff;
+}
+
+.header .nav .nav_5 a:nth-of-type(2) .shootInfo.arrowBottom:before {
+    position: absolute;
+    left: 20px;
+    bottom: -16px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+}
+
+.header .nav .nav_5 a:nth-of-type(2) .shootInfo.arrowBottom:after {
+    position: absolute;
+    left: 21px;
+    bottom: -13px;
+    height: 0;
+    content: '';
+    border: 7px solid transparent;
+    border-top-color: #ffffff;
+}
+
+.header .nav .nav_5 a:nth-of-type(2) .shootInfo {
+    width: 390px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    left: -10px;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_5 a:nth-of-type(2):hover .shootInfo {
+    display: block;
+}
+
+.header .nav .nav_5 a:nth-of-type(2) .shootInfo > span:nth-of-type(1) {
+    color: #ff6824;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.header .nav .nav_5 a:nth-of-type(2) .shootInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.header .nav .nav_5 a:nth-of-type(2) .shootInfo > div {
+    width: 100%;
+    padding: 0 1px;
+}
+
+.header .nav .nav_5 a:nth-of-type(2) .shootInfo > div span {
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.header .nav .nav_5 a:nth-of-type(2) .shootInfo > div span:hover {
+    color: #ff6824;
+}
+
+/*拍客二级菜单结束*/
+
+/*汽车二级菜单开始*/
+
+.header .nav .nav_5 a:nth-of-type(4) .carsInfo.arrowTop:before {
+    position: absolute;
+    left: 20px;
+    top: -16.5px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom-color: #ff6824;
+}
+
+.header .nav .nav_5 a:nth-of-type(4) .carsInfo.arrowTop:after {
+    position: absolute;
+    left: 21.5px;
+    top: -12.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom-color: #ffffff;
+}
+
+.header .nav .nav_5 a:nth-of-type(4) .carsInfo.arrowBottom:before {
+    position: absolute;
+    left: 20px;
+    bottom: -16px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+}
+
+.header .nav .nav_5 a:nth-of-type(4) .carsInfo.arrowBottom:after {
+    position: absolute;
+    left: 21px;
+    bottom: -13px;
+    height: 0;
+    content: '';
+    border: 7px solid transparent;
+    border-top-color: #ffffff;
+}
+
+.header .nav .nav_5 a:nth-of-type(4) .carsInfo {
+    width: 390px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    left: -10px;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_5 a:nth-of-type(4):hover .carsInfo {
+    display: block;
+}
+
+.header .nav .nav_5 a:nth-of-type(4) .carsInfo > span:nth-of-type(1) {
+    color: #ff6824;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.header .nav .nav_5 a:nth-of-type(4) .carsInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.header .nav .nav_5 a:nth-of-type(4) .carsInfo > div {
+    width: 100%;
+    padding: 0 1px;
+}
+
+.header .nav .nav_5 a:nth-of-type(4) .carsInfo > div span {
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.header .nav .nav_5 a:nth-of-type(4) .carsInfo > div span:hover {
+    color: #ff6824;
+}
+
+/*汽车二级菜单结束*/
+
+/*儒释道二级菜单开始*/
+
+.header .nav .nav_5 a:nth-of-type(6) .buddhismInfo.arrowTop:before {
+    position: absolute;
+    left: 25px;
+    top: -16.5px;
+    content: '';
+    border: 8px solid transparent;
+    border-bottom-color: #ff6824;
+}
+
+.header .nav .nav_5 a:nth-of-type(6) .buddhismInfo.arrowTop:after {
+    position: absolute;
+    left: 26.5px;
+    top: -12.5px;
+    height: 0;
+    content: '';
+    border: 6.5px solid transparent;
+    border-bottom-color: #ffffff;
+}
+
+.header .nav .nav_5 a:nth-of-type(6) .buddhismInfo.arrowBottom:before {
+    position: absolute;
+    left: 25px;
+    bottom: -16px;
+    height: 0;
+    content: '';
+    border: 8px solid transparent;
+    border-top-color: #ff6824;
+}
+
+.header .nav .nav_5 a:nth-of-type(6) .buddhismInfo.arrowBottom:after {
+    position: absolute;
+    left: 26px;
+    bottom: -13px;
+    height: 0;
+    content: '';
+    border: 7px solid transparent;
+    border-top-color: #ffffff;
+}
+
+.header .nav .nav_5 a:nth-of-type(6) .buddhismInfo {
+    width: 390px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    left: -10px;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 0 1px #000000;
+}
+
+.header .nav .nav_5 a:nth-of-type(6):hover .buddhismInfo {
+    display: block;
+}
+
+.header .nav .nav_5 a:nth-of-type(6) .buddhismInfo > span:nth-of-type(1) {
+    color: #ff6824;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.header .nav .nav_5 a:nth-of-type(6) .buddhismInfo > span:nth-of-type(1) i.fa-angle-right {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.header .nav .nav_5 a:nth-of-type(6) .buddhismInfo > div {
+    width: 100%;
+    padding: 0 1px;
+}
+
+.header .nav .nav_5 a:nth-of-type(6) .buddhismInfo > div span {
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.header .nav .nav_5 a:nth-of-type(6) .buddhismInfo > div span:hover {
+    color: #ff6824;
+}
+
+/*儒释道二级菜单结束*/
+

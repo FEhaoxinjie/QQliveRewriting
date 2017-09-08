@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "img": "css/images/header/banner/banner1.jpg",
+    "banner_Img": "css/images/header/banner/banner1.jpg",
     "navTitle":"权利的游戏7",
     "navDesc": "会员劲爆大结局",
     "background":"#D4EAF8",
@@ -9,7 +9,7 @@
   },
   {
     "id": 2,
-    "img": "css/images/header/banner/banner2.jpg",
+    "banner_Img": "css/images/header/banner/banner2.jpg",
     "navTitle":"极限挑战",
     "navDesc": "颜王小猪辣眼睛'亲亲'",
     "background":"#8C706C",
@@ -17,7 +17,7 @@
   },
   {
     "id": 3,
-    "img": "css/images/header/banner/banner3.jpg",
+    "banner_Img": "css/images/header/banner/banner3.jpg",
     "navTitle":"与君相恋100次",
     "navDesc": "七夕情人节必看",
     "background":"#102854",
@@ -25,7 +25,7 @@
   },
   {
     "id": 4,
-    "img": "css/images/header/banner/banner4.jpg",
+    "banner_Img": "css/images/header/banner/banner4.jpg",
     "navTitle":"我们相爱吧",
     "navDesc": "吴昕潘玮柏浪漫亲亲",
     "background":"#EFF5F1",
@@ -33,7 +33,7 @@
   },
   {
     "id": 5,
-    "img": "css/images/header/banner/banner5.jpg",
+    "banner_Img": "css/images/header/banner/banner5.jpg",
     "navTitle":"你的名字。",
     "navDesc": "口碑票房双爆巨作",
     "background":"#05496E",
@@ -41,7 +41,7 @@
   },
   {
     "id": 6,
-    "img": "css/images/header/banner/banner6.jpg",
+    "banner_Img": "css/images/header/banner/banner6.jpg",
     "navTitle":"我们的爱",
     "navDesc": "靳东被警察带走",
     "background":"#DFC4B3",
@@ -49,7 +49,7 @@
   },
   {
     "id": 7,
-    "img": "css/images/header/banner/banner7.jpg",
+    "banner_Img": "css/images/header/banner/banner7.jpg",
     "navTitle":"开心相对论",
     "navDesc": "赵本山父女通话曝光",
     "background":"#221A3F",
@@ -57,14 +57,14 @@
   },
   {
     "id": 8,
-    "img": "css/images/header/banner/banner8.jpg",
+    "banner_Img": "css/images/header/banner/banner8.jpg",
     "navTitle":"异地恋",
     "navDesc": "帅气海归精英蜜恋灰姑娘",
     "background":"#DBE8FB",
     "link": "http://www.zhufengpeixun.cn/"
   },{
   "id": 9,
-  "img": "css/images/header/banner/banner9.jpg",
+  "banner_Img": "css/images/header/banner/banner9.jpg",
   "navTitle":"肆意好时光",
   "navDesc": "大戏狂欢不断档",
   "background":"#EBE6E2",
@@ -72,7 +72,7 @@
 },
   {
     "id": 10,
-    "img": "css/images/header/banner/banner10.jpg",
+    "banner_Img": "css/images/header/banner/banner10.jpg",
     "navTitle":"鬼吹灯之黄皮子坟",
     "navDesc": "阴兵复活",
     "background":"#000000",
