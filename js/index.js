@@ -137,8 +137,6 @@ var QQVideo = (function () {
         let allAList = document.getElementsByTagName('a');
 
         function clear_defaultA() {
-
-
             for (var i = 0; i < allAList.length; i++) {
                 var curA = allAList[i];
                 if (curA.href) {
@@ -151,58 +149,52 @@ var QQVideo = (function () {
 
     /*header二级菜单开始*/
     {
-        function firstCheckHeight(element) {
+        function checkHeight(element) {
             var eleTop = getRect(element).top,
-                eleInfoBox = element.getElementsByTagName('div')[0],
-                targetHeight = eleInfoBox.offsetHeight + 5;
-            return eleTop >= targetHeight;
-        }
-
-        function secondCheckHeight(element) {
-            var _Bottom = getRect(element).bottom,
+                _Bottom = getRect(element).bottom,
                 windowHeight = document.documentElement.clientHeight || document.body.clientHeight,
                 eleBottom = windowHeight - _Bottom,
                 eleInfoBox = element.getElementsByTagName('div')[0],
                 targetHeight = eleInfoBox.offsetHeight + 5;
-            return eleBottom >= targetHeight;
+            if (element.dataset.lines === '1') {
+                return {
+                    result: eleTop >= targetHeight,
+                    nav_type: '1'
+                }
+            } else if (element.dataset.lines === '2') {
+                return {
+                    result: eleBottom >= targetHeight,
+                    nav_type: '2'
+                }
+            }
         }
 
-        function firstHoverMenu() {
+
+        function hoverMenu() {
             sizeListener.call(this, null);
             var eleInfoBox = this.getElementsByTagName('div')[0],
-                check = firstCheckHeight(this);
-            if (check) {
+                check = checkHeight(this);
+            if (check.result && check.nav_type === '1') {
+                eleInfoBox.style.borderTopColor = null;
+                eleInfoBox.style.top = null;
                 eleInfoBox.classList.remove('arrowTop');
                 eleInfoBox.classList.add('arrowBottom');
-                eleInfoBox.style.borderTopColor = null;
                 eleInfoBox.style.borderBottomColor = '#ff6824';
-                eleInfoBox.style.top = null;
                 eleInfoBox.style.bottom = '32px';
-            } else {
+            } else if (check.nav_type === '1') {
+                eleInfoBox.style.bottom = null;
+                eleInfoBox.style.borderBottomColor = null;
+                eleInfoBox.classList.remove('arrowBottom');
+                eleInfoBox.classList.add('arrowTop');
+                eleInfoBox.style.borderTopColor = '#ff6824';
+                eleInfoBox.style.top = '32px';
+            } else if (check.result && check.nav_type === '2') {
                 eleInfoBox.classList.remove('arrowBottom');
                 eleInfoBox.classList.add('arrowTop');
                 eleInfoBox.style.borderBottomColor = null;
                 eleInfoBox.style.borderTopColor = '#ff6824';
                 eleInfoBox.style.bottom = null;
                 eleInfoBox.style.top = '32px';
-            }
-            window.onscroll = window.onresize = null;
-
-        }
-
-        function secondHoverMenu() {
-            sizeListener.call(this, null);
-            var eleInfoBox = this.getElementsByTagName('div')[0],
-                check = secondCheckHeight(this);
-            if (check) {
-
-
-                eleInfoBox.classList.remove('arrowBottom');
-                eleInfoBox.classList.add('arrowTop');
-                eleInfoBox.style.borderBottomColor = null;
-                eleInfoBox.style.borderTopColor = '#ff6824';
-                eleInfoBox.style.bottom = null;
-                eleInfoBox.style.top = '32px';
             } else {
                 eleInfoBox.classList.remove('arrowTop');
                 eleInfoBox.classList.add('arrowBottom');
@@ -214,12 +206,10 @@ var QQVideo = (function () {
             window.onscroll = window.onresize = null;
 
         }
-
 
         function sizeListener() {
             var _this = this;
-            window.onscroll = window.onresize = firstCheckHeight.bind(_this, null);
-            window.onscroll = window.onresize = secondCheckHeight.bind(_this, null);
+            window.onscroll = window.onresize = checkHeight.bind(_this, null);
         }
 
         function leaveMenu() {
@@ -248,35 +238,30 @@ var QQVideo = (function () {
                 bindA(curA);
             }
             function bindA(menu_A) {
-                if (menu_A.dataset.lines === '1') {
-                    menu_A.addEventListener('mouseenter', firstHoverMenu, false);
-                    menu_A.addEventListener('mouseleave', leaveMenu, false);
-                } else if (menu_A.dataset.lines === '2') {
-                    menu_A.addEventListener('mouseenter', secondHoverMenu, false);
+                if (menu_A.dataset.hasOwnProperty('lines')) {
+                    menu_A.addEventListener('mouseenter', hoverMenu, false);
                     menu_A.addEventListener('mouseleave', leaveMenu, false);
                 }
-
             }
         }
 
-    }
-    /*header二级菜单结束*/
-    return {
-        clear_defaultA: function () {
-            clear_defaultA();
-        },
-        header_banner: function () {
-            getData();
-            bindData();
-            windOnload();
-            auto();
-            bindMousrEvent();
-            bindFocusList();
-        },
-        nav_secondMenu: function () {
-            bind();
+        /*header二级菜单结束*/
+        return {
+            clear_defaultA: function () {
+                clear_defaultA();
+            },
+            header_banner: function () {
+                getData();
+                bindData();
+                windOnload();
+                auto();
+                bindMousrEvent();
+                bindFocusList();
+            },
+            nav_secondMenu: function () {
+                bind();
+            }
         }
-
     }
 })();
 {
