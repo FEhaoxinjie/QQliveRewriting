@@ -1,0 +1,25 @@
+{
+  "imagesSrc(图片地址)":"",
+  "videoLabels(视频的标签，似乎只有短时频没有只要有鼠标特效的都有 标签就是类似 视频年份（2014，2013。。。什么的），类别（喜剧，军旅 恐怖，脱口秀 ，明星真人秀。。。之类的）)":"",
+  "videoHot（视频热度 今日热门需要返回）":"",
+  "score（评分 一般只有短时频没有评分）":"",
+  "performer(主演 有些动画片是没有主演的不用返回)":"",
+  "comment(点评 应该是除了综艺都有)":"",
+  "recommend(推荐)":"true(true标识推荐资源)",
+  "videoSign(视频标识)":"vip(vip、自制、独播什么的)",
+  "videoTitle(视频名字)":"",
+  "videoDescription（视频描述）":"",
+  "mouseHoverVideo(鼠标放上去显示的预告短视频)":"",
+  "mouseHoverSprite(鼠标划过去显示的雪碧图)":"",
+  "videoDuration(视频时长这个是短时频和电影需要返回)":"",
+  "videoStages(视频第几期这个是综艺需要返回)":"",
+  "videoSchedule(视频集数：电视剧)":{
+    "videoEpisode(视频集数)": "",
+    "videoEpisodeUpdate（更新到哪一集如果未完结需要返回）": "",
+    "videoEpisodeTotal（总集数如果完结需要返回）": ""
+  },
+  "expect(期待指数 强势接挡需要返回)":"(0-100)%",
+  "watchingSchedule(观看进度：再看一遍栏目里的视频需要返回)":"(0-100)%"
+
+
+}

@@ -1,31 +1,387 @@
-var QQVideo = (function () {
+let QQVideo = (function () {
+    /*utils开始*/
+    {
+        function ajax(opt) {
+            opt = opt || {};
+            opt.method = opt.method.toUpperCase() || 'POST';
+            opt.url = opt.url || '';
+            opt.async = opt.async || true;
+            opt.data = opt.data || null;
+            opt.success = opt.success || function () {
+            };
+            let xmlHttp = null,
+                response = null;
+            if (XMLHttpRequest) {
+                xmlHttp = new XMLHttpRequest();
+            }
+            else {
+                xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
+            }
+            let params = [];
+            for (let key in opt.data) {
+                params.push(key + '=' + opt.data[key]);
+            }
+            let postData = params.join('&');
+            if (opt.method.toUpperCase() === 'POST') {
+                xmlHttp.open(opt.method, opt.url, opt.async);
+                xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
+                xmlHttp.send(postData);
+            }
+            else if (opt.method.toUpperCase() === 'GET') {
+                xmlHttp.open(opt.method, opt.url + '?' + postData, opt.async);
+                xmlHttp.send(null);
+            }
+            xmlHttp.onreadystatechange = function () {
+                if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+                    response = JSON.parse(xmlHttp.responseText)
+                    opt.success(response);
+                }
+            };
+        }
+    }
+    /*utils结束*/
+    /*用户登录开始*/
+    {
+        let header = document.getElementsByClassName('header')[0],
+            header_top = header.getElementsByClassName('header-top')[0],
+            userBox = header_top.getElementsByClassName('userBox')[0],
+            infoBottom = userBox.getElementsByClassName('infoBottom')[0],
+            userboxLogin = infoBottom.getElementsByTagName('a')[4],
+            loginIn = document.getElementsByClassName('loginIn')[0],
+            loginChoose = document.getElementsByClassName('loginChoose')[0],
+            loginTitle = document.getElementsByClassName('loginTitle')[0],
+            loginTitleClose = loginTitle.getElementsByTagName('a')[0],
+            loginType_QQ = document.getElementsByClassName('loginType_QQ')[0],
+            loginType_VX = document.getElementsByClassName('loginType_VX')[0],
+            loginPanel = document.getElementsByClassName('loginPanel')[0],
+            loginTypeChoose = loginPanel.getElementsByClassName('loginTypeChoose')[0],
+            loginTypeChooseA = loginTypeChoose.getElementsByTagName('a'),
+            loginQuickCont = document.getElementsByClassName('loginQuickCont')[0],
+            loginPanelContent_QQ = document.getElementsByClassName('loginPanelContent_QQ')[0],
+            loginPanelContent_VX = document.getElementsByClassName('loginPanelContent_VX')[0],
+            loginPanelFooter = document.getElementsByClassName('loginPanelFooter')[0],
+            loginPanelFooterDiv = loginPanelFooter.getElementsByTagName('div')[1],
+            loginPanelFooterDivA = loginPanelFooterDiv.getElementsByTagName('a')[0],
+            autoLoginBtn = document.getElementById('autoLoginBtn'),
+            autoChooseSign = 1,
+            autoLoginChoose = document.getElementById('autoLoginChoose'),
+            loginNormalCont = document.getElementsByClassName('loginNormalCont')[0],
+            loginInputUser = loginNormalCont.getElementsByClassName('loginInputUser')[0],
+            loginInputUserLabel = loginInputUser.getElementsByTagName('label')[0],
+            loginInputUserInput = loginInputUser.getElementsByTagName('input')[0],
+            loginInputUserClear = loginInputUser.getElementsByTagName('a')[0],
+            loginInputPassword = loginNormalCont.getElementsByClassName('loginInputPassword')[0],
+            loginInputPasswordLabel = loginInputPassword.getElementsByTagName('label')[0],
+            loginInputPasswordInput = loginInputPassword.getElementsByTagName('input')[0],
+            loginNormalContDiv = loginNormalCont.getElementsByTagName('div')[1],
+            loginNormalContDivA = loginNormalContDiv.getElementsByTagName('a')[0],
+            loginSubmit = document.getElementsByClassName('loginSubmit')[0],
+            userBoxUserHeader = userBox.getElementsByTagName('a')[0],
+            useBoxInfo = userBox.getElementsByClassName('useBoxInfo')[0],
+            userBoxInfoTop=useBoxInfo.getElementsByClassName('infoTop')[0],
+            userLogin=document.getElementById('userLogin');
+
+
+        loginTitleClose.addEventListener('click', function () {
+            loginIn.style.display = 'none';
+        }, false);
+        loginTypeChooseA[2].addEventListener('click', function () {
+            loginIn.style.display = 'none';
+        }, false);
+        loginType_QQ.addEventListener('click', function () {
+            loginChoose.style.display = 'none';
+            loginPanel.style.display = 'block';
+            loginTypeChooseA[1].classList.remove('select');
+            loginTypeChooseA[0].classList.add('select');
+            loginPanelFooter.style.display = '';
+            loginPanelContent_VX.style.display = '';
+            loginPanelContent_QQ.style.display = 'block';
+        }, false)
+        loginType_VX.addEventListener('click', function () {
+            loginChoose.style.display = 'none';
+            loginPanel.style.display = 'block ';
+            loginTypeChooseA[0].classList.remove('select');
+            loginTypeChooseA[1].classList.add('select');
+            loginPanelContent_QQ.style.display = '';
+            loginPanelContent_VX.style.display = 'block';
+            loginPanelFooter.style.display = 'none';
+        }, false)
+        loginTypeChooseA[0].addEventListener('click', function () {
+            loginTypeChooseA[1].classList.remove('select');
+            loginTypeChooseA[0].classList.add('select');
+            loginPanelFooter.style.display = '';
+            loginPanelContent_VX.style.display = '';
+            loginPanelContent_QQ.style.display = 'block';
+        }, false)
+        loginTypeChooseA[1].addEventListener('click', function () {
+            loginTypeChooseA[0].classList.remove('select');
+            loginTypeChooseA[1].classList.add('select');
+            loginPanelContent_QQ.style.display = '';
+            loginPanelContent_VX.style.display = 'block';
+            loginPanelFooter.style.display = 'none';
+        }, false)
+        loginPanelFooterDivA.addEventListener('click', function () {
+            loginQuickCont.style.display = 'none';
+            loginNormalCont.style.display = 'block';
+        }, false);
+        loginNormalContDivA.addEventListener('click', function () {
+            loginQuickCont.style.display = '';
+            loginNormalCont.style.display = '';
+        }, false);
+        autoLoginBtn.addEventListener('click', function () {
+            if (autoChooseSign === 1) {
+                autoLoginChoose.style.backgroundPosition = '-74px -163px';
+            } else {
+                autoLoginChoose.style.backgroundPosition = '';
+            }
+            autoChooseSign *= -1;
+        }, false)
+        loginInputUserInput.addEventListener('focus', function () {
+            console.log(1);
+            loginInputUserLabel.style.color = '#ddd';
+            loginInputUser.style.backgroundPosition = '-1px -45px';
+            loginInputUserClear.style.display = '';
+        }, false);
+        loginInputUserInput.addEventListener('input', function () {
+            if (loginInputUserInput.value !== '') {
+                loginInputUserLabel.style.display = 'none';
+                loginInputUserClear.style.display = 'block';
+            } else {
+                loginInputUserLabel.style.display = '';
+            }
+
+        }, false);
+        loginInputUserClear.addEventListener('click', function () {
+            loginInputUserInput.value = '';
+            loginInputUserClear.style.display = '';
+            loginInputUserLabel.style.display = '';
+        }, false);
+        loginInputPasswordInput.addEventListener('focus', function () {
+            loginInputPasswordLabel.style.color = '#ddd';
+            loginInputPassword.style.backgroundPosition = '-1px -45px';
+        }, false);
+        loginInputPasswordInput.addEventListener('input', function () {
+            if (loginInputPasswordInput.value !== '') {
+                loginInputPasswordLabel.style.display = 'none';
+            } else {
+                console.log(2);
+                loginInputPasswordLabel.style.display = '';
+            }
+
+        }, false);
+        userBox.addEventListener('click', function () {
+            loginIn.style.display = 'block';
+        }, false)
+        userboxLogin.addEventListener('click', function () {
+            loginIn.style.display = 'block';
+        }, false)
+        loginSubmit.addEventListener('click', function () {
+            let username = loginInputUserInput.value,
+                password = loginInputPasswordInput.value;
+            if (username !== '' && password !== '') {
+                ajax({
+                    method: 'POST',
+                    url: 'http://47.94.165.170:8080/txvideo/login',
+                    async: true,
+                    data: {
+                        userName: username,
+                        passWord: password
+                    },
+                    success: function (data) {
+                        if (data.code === '1' && data.message === '登录成功') {
+                            let userBoxInfoStr = ` <span>QQ帐号: ${data.data[0].nickName}${parseFloat(data.data[0].isVip) > -1 ? `<i class="userVip"><i class="userVipNum${data.data[0].isVip}"></i></i>` : ``}</span>
+                        <div class="loginUserMenu">
+                            <a href="">切换</a>
+                            <a href="">退出</a>
+                        </div>${data.data[0].isVip > -1 ? `<span>vip于${data.data[0].vipOutTime}到期</span>` : ``}
+                        <a href="" class="tvPrivilege">开通电视特权</a>
+                        <a href="" class="vipRenew">续费</a>`;
+                            let userBoxHeader = `${data.data[0].accountType === 0 ? `<i class="QQ"></i>` : `<i class="VX"></i>`}${parseFloat(data.data[0].isVip) > -1 ? `<i class="userVip"><i class="userVipNum${data.data[0].isVip}"></i></i>` : ``}<img src="${data.data[0].userPic}" alt=""><span></span>`
+                            userBoxInfoTop.innerHTML = userBoxInfoStr;
+                            userBoxUserHeader.innerHTML = userBoxHeader;
+                            userboxLogin.style.display='none';
+                            loginIn.style.display='none';
+
+                        }
+                    }
+                })
+            }
+
+        }, false)
+    }
+    /*用户登录结束*/
+    /*追剧目录开始*/
+    {
+        ajax({
+                url: 'json/top_binwatching.json',
+                method: "get",
+                data: null,
+                async: true,
+                success: function (response) {
+                    bindWatchingData(response);
+                }
+            }
+        );
+        let binWatching = document.getElementById('binWatching'),
+            binWatchingInfo = document.getElementById('binWatchingInfo'),
+            binWatchingMask = document.getElementsByClassName('binWatchingMask')[0],
+            loginArrowTop = document.getElementById('loginArrowTop'),
+            loginArrowLeft = document.getElementById('loginArrowLeft'),
+            loginArrowRight = document.getElementById('loginArrowRight'),
+            binWatchingInfoBox = document.getElementById('binWatchingInfoBox'),
+            binWatchingInfoDiv = binWatchingInfoBox.getElementsByTagName('div');
+
+        function bindWatchingData() {
+            let watchingData = ``;
+            for (let i = 0; i < arguments[0].binWatchingInfo.length; i++) {
+                let curWatchingData = arguments[0].binWatchingInfo[i];
+                watchingData += `<div><a href=""><span><img class="watchingImgs"  src="${curWatchingData.watchingImages}" alt=""><span></span><span>${/(\d+)(.{1}\d+)/g.exec(curWatchingData.score)[1]}<span>${/(\d+)(.{1}\d+)/g.exec(curWatchingData.score)[2]}</span></span></span><span>${curWatchingData.watchingTitle}</span><span>更新至${curWatchingData.watchingSchedule.watchingEpisodeUpdate}集</span></a></div> `
+            }
+            binWatchingInfoBox.innerHTML = watchingData;
+            bindWatchingEvent();
+        }
+
+        //240px 103% 95px
+        function bindWatchingEvent() {
+            function addHeight() {
+                binWatchingInfo.style.height = '100%'
+            }
+
+            function micsHeight() {
+                binWatchingInfo.style.height = '97%'
+            }
+
+            function arrowRightShow() {
+                loginArrowRight.style.opacity = '1';
+                loginArrowRight.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    loginArrowLeft.style.opacity = '1';
+                    for (let i = 0; i < 3; i++) {
+                        let curDiv = binWatchingInfoDiv[i];
+                        curDiv.style.display = 'none'
+                    }
+                    loginArrowRight.style.opacity = '0';
+                    binWatchingInfo.removeEventListener('mouseenter', arrowRightShow);
+                    binWatchingInfo.removeEventListener('mouseleave', arrowRightBlank);
+                    binWatchingInfo.addEventListener('mouseenter', arrowLeftShow, false);
+                    binWatchingInfo.addEventListener('mouseleave', arrowLeftBlank, false);
+                })
+            }
+
+            function arrowRightBlank() {
+                loginArrowRight.style.opacity = '0';
+            }
+
+            function arrowLeftShow() {
+                loginArrowLeft.style.opacity = '1';
+                loginArrowLeft.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    loginArrowRight.style.opacity = '1';
+                    for (let i = 0; i < 3; i++) {
+                        let curDiv = binWatchingInfoDiv[i];
+                        curDiv.style.display = 'inline-block'
+                    }
+                    loginArrowLeft.style.opacity = '0';
+                    binWatchingInfo.removeEventListener('mouseenter', arrowLeftShow);
+                    binWatchingInfo.removeEventListener('mouseleave', arrowLeftShow);
+                    binWatchingInfo.addEventListener('mouseenter', arrowRightShow, false);
+                    binWatchingInfo.addEventListener('mouseleave', arrowRightBlank, false);
+                })
+            }
+
+            function arrowLeftBlank() {
+                loginArrowLeft.style.opacity = '0';
+            }
+
+
+            function binWatchingChange() {
+
+                binWatching.style.marginTop = 0;
+                binWatchingMask.style.display = 'none';
+                loginArrowTop.style.display = 'block';
+                binWatchingInfo.removeEventListener('mouseenter', addHeight);
+                binWatchingInfo.removeEventListener('mouseleave', micsHeight);
+                for (let i = 0; i < binWatchingInfoDiv.length; i++) {
+                    let curDiv = binWatchingInfoDiv[i],
+                        curDivImage = curDiv.getElementsByClassName('watchingImgs')[0];
+                    curDivImage.onmouseenter = function () {
+                        curDivImage.style.height = '105%';
+                        curDivImage.hTimer = setTimeout(function () {
+                            curDivImage.style.height = '100%';
+                            window.clearTimeout(curDivImage.hTimer);
+                        }, 80)
+                    }
+                    curDiv.style.transition = 'all 0s';
+                    curDiv.style.top = '0px';
+                }
+                binWatchingInfo.addEventListener('mouseenter', arrowRightShow, false);
+                binWatchingInfo.addEventListener('mouseleave', arrowRightBlank, false);
+            }
+
+            binWatchingMask.addEventListener('click', binWatchingChange, false)
+            binWatchingInfo.addEventListener('mouseenter', addHeight, false);
+            binWatchingInfo.addEventListener('mouseleave', micsHeight, false);
+
+            loginArrowTop.addEventListener('click', function () {
+                addHeight();
+                binWatching.style.marginTop = '-332px';
+                binWatchingMask.style.display = 'block';
+                binWatchingMask.style.height = '0%';
+                loginArrowTop.style.display = 'none';
+                binWatchingInfo.removeEventListener('mouseleave', micsHeight);
+                binWatchingMask.hTimer = setInterval(function () {
+                    binWatchingMask.style.height = parseFloat(binWatchingMask.style.height) + 4 + '%';
+                    if (parseFloat(binWatchingMask.style.height) >= 100) {
+                        binWatchingMask.style.height = '100%';
+                        for (let i = 0; i < binWatchingInfoDiv.length; i++) {
+                            let curDiv = binWatchingInfoDiv[i];
+                            curDiv.style.transition = null;
+                            curDiv.style.top = '93px';
+                        }
+                        micsHeight();
+                        window.clearInterval(binWatchingMask.hTimer)
+                        if (parseFloat(binWatchingInfo.style.height) === 97) {
+                            setTimeout(function () {
+                                for (let i = 0; i < binWatchingInfoDiv.length; i++) {
+                                    let curDiv = binWatchingInfoDiv[i];
+                                    curDiv.style.top = null;
+                                }
+                                binWatchingInfo.addEventListener('mouseenter', addHeight, false);
+                                binWatchingInfo.addEventListener('mouseleave', micsHeight, false);
+                            }, 0)
+                        }
+                    }
+                }, 30)
+                for (let i = 0; i < binWatchingInfoDiv.length; i++) {
+                    let curDiv = binWatchingInfoDiv[i],
+                        curDivImage = curDiv.getElementsByClassName('watchingImgs')[0];
+                    curDivImage.onmouseenter = null;
+                    curDiv.style.transition = 'all 0s';
+                    curDiv.style.top = '213px';
+                }
+                binWatchingInfo.addEventListener('mouseenter', arrowRightShow, false);
+                binWatchingInfo.addEventListener('mouseleave', arrowRightBlank, false);
+            },)
+        }
+
+
+    }
+    /*追剧目录结束*/
+
     /*顶部轮播图开始*/
     {
         let imgBox = document.getElementById('imgBox'),
             imgList = null,
             focusList = null,
             rightNavBox = document.getElementById('rightNavBox'),
-            bannerData = null,
             step = 0,
             autoTimer = null;
 
-        function getData() {
-            var xhr = new XMLHttpRequest;
-            xhr.open('GET', 'json/top_banner.json', false);
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    bannerData = JSON.parse(xhr.responseText);
-                }
-            }
-            xhr.send();
-        }
-
-        function bindData() {
-
-            var bannerStr = ``,
+        function bannerBindData() {
+            let bannerStr = ``,
                 bannerNavStr = ``;
-            for (var i = 0; i < bannerData.length; i++) {
-                var cur = bannerData[i];
+            for (let i = 0; i < arguments[0].length; i++) {
+                let cur = arguments[0][i];
                 bannerStr += `<li style="background-color: ${cur.background}"><a href="javascript:;"><img  data-src="${cur.banner_Img}"></a></li>`;
                 bannerNavStr += `<li><span class="navTitle">${cur.navTitle}</span><span class="navDesc">${cur.navDesc}</span></li>`;
             }
@@ -35,9 +391,12 @@ var QQVideo = (function () {
             imgList = imgBox.getElementsByTagName('img');
             liList = imgBox.getElementsByTagName('li');
             focusList = rightNavBox.getElementsByTagName('li');
+            winOnLoad();
+            auto();
+            bannerBindFocusList();
         }
 
-        function windOnload() {
+        function winOnLoad() {
             liList[step].style.zIndex = 0;
             change(imgList[step]);
             focusList[step].classList.add('hover')
@@ -47,9 +406,9 @@ var QQVideo = (function () {
         }
 
         function lazyImg(curImg) {
-            if (curImg.isLoad)return;
+            if (curImg.isLoad) return;
 
-            var tempImg = new Image;
+            let tempImg = new Image;
             tempImg.onload = function () {
                 curImg.src = this.src;
 
@@ -62,11 +421,11 @@ var QQVideo = (function () {
         }
 
         function change(oImg) {
-            var opaStep = 0.1,
+            let opaStep = 0.1,
                 total = 0;
             lazyImg(oImg);
-            for (var i = 0; i < focusList.length; i++) {
-                var cur = focusList[i], obj = imgList[i], item = liList[i];
+            for (let i = 0; i < focusList.length; i++) {
+                let cur = focusList[i], obj = imgList[i], item = liList[i];
                 i === step ? (function () {
                     cur.classList.add('hover');
                     item.style.zIndex = 0;
@@ -103,19 +462,10 @@ var QQVideo = (function () {
 
         }
 
-        function bindMousrEvent() {
-            imgBox.onmouseenter = function () {
-                clearInterval(autoTimer);
-            }
-            imgBox.onmouseleave = function () {
-                auto();
 
-            }
-        }
-
-        function bindFocusList() {
-            for (var i = 0; i < focusList.length; i++) {
-                var cur = focusList[i];
+        function bannerBindFocusList() {
+            for (let i = 0; i < focusList.length; i++) {
+                let cur = focusList[i];
                 cur.imgIndex = i;
                 cur.onmouseenter = function () {
                     window.clearInterval(autoTimer);
@@ -132,25 +482,12 @@ var QQVideo = (function () {
         }
     }
     /*顶部轮播图结束*/
-    /*清除a标签的默认行为开始*/
-    {
-        let allAList = document.getElementsByTagName('a');
 
-        function clear_defaultA() {
-            for (var i = 0; i < allAList.length; i++) {
-                var curA = allAList[i];
-                if (curA.href) {
-                    curA.href = "javascript:;";
-                }
-            }
-        }
-    }
-    /*清除a标签的默认行为结束*/
 
     /*header二级菜单开始*/
     {
         function checkHeight(element) {
-            var eleTop = getRect(element).top,
+            let eleTop = getRect(element).top,
                 _Bottom = getRect(element).bottom,
                 windowHeight = document.documentElement.clientHeight || document.body.clientHeight,
                 eleBottom = windowHeight - _Bottom,
@@ -172,7 +509,7 @@ var QQVideo = (function () {
 
         function hoverMenu() {
             sizeListener.call(this, null);
-            var eleInfoBox = this.getElementsByTagName('div')[0],
+            let eleInfoBox = this.getElementsByTagName('div')[0],
                 check = checkHeight(this);
             if (check.result && check.nav_type === '1') {
                 eleInfoBox.style.borderTopColor = null;
@@ -208,20 +545,20 @@ var QQVideo = (function () {
         }
 
         function sizeListener() {
-            var _this = this;
+            let _this = this;
             window.onscroll = window.onresize = checkHeight.bind(_this, null);
         }
 
         function leaveMenu() {
-            var eleInfoBox = this.getElementsByTagName('div')[0];
+            let eleInfoBox = this.getElementsByTagName('div')[0];
             eleInfoBox.classList.remove('arrowBottom');
             eleInfoBox.classList.remove('arrowTop');
         }
 
         function getRect(element) {
-            var rect = element.getBoundingClientRect();
-            var top = document.documentElement.clientTop;
-            var left = document.documentElement.clientLeft;
+            let rect = element.getBoundingClientRect();
+            let top = document.documentElement.clientTop;
+            let left = document.documentElement.clientLeft;
             return {
                 top: rect.top - top,
                 bottom: rect.bottom - top,
@@ -237,6 +574,7 @@ var QQVideo = (function () {
                 let curA = allAList[i];
                 bindA(curA);
             }
+
             function bindA(menu_A) {
                 if (menu_A.dataset.hasOwnProperty('lines')) {
                     menu_A.addEventListener('mouseenter', hoverMenu, false);
@@ -244,23 +582,24 @@ var QQVideo = (function () {
                 }
             }
         }
+    }
+    /*header二级菜单结束*/
 
-        /*header二级菜单结束*/
-        return {
-            clear_defaultA: function () {
-                clear_defaultA();
-            },
-            header_banner: function () {
-                getData();
-                bindData();
-                windOnload();
-                auto();
-                bindMousrEvent();
-                bindFocusList();
-            },
-            nav_secondMenu: function () {
-                bind();
-            }
+    return {
+        header_banner: function () {
+            ajax({
+                url: 'json/top_banner.json',
+                method: "get",
+                data: null,
+                async: true,
+                success: function (response) {
+                    bannerBindData(response);
+                }
+            });
+
+        },
+        nav_secondMenu: function () {
+            bind();
         }
     }
 })();
@@ -273,7 +612,282 @@ var QQVideo = (function () {
     }
 
     for (let j = 0; j < fnAry.length; j++) {
-        var curFn = fnAry[j];
+        let curFn = fnAry[j];
         curFn();
     }
 }
+
+
+/*原型*/
+// function QQVideo() {
+// }
+// QQVideo.prototype = (function () {
+//     /*顶部轮播图开始*/
+//     {
+//         let imgBox = document.getElementById('imgBox'),
+//             imgList = null,
+//             focusList = null,
+//             rightNavBox = document.getElementById('rightNavBox'),
+//             bannerData = null,
+//             step = 0,
+//             autoTimer = null;
+//
+//         function getData() {
+//             let xhr = new XMLHttpRequest;
+//             xhr.open('GET', 'json/top_banner.json', false);
+//             xhr.onreadystatechange = function () {
+//                 if (xhr.readyState === 4 && xhr.status === 200) {
+//                     bannerData = JSON.parse(xhr.responseText);
+//                 }
+//             }
+//             xhr.send();
+//         }
+//
+//         function bindData() {
+//
+//             let bannerStr = ``,
+//                 bannerNavStr = ``;
+//             for (let i = 0; i < bannerData.length; i++) {
+//                 let cur = bannerData[i];
+//                 bannerStr += `<li style="background-color: ${cur.background}"><a href="javascript:;"><img  data-src="${cur.banner_Img}"></a></li>`;
+//                 bannerNavStr += `<li><span class="navTitle">${cur.navTitle}</span><span class="navDesc">${cur.navDesc}</span></li>`;
+//             }
+//             imgBox.innerHTML = bannerStr;
+//             rightNavBox.innerHTML = bannerNavStr;
+//
+//             imgList = imgBox.getElementsByTagName('img');
+//             liList = imgBox.getElementsByTagName('li');
+//             focusList = rightNavBox.getElementsByTagName('li');
+//         }
+//
+//         function windOnload() {
+//             liList[step].style.zIndex = 0;
+//             change(imgList[step]);
+//             focusList[step].classList.add('hover')
+//             step = 1;
+//
+//
+//         }
+//
+//         function lazyImg(curImg) {
+//             if (curImg.isLoad)return;
+//
+//             let tempImg = new Image;
+//             tempImg.onload = function () {
+//                 curImg.src = this.src;
+//
+//                 tempImg = null;
+//             }
+//             tempImg.src = curImg.getAttribute('data-src');
+//             curImg.isLoad = true;
+//
+//
+//         }
+//
+//         function change(oImg) {
+//             let opaStep = 0.1,
+//                 total = 0;
+//             lazyImg(oImg);
+//             for (let i = 0; i < focusList.length; i++) {
+//                 let cur = focusList[i], obj = imgList[i], item = liList[i];
+//                 i === step ? (function () {
+//                     cur.classList.add('hover');
+//                     item.style.zIndex = 0;
+//                 })() : (function () {
+//                     window.clearInterval(obj.timer);
+//                     item.style.zIndex = -1;
+//                     obj.style.opacity = 0;
+//                     cur.classList.remove('hover');
+//                 })()
+//             }
+//             window.clearInterval(oImg.timer);
+//             oImg.timer = setInterval(function () {
+//                 if (oImg.style.opacity >= 1) {
+//                     clearInterval(oImg.timer);
+//                     return;
+//                 }
+//                 total += opaStep;
+//                 oImg.style.opacity = total;
+//             }, 17)
+//
+//
+//         }
+//
+//         function auto() {
+//             window.clearInterval(autoTimer);
+//             autoTimer = window.setInterval(function () {
+//                 if (step > imgList.length - 1) {
+//                     step = 0;
+//                 }
+//                 ;
+//                 change(imgList[step]);
+//                 step++;
+//             }, 3000)
+//
+//         }
+//
+//         function bindMousrEvent() {
+//             imgBox.onmouseenter = function () {
+//                 clearInterval(autoTimer);
+//             }
+//             imgBox.onmouseleave = function () {
+//                 auto();
+//
+//             }
+//         }
+//
+//         function bindFocusList() {
+//             for (let i = 0; i < focusList.length; i++) {
+//                 let cur = focusList[i];
+//                 cur.imgIndex = i;
+//                 cur.onmouseenter = function () {
+//                     window.clearInterval(autoTimer);
+//                     step = this.imgIndex;
+//                     change(imgList[step]);
+//                     step++;
+//                 }
+//                 cur.onmouseleave = function () {
+//                     window.clearInterval(autoTimer);
+//                     auto();
+//                 }
+//             }
+//
+//         }
+//     }
+//     /*顶部轮播图结束*/
+//     /*清除a标签的默认行为开始*/
+//     {
+//         let allAList = document.getElementsByTagName('a');
+//
+//         function clear_defaultA() {
+//             for (let i = 0; i < allAList.length; i++) {
+//                 let curA = allAList[i];
+//                 if (curA.href) {
+//                     curA.href = "javascript:;";
+//                 }
+//             }
+//         }
+//     }
+//     /*清除a标签的默认行为结束*/
+//
+//     /*header二级菜单开始*/
+//     {
+//         function checkHeight(element) {
+//             let eleTop = getRect(element).top,
+//                 _Bottom = getRect(element).bottom,
+//                 windowHeight = document.documentElement.clientHeight || document.body.clientHeight,
+//                 eleBottom = windowHeight - _Bottom,
+//                 eleInfoBox = element.getElementsByTagName('div')[0],
+//                 targetHeight = eleInfoBox.offsetHeight + 5;
+//             if (element.dataset.lines === '1') {
+//                 return {
+//                     result: eleTop >= targetHeight,
+//                     nav_type: '1'
+//                 }
+//             } else if (element.dataset.lines === '2') {
+//                 return {
+//                     result: eleBottom >= targetHeight,
+//                     nav_type: '2'
+//                 }
+//             }
+//         }
+//
+//
+//         function hoverMenu() {
+//             sizeListener.call(this, null);
+//             let eleInfoBox = this.getElementsByTagName('div')[0],
+//                 check = checkHeight(this);
+//             if (check.result && check.nav_type === '1') {
+//                 eleInfoBox.style.borderTopColor = null;
+//                 eleInfoBox.style.top = null;
+//                 eleInfoBox.classList.remove('arrowTop');
+//                 eleInfoBox.classList.add('arrowBottom');
+//                 eleInfoBox.style.borderBottomColor = '#ff6824';
+//                 eleInfoBox.style.bottom = '32px';
+//             } else if (check.nav_type === '1') {
+//                 eleInfoBox.style.bottom = null;
+//                 eleInfoBox.style.borderBottomColor = null;
+//                 eleInfoBox.classList.remove('arrowBottom');
+//                 eleInfoBox.classList.add('arrowTop');
+//                 eleInfoBox.style.borderTopColor = '#ff6824';
+//                 eleInfoBox.style.top = '32px';
+//             } else if (check.result && check.nav_type === '2') {
+//                 eleInfoBox.classList.remove('arrowBottom');
+//                 eleInfoBox.classList.add('arrowTop');
+//                 eleInfoBox.style.borderBottomColor = null;
+//                 eleInfoBox.style.borderTopColor = '#ff6824';
+//                 eleInfoBox.style.bottom = null;
+//                 eleInfoBox.style.top = '32px';
+//             } else {
+//                 eleInfoBox.classList.remove('arrowTop');
+//                 eleInfoBox.classList.add('arrowBottom');
+//                 eleInfoBox.style.borderTopColor = null;
+//                 eleInfoBox.style.borderBottomColor = '#ff6824';
+//                 eleInfoBox.style.top = null;
+//                 eleInfoBox.style.bottom = '32px';
+//             }
+//             window.onscroll = window.onresize = null;
+//
+//         }
+//
+//         function sizeListener() {
+//             let _this = this;
+//             window.onscroll = window.onresize = checkHeight.bind(_this, null);
+//         }
+//
+//         function leaveMenu() {
+//             let eleInfoBox = this.getElementsByTagName('div')[0];
+//             eleInfoBox.classList.remove('arrowBottom');
+//             eleInfoBox.classList.remove('arrowTop');
+//         }
+//                                          
+//         function getRect(element) {
+//             let rect = element.getBoundingClientRect();
+//             let top = document.documentElement.clientTop;
+//             let left = document.documentElement.clientLeft;
+//             return {
+//                 top: rect.top - top,
+//                 bottom: rect.bottom - top,
+//                 left: rect.left - left,
+//                 right: rect.right - left
+//             }
+//         }
+//
+//         function bind() {
+//             let nav = document.getElementById('nav'),
+//                 allAList = nav.getElementsByTagName('a');
+//             for (let i = 0; i < allAList.length; i++) {
+//                 let curA = allAList[i];
+//                 bindA(curA);
+//             }
+//             function bindA(menu_A) {
+//                 if (menu_A.dataset.hasOwnProperty('lines')) {
+//                     menu_A.addEventListener('mouseenter', hoverMenu, false);
+//                     menu_A.addEventListener('mouseleave', leaveMenu, false);
+//                 }
+//             }
+//         }
+//     }
+//
+//     /*header二级菜单结束*/
+//     return {
+//         clear_defaultA: function () {
+//             clear_defaultA();
+//         },
+//         header_banner: function () {
+//             getData();
+//             bindData();
+//             windOnload();
+//             auto();
+//             bindMousrEvent();
+//             bindFocusList();
+//         },
+//         nav_secondMenu: function () {
+//             bind();
+//         }
+//     }
+// })();
+// let video=new QQVideo;
+// video.clear_defaultA();
+// video.header_banner();
+// video.nav_secondMenu()

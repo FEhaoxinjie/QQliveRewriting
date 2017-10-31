@@ -9,6 +9,151 @@
     <link rel="stylesheet" href="css/Font-Awesome-master/css/font-awesome.min.css">
 </head>
 <body>
+<!--登录界面开始-->
+<div class="loginIn">
+    <div class="loginMask"></div>
+    <div class="loginDialog">
+        <div class="loginChoose">
+            <div class="loginTitle">
+                <span>选择登录帐号的类型</span>
+                <a href="javascript:;"></a>
+            </div>
+            <div class="loginType">
+                <div class="loginTypeImg"></div>
+                <a href="javascrip:;" class="loginType_QQ"></a>
+                <a href="javascript:;" class="loginType_VX"></a>
+            </div>
+        </div>
+        <div class="loginPanel">
+            <div class="loginTypeChoose">
+                <a href="javascript:;">
+                    <i></i>
+                    <span>QQ帐号登录</span>
+                </a>
+                <a href="javascript:;">
+                    <i></i>
+                    <span>微信帐号登录</span>
+                </a>
+                <a href="javascript:;"></a>
+            </div>
+            <div class="loginPanelContent">
+                <div class="loginTips">
+                    <div>微信和QQ是两个独立账号，账号信息不互通</div>
+                    <div>登录后高清播放更流畅</div>
+                </div>
+                <div class="loginPanelContent_QQ">
+                    <div class="loginQuickCont">
+                        <div>快速安全登录</div>
+                        <div>请使用<a href="http://im.qq.com/mobileqq/#from=login" target="_blank">QQ手机版</a>扫描二维码<br>安全登录，防止盗号。</div>
+                        <div class="loginQR_QQ_code">
+                            <div class="loginQR_QQ_codeBox">
+                                <div class="loginQR_QQ_codeDialog"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="loginNormalCont">
+                        <div>帐号密码登录</div>
+                        <div>推荐使用<a href="javascript:;">快速安全登录，</a>防止盗号。</div>
+                        <!--<div class="loginError"><i></i><span>您输入的帐号或者密码不正确，请重新输入。</span></div>-->
+                        <div class="loginInputBox">
+                            <form action="" method="post">
+                                <div class="loginInputUser">
+                                    <label for="userName">支持QQ号/邮箱/手机号登录</label>
+                                    <input type="text" id="userName">
+                                    <a href="javascript:;"></a>
+                                </div>
+                                <div class="loginInputPassword">
+                                    <label for="password">密码</label>
+                                    <input type="text" id="password">
+                                </div>
+                                <div class="loginSubmit" id="loginSubmitBtn">
+                                    <input type="button" value="登录">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="loginPanelContent_VX">
+                    <div class="loginCont">
+                        <div>安全登录，防止被盗</div>
+                        <div class="loginQR_VX_code">
+                            <div class="loginQR_VX_codeBox">
+                                <div class="loginQR_codeDialog"></div>
+                            </div>
+                        </div>
+                        <div class="loginContInfo">
+                           <div class="loginContInfoBox"> <p>请使用微信扫描二维码登录</p>
+                            <p>“腾讯视频微信登录”</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="loginPanelFooter">
+                <div id="autoLoginBtn">
+                    <a href="javascript:;">
+                        <i id="autoLoginChoose"></i>
+                        <span>下次自动登录</span>
+                    </a>
+                </div>
+                <div>
+                    <a href="javascript:;">帐号密码登录</a>
+                    <span>|</span>
+                    <a href="https://ssl.zc.qq.com/v3/index-chs.html?from=pt" target="_blank">注册新账号</a>
+                    <span>|</span>
+                    <a href="https://support.qq.com/products/14800" target="_blank">意见反馈</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--登录界面结束-->
+<!--顶部追剧栏-->
+<div class="binWatching" id="binWatching">
+
+    <div class="binWatchingInfo" id="binWatchingInfo">
+        <div class="binWatchingMask">
+            <i></i>
+            <span>你观看的第6集的 国民大生活 更新啦</span>
+            <i></i>
+        </div>
+        <a href="javascript:;" class="loginArrowTop" id="loginArrowTop">
+        </a>
+        <a href="" class="loginArrowLeft" id="loginArrowLeft">
+            <i></i>
+        </a>
+        <a href="" class="loginArrowRight" id="loginArrowRight">
+            <i></i>
+        </a>
+        <div class="binWatchingInfoBox" id="binWatchingInfoBox">
+            <div>
+                <div class="loginDialog">
+                    <i></i>
+                    <span>登录查看你感兴趣的内容</span>
+                    <a href="" class="dialogLogin-btn">登录</a>
+                </div>
+                <a href="">
+                <span>
+                    <img src="css/images/header/topBinwatching/binWatching_01.jpg" alt="">
+                </span>
+                </a>
+            </div>
+            <div>
+                <div class="binWatchingRecommend">也许你还喜欢看</div>
+                <a href="">
+                <span>
+                    <img src="css/images/header/topBinwatching/binWatching_02.jpg" alt="">
+                    <span>
+                    <img src="css/images/header/topBinwatching/vipSign.png" alt="">
+                </span>
+                    <span>7<span>.1</span></span>
+                </span>
+                    <span>国民大生活</span>
+                    <span>更新至23集</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 <!--这是头部-->
 <div class="header" id="header">
     <!--顶部搜索栏-->
@@ -83,7 +228,7 @@
                             <span>昨天</span>
                             <a href="">
                                 <span>告别单身</span>
-                            <span>
+                                <span>
                                 <span>已看完</span>
                                 <span></span>
                             </span>
@@ -93,28 +238,28 @@
                             <span>更早</span>
                             <a href="">
                                 <span>最新主题：看好你的钱</span>
-                             <span>
+                                <span>
                                 <span>已看完</span>
                                 <span></span>
                             </span>
                             </a>
                             <a href="">
                                 <span>浅水有大鱼，让人心动 </span>
-                             <span>
+                                <span>
                                 <span>已看完</span>
                                 <span></span>
                             </span>
                             </a>
                             <a href="">
                                 <span>小老虎好可怜，被金毛收拾得服服帖帖滴！ </span>
-                             <span>
+                                <span>
                                 <span>已看完</span>
                                 <span></span>
                             </span>
                             </a>
                             <a href="">
                                 <span>小狮子与小老虎打架，太萌了！ </span>
-                             <span>
+                                <span>
                                 <span>已看完</span>
                                 <span></span>
                             </span>
@@ -145,16 +290,27 @@
                 </div>
             </div>
             <div class="userBox">
-                <a href="">
+                <a href="javascript:;">
+                    <i></i>
+                    <!--<i class="userVip">-->
+                        <!--<i class="userVipNum"></i>-->
+                    </i>
                     <img src="css/images/header/nav_top/user.png" alt="">
                     <span></span>
                 </a>
-
                 <div class="useBoxInfo">
                     <div class="infoTop">
                         <span>登录之后可以</span>
+                        <!--<div class="loginUserMenu">-->
+                            <!--<a href="">切换</a>-->
+                            <!--<a href="">退出</a>-->
+                        <!--</div>-->
                         <span>开通VIP/超级VIP看大片</span>
+                        <!--<span>vip于2017-11-10到期</span>-->
                         <a href="">开通</a>
+                        <!--<a href="" class="tvPrivilege">开通电视特权</a>-->
+                        <!--<a href="" class="vipRenew">续费</a>-->
+<!---->
                     </div>
                     <div class="infoBottom">
                         <a href="">
@@ -177,7 +333,7 @@
                                  alt="">
                             <span>用客户端看送VIP</span>
                         </a>
-                        <a href="" class="userLogin" id="userLogin">立即登录</a>
+                        <a href="javascript:;" class="userLogin" id="userLogin">立即登录</a>
                     </div>
                 </div>
             </div>
@@ -787,7 +943,6 @@
     </div>
 </div>
 <!--导航栏-->
-
 <!--这是中部内容-->
 <div class="content">
     <!--今日热门-->
@@ -867,4 +1022,6 @@
 <div class="footer"></div>
 </body>
 <script type="text/javascript" src="js/index.js"></script>
+<script>
+</script>
 </html>

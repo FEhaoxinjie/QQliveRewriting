@@ -1,0 +1,132 @@
+{
+  "watchingUpdate": [
+    {         
+      "watchingUpdateTitle": "国民大生活",
+      "watchingEpisode": "1"
+    }
+  ],
+  "binWatchingInfo": [
+    {
+      "watchingImages":"css/images/header/topBinwatching/binWatching_01.jpg",
+      "watchingTitle": "国民大生活",
+      "watchingDescription": "",
+      "watchingSchedule": {
+        "watchingEpisode": "01",
+        "watchingEpisodeUpdate": "23",
+        "watchingEpisodeTotal": ""
+      },
+      "score": "8.1",
+      "videoSign": ""
+    },
+    {
+      "watchingImages":"css/images/header/topBinwatching/binWatching_02.jpg",
+      "watchingTitle": "三国演义",
+      "watchingDescription": "",
+      "watchingSchedule": {
+        "watchingEpisode": "02",
+        "watchingEpisodeUpdate": "03",
+        "watchingEpisodeTotal": ""
+      },
+      "score": "7.6",
+      "videoSign": "vip"
+    },
+    {
+      "watchingImages":"css/images/header/topBinwatching/binWatching_03.jpg",
+      "watchingTitle": "雄兵连之雄芯篇",
+      "watchingDescription": "",
+      "watchingSchedule": {
+        "watchingEpisode": "01",
+        "watchingEpisodeUpdate": "06",
+        "watchingEpisodeTotal": ""
+      },
+      "score": "7.7",
+      "videoSign": "vip"
+    },
+    {
+      "watchingImages":"css/images/header/topBinwatching/binWatching_04.jpg",
+      "watchingTitle": "斗破苍穹 特别篇",
+      "watchingDescription": "",
+      "watchingSchedule": {
+        "watchingEpisode": "02",
+        "watchingEpisodeUpdate": "02",
+        "watchingEpisodeTotal": ""
+      },
+      "score": "7.7",
+      "videoSign": "vip"
+    },
+    {
+      "watchingImages":"css/images/header/topBinwatching/binWatching_05.jpg",
+      "watchingTitle": "武庚纪 第1季",
+      "watchingDescription": "",
+      "watchingSchedule": {
+        "watchingEpisode": "29",
+        "watchingEpisodeUpdate": "30",
+        "watchingEpisodeTotal": ""
+      },
+      "score": "8.9",
+      "videoSign": "vip"
+    },
+    {
+      "watchingImages":"css/images/header/topBinwatching/binWatching_06.jpg",
+      "watchingTitle": "雄兵连之天河战役篇",
+      "watchingDescription": "",
+      "watchingSchedule": {
+        "watchingEpisode": "01",
+        "watchingEpisodeUpdate": "11",
+        "watchingEpisodeTotal": ""
+      },
+      "score": "9.0",
+      "videoSign": "vip"
+    },
+    {
+      "watchingImages":"css/images/header/topBinwatching/binWatching_07.jpg",
+      "watchingTitle": "奔跑吧",
+      "watchingDescription": "第13期幕后特辑：热巴鹿晗大爆料",
+      "watchingSchedule": {
+        "watchingEpisode": "2017-07-07 期",
+        "watchingEpisodeUpdate": "",
+        "watchingEpisodeTotal": ""
+      },
+      "score": "7.1",
+      "videoSign": ""
+    },
+    {
+      "watchingImages":"css/images/header/topBinwatching/binWatching_08.jpg",
+      "watchingTitle": "吐槽大会",
+      "watchingDescription": "第10期：收官！凤凰传奇龚琳娜飙神曲互怼",
+      "watchingSchedule": {
+        "watchingEpisode": "01",
+        "watchingEpisodeUpdate": "06",
+        "watchingEpisodeTotal": ""
+      },
+      "score": "7.5",
+      "videoSign": "self"
+    },
+    {
+      
+      "watchingImages":"css/images/header/topBinwatching/binWatching_09.jpg",
+      "watchingTitle": "斗破苍穹 第1季",
+      "watchingDescription": "",
+      "watchingSchedule": {
+        "watchingEpisode": "12",
+        "watchingEpisodeUpdate": "",
+        "watchingEpisodeTotal": "12"
+      },
+      "score": "7.7",
+      "videoSign": "vip"
+    },
+    {
+      "recommend":"true",
+      "watchingImages":"css/images/header/topBinwatching/binWatching_10.jpg",
+      "watchingTitle": "那年花开月正圆",
+      "watchingDescription": "",
+      "watchingSchedule": {
+        "watchingEpisode": "",
+        "watchingEpisodeUpdate": "",
+        "watchingEpisodeTotal": "74"
+      },
+      "score": "8.9",
+      "videoSign": "vip"
+    }
+  ]
+}
