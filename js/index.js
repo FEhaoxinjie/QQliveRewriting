@@ -1,4 +1,6 @@
+console.log();
 let QQVideo = (function () {
+
     /*utils开始*/
     {
         function ajax(opt) {
@@ -63,7 +65,6 @@ let QQVideo = (function () {
             loginPanelFooterDiv = loginPanelFooter.getElementsByTagName('div')[1],
             loginPanelFooterDivA = loginPanelFooterDiv.getElementsByTagName('a')[0],
             autoLoginBtn = document.getElementById('autoLoginBtn'),
-            autoChooseSign = 1,
             autoLoginChoose = document.getElementById('autoLoginChoose'),
             loginNormalCont = document.getElementsByClassName('loginNormalCont')[0],
             loginInputUser = loginNormalCont.getElementsByClassName('loginInputUser')[0],
@@ -78,17 +79,35 @@ let QQVideo = (function () {
             loginSubmit = document.getElementsByClassName('loginSubmit')[0],
             userBoxUserHeader = userBox.getElementsByTagName('a')[0],
             useBoxInfo = userBox.getElementsByClassName('useBoxInfo')[0],
-            userBoxInfoTop=useBoxInfo.getElementsByClassName('infoTop')[0],
-            userLogin=document.getElementById('userLogin');
+            userBoxInfoTop = useBoxInfo.getElementsByClassName('infoTop')[0],
+            userBoxInfoTopOpen = userBoxInfoTop.getElementsByTagName('a')[0],
+            userLogin = document.getElementById('userLogin'),
+            autoChooseSign = 1,
+            loginError = document.getElementsByClassName('loginError')[0],
+            loginErrorText = document.getElementsByClassName('loginError')[0].getElementsByTagName('span')[0],
+            errorMsg = '';
 
+        function loginMenuShow(e) {
+            e.stopPropagation();
+            loginIn.style.display = 'block';
+        }
 
-        loginTitleClose.addEventListener('click', function () {
-            loginIn.style.display = 'none';
+        function clearAllCookie() {
+            let keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+            if (keys) {
+                for (let i = keys.length; i--;)
+                    document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()
+            }
+        }
+
+        loginTitleClose.addEventListener('click', function (e) {
+            loginIn.style.display = '';
         }, false);
         loginTypeChooseA[2].addEventListener('click', function () {
-            loginIn.style.display = 'none';
+            loginIn.style.display = '';
         }, false);
-        loginType_QQ.addEventListener('click', function () {
+        loginType_QQ.addEventListener('click', function (e) {
+            e.stopPropagation();
             loginChoose.style.display = 'none';
             loginPanel.style.display = 'block';
             loginTypeChooseA[1].classList.remove('select');
@@ -97,7 +116,8 @@ let QQVideo = (function () {
             loginPanelContent_VX.style.display = '';
             loginPanelContent_QQ.style.display = 'block';
         }, false)
-        loginType_VX.addEventListener('click', function () {
+        loginType_VX.addEventListener('click', function (e) {
+            e.stopPropagation();
             loginChoose.style.display = 'none';
             loginPanel.style.display = 'block ';
             loginTypeChooseA[0].classList.remove('select');
@@ -106,43 +126,50 @@ let QQVideo = (function () {
             loginPanelContent_VX.style.display = 'block';
             loginPanelFooter.style.display = 'none';
         }, false)
-        loginTypeChooseA[0].addEventListener('click', function () {
+        loginTypeChooseA[0].addEventListener('click', function (e) {
+            e.stopPropagation();
             loginTypeChooseA[1].classList.remove('select');
             loginTypeChooseA[0].classList.add('select');
             loginPanelFooter.style.display = '';
             loginPanelContent_VX.style.display = '';
             loginPanelContent_QQ.style.display = 'block';
         }, false)
-        loginTypeChooseA[1].addEventListener('click', function () {
+        loginTypeChooseA[1].addEventListener('click', function (e) {
+            e.stopPropagation();
             loginTypeChooseA[0].classList.remove('select');
             loginTypeChooseA[1].classList.add('select');
             loginPanelContent_QQ.style.display = '';
             loginPanelContent_VX.style.display = 'block';
             loginPanelFooter.style.display = 'none';
         }, false)
-        loginPanelFooterDivA.addEventListener('click', function () {
+        loginPanelFooterDivA.addEventListener('click', function (e) {
+            e.stopPropagation();
             loginQuickCont.style.display = 'none';
             loginNormalCont.style.display = 'block';
         }, false);
-        loginNormalContDivA.addEventListener('click', function () {
+        loginNormalContDivA.addEventListener('click', function (e) {
+            e.stopPropagation();
             loginQuickCont.style.display = '';
             loginNormalCont.style.display = '';
         }, false);
-        autoLoginBtn.addEventListener('click', function () {
+        autoLoginBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
             if (autoChooseSign === 1) {
                 autoLoginChoose.style.backgroundPosition = '-74px -163px';
             } else {
                 autoLoginChoose.style.backgroundPosition = '';
             }
             autoChooseSign *= -1;
+            console.log(autoChooseSign);
         }, false)
-        loginInputUserInput.addEventListener('focus', function () {
-            console.log(1);
+        loginInputUserInput.addEventListener('focus', function (e) {
+            e.stopPropagation();
             loginInputUserLabel.style.color = '#ddd';
             loginInputUser.style.backgroundPosition = '-1px -45px';
             loginInputUserClear.style.display = '';
         }, false);
-        loginInputUserInput.addEventListener('input', function () {
+        loginInputUserInput.addEventListener('input', function (e) {
+            e.stopPropagation();
             if (loginInputUserInput.value !== '') {
                 loginInputUserLabel.style.display = 'none';
                 loginInputUserClear.style.display = 'block';
@@ -151,69 +178,133 @@ let QQVideo = (function () {
             }
 
         }, false);
-        loginInputUserClear.addEventListener('click', function () {
+        loginInputUserClear.addEventListener('click', function (e) {
+            e.stopPropagation();
             loginInputUserInput.value = '';
             loginInputUserClear.style.display = '';
             loginInputUserLabel.style.display = '';
         }, false);
-        loginInputPasswordInput.addEventListener('focus', function () {
+        loginInputPasswordInput.addEventListener('focus', function (e) {
+            e.stopPropagation();
             loginInputPasswordLabel.style.color = '#ddd';
             loginInputPassword.style.backgroundPosition = '-1px -45px';
         }, false);
-        loginInputPasswordInput.addEventListener('input', function () {
+        loginInputPasswordInput.addEventListener('input', function (e) {
+            e.stopPropagation();
             if (loginInputPasswordInput.value !== '') {
                 loginInputPasswordLabel.style.display = 'none';
             } else {
-                console.log(2);
                 loginInputPasswordLabel.style.display = '';
             }
 
         }, false);
-        userBox.addEventListener('click', function () {
-            loginIn.style.display = 'block';
-        }, false)
-        userboxLogin.addEventListener('click', function () {
-            loginIn.style.display = 'block';
-        }, false)
-        loginSubmit.addEventListener('click', function () {
-            let username = loginInputUserInput.value,
-                password = loginInputPasswordInput.value;
-            if (username !== '' && password !== '') {
+        userBoxUserHeader.addEventListener('click', loginMenuShow, false)
+        userboxLogin.addEventListener('click', loginMenuShow, false)
+        userBoxInfoTopOpen.addEventListener('click', loginMenuShow, false)
+        if (autoChooseSign === 1) {
+            if (document.cookie) {
                 ajax({
                     method: 'POST',
                     url: 'http://47.94.165.170:8080/txvideo/login',
                     async: true,
                     data: {
+                        userName: /userName=(\d+);/.exec(document.cookie)[1],
+                        passWord: /password=(\d+);?/g.exec(document.cookie)[1]
+                    },
+                    success: function (data) {
+                        try {
+                            if (data.code === '1' && data.message === '登录成功') {
+                                let userBoxInfoStr = ` <span>QQ帐号: ${data.data[0].nickName}${parseFloat(data.data[0].isVip) > -1 ? `<i class="userVip"><i class="userVipNum${data.data[0].isVip}"></i></i>` : ``}</span>
+                        <div class="loginUserMenu">
+                            <a href="javascript:;">切换</a>
+                            <a href="javascript:;" id="userExit">退出</a>
+                        </div>${data.data[0].isVip > -1 ? `<span>vip于${data.data[0].vipOutTime}到期</span>` : ``}
+                        <a href="" class="tvPrivilege">开通电视特权</a>
+                        <a href="" class="vipRenew">续费</a>`;
+                                let userBoxHeader = `${data.data[0].accountType === '0' ? `<i class="QQ"></i>` : `<i class="VX"></i>`}${parseFloat(data.data[0].isVip) > -1 ? `<i class="userVip"><i class="userVipNum${data.data[0].isVip}"></i></i>` : ``}<img src="${data.data[0].userPic}" alt=""><span></span>`
+                                userBoxInfoTop.innerHTML = userBoxInfoStr;
+                                userBoxUserHeader.innerHTML = userBoxHeader;
+                                userboxLogin.style.display = 'none';
+                                loginIn.style.display = 'none';
+                                userBoxUserHeader.removeEventListener('click', loginMenuShow)
+                                userboxLogin.removeEventListener('click', loginMenuShow)
+                                userBoxInfoTopOpen.removeEventListener('click', loginMenuShow)
+                            }
+                            let userExit = document.getElementById('userExit');
+                            userExit.addEventListener('click', function (e) {
+                                clearAllCookie();
+                                userBoxUserHeader.addEventListener('click', loginMenuShow, false)
+                                userboxLogin.addEventListener('click', loginMenuShow, false)
+                                userBoxInfoTopOpen.addEventListener('click', loginMenuShow, false)
+                                window.location.reload();
+                            }, false)
+                        } catch (e) {
+                        }
+                    }
+
+                });
+            }
+        }
+        loginSubmit.addEventListener('click', function (e) {
+            e.stopPropagation();
+            let username = loginInputUserInput.value,
+                password = loginInputPasswordInput.value;
+            if (username === '') {
+                errorMsg = '帐号或密码不能为空！';
+            } else if (!/^(\d+)$/.test(username)) {
+                errorMsg = '请输入正确的帐号！';
+            } else if (password === '') {
+                errorMsg = '帐号或密码不能为空！';
+            }
+            else {
+                ajax({
+                    method: 'POST',
+                    url: 'http://47.94.165.170:8080/txvideo/login',
+                    async: false,
+                    data: {
                         userName: username,
                         passWord: password
                     },
                     success: function (data) {
-                        if (data.code === '1' && data.message === '登录成功') {
-                            let userBoxInfoStr = ` <span>QQ帐号: ${data.data[0].nickName}${parseFloat(data.data[0].isVip) > -1 ? `<i class="userVip"><i class="userVipNum${data.data[0].isVip}"></i></i>` : ``}</span>
-                        <div class="loginUserMenu">
-                            <a href="">切换</a>
-                            <a href="">退出</a>
-                        </div>${data.data[0].isVip > -1 ? `<span>vip于${data.data[0].vipOutTime}到期</span>` : ``}
-                        <a href="" class="tvPrivilege">开通电视特权</a>
-                        <a href="" class="vipRenew">续费</a>`;
-                            let userBoxHeader = `${data.data[0].accountType === 0 ? `<i class="QQ"></i>` : `<i class="VX"></i>`}${parseFloat(data.data[0].isVip) > -1 ? `<i class="userVip"><i class="userVipNum${data.data[0].isVip}"></i></i>` : ``}<img src="${data.data[0].userPic}" alt=""><span></span>`
-                            userBoxInfoTop.innerHTML = userBoxInfoStr;
-                            userBoxUserHeader.innerHTML = userBoxHeader;
-                            userboxLogin.style.display='none';
-                            loginIn.style.display='none';
+                        console.log(data);
+                        if (data.code === '0' && data.message === '该账户不存在') {
+                            errorMsg = '帐号或密码不正确！请重新输入。';
+                            loginInputPasswordInput.value='';
+                            loginInputPasswordInput.focus();
+                            loginErrorText.innerText = errorMsg;
+                            loginError.style.display = 'block';
+                            loginError.tipsTimer = window.setTimeout(function () {
+                                loginError.style.display = '';
+                                window.clearTimeout(loginError.tipsTimer);
+                            }, 5000)
+                        } else {
+                            loginError.style.display = 'none';
+                            document.cookie = 'userName=' + username;
+                            document.cookie = 'password=' + password;
+                            document.cookie = 'userLogin=' + true;
+                            window.location.reload();
 
                         }
                     }
                 })
             }
+            if(errorMsg!==''){
+                loginErrorText.innerText = errorMsg;
+                loginError.style.display = 'block';
+                loginError.tipsTimer = window.setTimeout(function () {
+                    loginError.style.display = '';
+                    window.clearTimeout(loginError.tipsTimer);
+                }, 5000)
+            }
 
         }, false)
+
     }
     /*用户登录结束*/
     /*追剧目录开始*/
     {
         ajax({
-                url: 'json/top_binwatching.json',
+                url: 'json/top_followData/top_followData.json',
                 method: "get",
                 data: null,
                 async: true,
@@ -229,19 +320,61 @@ let QQVideo = (function () {
             loginArrowLeft = document.getElementById('loginArrowLeft'),
             loginArrowRight = document.getElementById('loginArrowRight'),
             binWatchingInfoBox = document.getElementById('binWatchingInfoBox'),
-            binWatchingInfoDiv = binWatchingInfoBox.getElementsByTagName('div');
+            binWatchingInfoDiv = binWatchingInfoBox.getElementsByTagName('div'),
+            loginIn = document.getElementsByClassName('loginIn')[0];
+
 
         function bindWatchingData() {
             let watchingData = ``;
-            for (let i = 0; i < arguments[0].binWatchingInfo.length; i++) {
-                let curWatchingData = arguments[0].binWatchingInfo[i];
-                watchingData += `<div><a href=""><span><img class="watchingImgs"  src="${curWatchingData.watchingImages}" alt=""><span></span><span>${/(\d+)(.{1}\d+)/g.exec(curWatchingData.score)[1]}<span>${/(\d+)(.{1}\d+)/g.exec(curWatchingData.score)[2]}</span></span></span><span>${curWatchingData.watchingTitle}</span><span>更新至${curWatchingData.watchingSchedule.watchingEpisodeUpdate}集</span></a></div> `
+            let oldNode = null;
+            for (let i = 0; i < arguments[0].length; i++) {
+                let curWatchingData = arguments[0][i];
+                if (i === 0) {
+                    watchingData += `<div class="loginQuickChooseBox">
+                <span class="loginQuickChoose">
+                    <i></i>
+                    <span>登录查看你感兴趣的内容</span>
+                    <a href="javascript:;" class="dialogLogin-btn">登录</a>
+                </span>
+                <a href="javascript:;">
+                <span>
+                    <img class="watchingImgs" src="${arguments[0][arguments[0].length - 1].jsonData.new_pic_vt}" alt="">
+                </span>
+                </a>
+            </div>`;
+                }
+                watchingData += `<div><a href="${curWatchingData.jsonData.url}" target="_blank"><span><img class="watchingImgs"  src="${curWatchingData.jsonData.new_pic_vt}" alt=""><span><img src="${JSON.parse(curWatchingData.jsonData.web20_imgtag).tag_2.param}" alt=""></span><span>${function () {
+                    try {
+                        return /(\d+)(.{1}\d?)/g.exec(curWatchingData.jsonData.score.score)[1];
+                    } catch (e) {
+                        return ``
+                    }
+                }()}<span>${function () {
+                    try {
+                        return /(\d+)(.{1}\d?)/g.exec(curWatchingData.jsonData.score.score)[2];
+                    } catch (e) {
+                        return ``
+                    }
+                }()}</span></span></span><span>${curWatchingData.jsonData.title}</span><span>${curWatchingData.jsonData.episode_updated || curWatchingData.jsonData.second_title || ''}</span></a></div> `
             }
+            ;
             binWatchingInfoBox.innerHTML = watchingData;
+            document.getElementsByClassName('dialogLogin-btn')[0].addEventListener('click', function () {
+                loginIn.style.display = 'block';
+            }, false)
+            oldNode = binWatchingInfoBox.childNodes[0].cloneNode(true);
+            if (document.cookie && /userLogin=(\w+)/g.exec(document.cookie)[1] === 'true') {
+                binWatchingInfoBox.removeChild(binWatchingInfoBox.childNodes[0]);
+            } else {
+                if (binWatchingInfoBox.childElementCount > 11) {
+                } else {
+                    binWatchingInfoBox.insertBefore(oldNode, binWatchingInfoBox.childNodes[0]);
+                }
+
+            }
             bindWatchingEvent();
         }
 
-        //240px 103% 95px
         function bindWatchingEvent() {
             function addHeight() {
                 binWatchingInfo.style.height = '100%'
@@ -279,7 +412,7 @@ let QQVideo = (function () {
                     loginArrowRight.style.opacity = '1';
                     for (let i = 0; i < 3; i++) {
                         let curDiv = binWatchingInfoDiv[i];
-                        curDiv.style.display = 'inline-block'
+                        curDiv.style.display = '';
                     }
                     loginArrowLeft.style.opacity = '0';
                     binWatchingInfo.removeEventListener('mouseenter', arrowLeftShow);
@@ -321,7 +454,6 @@ let QQVideo = (function () {
             binWatchingMask.addEventListener('click', binWatchingChange, false)
             binWatchingInfo.addEventListener('mouseenter', addHeight, false);
             binWatchingInfo.addEventListener('mouseleave', micsHeight, false);
-
             loginArrowTop.addEventListener('click', function () {
                 addHeight();
                 binWatching.style.marginTop = '-332px';
@@ -361,13 +493,32 @@ let QQVideo = (function () {
                 }
                 binWatchingInfo.addEventListener('mouseenter', arrowRightShow, false);
                 binWatchingInfo.addEventListener('mouseleave', arrowRightBlank, false);
-            },)
+            },);
+
         }
 
 
     }
     /*追剧目录结束*/
-
+      /*顶部热搜榜单开始*/
+    {
+        let hotSelectInfo=document.getElementsByClassName('hotInfo')[0],
+            hotInfoStr=``;
+        ajax({
+            url: 'json/top_hotSearchData/top_hotSearchData.json',
+            method: "get",
+            data: null,
+            async: true,
+            success: function (response) {
+                for (let i = 0; i <10; i++) {
+                    let curInfo = response[i];
+                    hotInfoStr+=`<li><span>${curInfo.c_pos}</span><span>${curInfo.c_title}</span></li>`;
+                }
+                hotSelectInfo.innerHTML=hotInfoStr;
+            }
+        })
+    }
+      /*顶部热搜榜单结束*/
     /*顶部轮播图开始*/
     {
         let imgBox = document.getElementById('imgBox'),
@@ -382,8 +533,9 @@ let QQVideo = (function () {
                 bannerNavStr = ``;
             for (let i = 0; i < arguments[0].length; i++) {
                 let cur = arguments[0][i];
-                bannerStr += `<li style="background-color: ${cur.background}"><a href="javascript:;"><img  data-src="${cur.banner_Img}"></a></li>`;
-                bannerNavStr += `<li><span class="navTitle">${cur.navTitle}</span><span class="navDesc">${cur.navDesc}</span></li>`;
+                console.log(cur);
+                bannerStr += `<li style="background-color: ${cur['data-bgcolor']}"><a  target="${cur['target']}" href="${cur['href']}"><img  data-src="${cur['data-bgimage']}"></a></li>`;
+                bannerNavStr += `<li><a  target="${cur['target']}" href="${cur['href']}"><span title="${cur.bannerTitle}" class="navTitle">${cur.bannerTitle}</span><span title="${cur.bannerDesc}" class="navDesc">${cur.bannerDesc}</span></a></li>`;
             }
             imgBox.innerHTML = bannerStr;
             rightNavBox.innerHTML = bannerNavStr;
@@ -506,7 +658,6 @@ let QQVideo = (function () {
             }
         }
 
-
         function hoverMenu() {
             sizeListener.call(this, null);
             let eleInfoBox = this.getElementsByTagName('div')[0],
@@ -588,7 +739,7 @@ let QQVideo = (function () {
     return {
         header_banner: function () {
             ajax({
-                url: 'json/top_banner.json',
+                url: 'json/top_BannerData/top_BannerData.json',
                 method: "get",
                 data: null,
                 async: true,

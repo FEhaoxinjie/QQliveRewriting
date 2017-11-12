@@ -1,0 +1,218 @@
+.hoverVideo {
+    margin: 200px auto;
+    width: 177px;
+    background-color: white;
+    position: relative;
+    opacity: 0;
+    transition: opacity .1s ease, transform .1s ease;
+    box-shadow: 0 2px 18px rgba(0, 0, 0, .35);
+}
+
+.hoverVideo > .hoverVideoBox {
+    width: 100%;
+    height: 135px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.hoverVideo > .hoverVideoBox > video {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transform: scale(1.4);
+
+}
+
+.hoverVideo > .hoverVideoBox > .videoVolume {
+    position: absolute;
+    right: 10px;
+    bottom: 3px;
+    width: 20px;
+    height: 20px;
+    background: url(images/contentHoverVideo/stopVoice.png) 0 0 no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+
+.hoverVideo > .hoverVideoContent {
+    min-height: 65px;
+    padding: 15px 20px 40px;
+    border-top: 0;
+}
+
+.hoverVideo > .hoverVideoContent > .videoTitle {
+    display: block;
+    color: #aaa;
+    margin-right: -5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 4px;
+}
+
+.hoverVideo > .hoverVideoContent > .videoTitle > a {
+    color: #202020;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 700;
+    margin-right: 124px;
+    text-decoration: none;
+}
+
+.hoverVideo > .hoverVideoContent > .mediaSign {
+    position: relative;
+}
+
+.weiboLogo {
+    width: 20px;
+    height: 20px;
+    background: url(images/contentHoverVideo/weibo.png) 0 0 no-repeat;
+    display: inline-block;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+
+.weiboText {
+    border: 1px solid #fe5b5b;
+    border-bottom: 2px solid #fe5b5b;
+    padding: 0 1px;
+    font-size: 12px;
+    line-height: 15px;
+    color: #fe5b5b;
+    position: absolute;
+    left: 17px;
+}
+
+.doubanLogo {
+    width: 20px;
+    height: 20px;
+    background: url(images/contentHoverVideo/douban.png) 0 0 no-repeat;
+    display: inline-block;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+
+.dopubanText {
+    border: 1px solid #30c14c;
+    border-bottom: 2px solid #30c14c;
+    padding: 0 1px;
+    font-size: 12px;
+    line-height: 15px;
+    color: #30c14c;
+    position: absolute;
+    left: 17px;
+    top: 2px;
+}
+
+.hoverVideo > .hoverVideoContent > .videoTitle > span {
+    font-size: 12px;
+    line-height: 30px;
+    margin-right: 10px;
+}
+
+.hoverVideo > .hoverVideoContent > .video_Tags {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    line-height: 24px;
+    color: #7a7a7a;
+
+}
+
+.hoverVideo > .hoverVideoContent > .video_Tags > .tag_tit {
+    color: #202020;
+    margin-right: 3px;
+}
+
+.hoverVideo > .hoverVideoContent > .video_review {
+    max-height: 36px;
+    display: -webkit-box;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    word-break: normal;
+    font-size: 12px;
+    line-height: 18px;
+    color: #7a7a7a;
+
+}
+
+.hoverVideo > .hoverVideoContent > .video_review > .review_name {
+    color: #202020;
+    margin-right: 3px;
+    display: inline-block;
+}
+
+.hoverVideo > .hoverVideoContent > .video_btn {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    padding: 0 20px;
+    width: 100%;
+    height: 20px;
+    text-align: center;
+    font-size: 0;
+    letter-spacing: -3px;
+    box-sizing: border-box;
+}
+
+.hoverVideo > .hoverVideoContent > .video_btn > .video_btn_follow {
+    display: inline-block;
+    width: 50%;
+    letter-spacing: normal;
+    height: 20px;
+    cursor: pointer;
+}
+
+.hoverVideo > .hoverVideoContent > .video_btn > .video_btn_follow > a > i {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(images/contentHoverVideo/love.png) 0 0 no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+
+.hoverVideo > .hoverVideoContent > .video_btn > .video_btn_follow > a > i:hover {
+    background: url(images/contentHoverVideo/loveHover.png) 0 0 no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+
+.hoverVideo > .hoverVideoContent > .video_btn > .video_btn_down {
+    display: inline-block;
+    width: 50%;
+    letter-spacing: normal;
+    height: 20px;
+    cursor: pointer;
+}
+
+.hoverVideo > .hoverVideoContent > .video_btn > .video_btn_down > a > i {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(images/contentHoverVideo/down.png) 0 0 no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+
+.hoverVideo > .hoverVideoContent > .video_btn > .video_btn_down > a > i:hover {
+    background: url(images/contentHoverVideo/downHover.png) 0 0 no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+
+.hoverVideo > .hoverVideoContent > .video_btn > .line {
+    position: absolute;
+    top: 2px;
+    left: 50%;
+    width: 1px;
+    height: 16px;
+    font-size: 0;
+    background-color: #ddd;
+}

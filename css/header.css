@@ -154,7 +154,6 @@
 
 .binWatching > .binWatchingInfo > .binWatchingInfoBox {
     position: relative;
-
     padding: 50px 0 50px 20px;
     letter-spacing: -3px;
     white-space: nowrap;
@@ -174,42 +173,46 @@
 }
 
 .binWatching > .binWatchingInfo > .binWatchingInfoBox > div:nth-of-type(1) {
-    transition: top .3s ease .5s;
+    transition: top .3s ease .52s;
 }
 
 .binWatching > .binWatchingInfo > .binWatchingInfoBox > div:nth-of-type(2) {
-    transition: top .3s ease .37s;
+    transition: top .3s ease .5s;
 }
 
 .binWatching > .binWatchingInfo > .binWatchingInfoBox > div:nth-of-type(3) {
-    transition: top .3s ease .35s;
+    transition: top .3s ease .37s;
 }
 
 .binWatching > .binWatchingInfo > .binWatchingInfoBox > div:nth-of-type(4) {
-    transition: top .35s ease .2s;
+    transition: top .3s ease .35s;
 }
 
 .binWatching > .binWatchingInfo > .binWatchingInfoBox > div:nth-of-type(5) {
-    transition: top .35s ease .15s;
+    transition: top .35s ease .2s;
 }
 
 .binWatching > .binWatchingInfo > .binWatchingInfoBox > div:nth-of-type(6) {
-    transition: top .35s ease .1s;
+    transition: top .35s ease .15s;
 }
 
 .binWatching > .binWatchingInfo > .binWatchingInfoBox > div:nth-of-type(7) {
-    transition: top .35s ease .05s;
+    transition: top .35s ease .1s;
 }
 
 .binWatching > .binWatchingInfo > .binWatchingInfoBox > div:nth-of-type(8) {
-    transition: top .35s ease;
-}
-
-.binWatching > .binWatchingInfo > .binWatchingInfoBox > div:nth-of-type(9) {
     transition: top .35s ease .05s;
 }
 
+.binWatching > .binWatchingInfo > .binWatchingInfoBox > div:nth-of-type(9) {
+    transition: top .35s ease;
+}
+
 .binWatching > .binWatchingInfo > .binWatchingInfoBox > div:nth-of-type(10) {
+    transition: top .35s ease .05s;
+}
+
+.binWatching > .binWatchingInfo > .binWatchingInfoBox > div:nth-of-type(11) {
     transition: top .35s ease .1s;
 }
 
@@ -218,7 +221,7 @@
     width: 100%;
 }
 
-.binWatching > .binWatchingInfo > .binWatchingInfoBox > div > .loginChoose {
+.binWatching > .binWatchingInfo > .binWatchingInfoBox > div > .loginQuickChoose {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -233,7 +236,7 @@
     z-index: 10;
 }
 
-.binWatching > .binWatchingInfo > .binWatchingInfoBox > div > .loginChoose > i {
+.binWatching > .binWatchingInfo > .binWatchingInfoBox > div > .loginQuickChoose > i {
     background: url(../css/images/header/topBinwatching/loginUser.png) 0 0 no-repeat;
     margin: 0 0 10px;
     width: 36px;
@@ -241,11 +244,11 @@
     display: inline-block;
 }
 
-.binWatching > .binWatchingInfo > .binWatchingInfoBox > div > .loginChoose > span:nth-of-type(1) {
+.binWatching > .binWatchingInfo > .binWatchingInfoBox > div > .loginQuickChoose > span:nth-of-type(1) {
     letter-spacing: normal;
 }
 
-.binWatching > .binWatchingInfo > .binWatchingInfoBox > div > .loginChoose > a {
+.binWatching > .binWatchingInfo > .binWatchingInfoBox > div > .loginQuickChoose > a {
     display: block;
     width: 68px;
     line-height: 26px;
@@ -256,7 +259,7 @@
     background: linear-gradient(to right, #ff850b 0, #ff5945 100%);
 }
 
-.binWatching > .binWatchingInfo > .binWatchingInfoBox > div > .loginChoose > a:hover {
+.binWatching > .binWatchingInfo > .binWatchingInfoBox > div > .loginQuickChoose > a:hover {
     background: #ff6428;
 }
 
@@ -626,6 +629,28 @@
     width: 100%;
     margin-top: 32px;
     display: none;
+    position: relative;
+}
+
+.loginIn > .loginDialog > .loginPanel > .loginPanelContent > .loginPanelContent_QQ > .loginNormalCont > .loginError {
+    color: #ff0d29;
+    position: absolute;
+    left: 30%;
+    top: 70px;
+    display: none;
+}
+
+.loginIn > .loginDialog > .loginPanel > .loginPanelContent > .loginPanelContent_QQ > .loginNormalCont > .loginError > i {
+    background: url(../css/images/header/loginImages/icon_3_tiny.png) 0 -162px no-repeat;
+    height: 18px;
+    width: 18px;
+    display: inline-block;
+    float: left;
+
+}
+
+.loginIn > .loginDialog > .loginPanel > .loginPanelContent > .loginPanelContent_QQ > .loginNormalCont > .loginError > span {
+    float: left;
 }
 
 .loginIn > .loginDialog > .loginPanel > .loginPanelContent > .loginPanelContent_QQ > .loginNormalCont > div:nth-of-type(1) {
@@ -1006,11 +1031,12 @@
     display: none;
     position: absolute;
     left: 15px;
-    width: 283px;
+    width: 273px;
     max-height: 455px;
     background: rgba(255, 255, 255, .98);
     color: #999;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .header .selectBox .secSelBox a {
@@ -1056,7 +1082,7 @@
 
 .header .selectBox .secSelBox .secSelBox-content .hisTags li {
     color: #000000;
-    margin: 0 5px 5px 5px;
+    margin: 5px 5px 5px 5px;
     float: left;
     width: 38%;
     background-color: #f8f8f8;
@@ -1102,6 +1128,22 @@
 
 .header .selectBox .secSelBox .secSelBox-bottom .hotInfo li:hover {
     background-color: #f0f0f0;
+}
+
+.header .selectBox .secSelBox .secSelBox-bottom .hotInfo li > span:nth-of-type(1) {
+    background-color: grey;
+}
+
+.header .selectBox .secSelBox .secSelBox-bottom .hotInfo li:nth-of-type(1) > span:nth-of-type(1) {
+    background-color: #ff0d29;
+}
+
+.header .selectBox .secSelBox .secSelBox-bottom .hotInfo li:nth-of-type(2) > span:nth-of-type(1) {
+    background-color: #ff920b;
+}
+
+.header .selectBox .secSelBox .secSelBox-bottom .hotInfo li:nth-of-type(3) > span:nth-of-type(1) {
+    background-color: #ffc600;
 }
 
 .header .selectBox .secSelBox .secSelBox-bottom .hotInfo span:nth-of-type(1) {
@@ -1497,9 +1539,15 @@
     -webkit-background-size: 100%;
     background-size: 100%;
 }
- .QQ{
-     background: url(../css/images/header/loginImages/login_QQ.png) 0 0 no-repeat #fff;
- }
+
+.QQ {
+    background: url(../css/images/header/loginImages/login_QQ.png) 0 0 no-repeat #fff;
+}
+
+.VX {
+    background: url(../css/images/header/loginImages/login_QQ.png) 0 0 no-repeat #fff;
+}
+
 .header .header-top .rightNav > .userBox > a > i:nth-of-type(2) {
     left: 24px;
     bottom: 8px;
@@ -1800,9 +1848,19 @@
     margin: 75px 0 10px 0;
 }
 
-.header .header-banner .banner-nav .rightNavBox li {
+.header .header-banner .banner-nav .rightNavBox li{
     font-size: 14px;
     padding: 6px 15px 6px 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.header .header-banner .banner-nav .rightNavBox li>a{
+    color: #0e0e0e;
+}
+
+.header .header-banner .banner-nav .rightNavBox > li > a > span:nth-of-type(2) {
+    width: 100%;
 }
 
 .header .header-banner .banner-nav .rightNavBox li:nth-of-type(1) {
@@ -1815,17 +1873,20 @@
     cursor: pointer;
 }
 
-.header .header-banner .banner-nav .rightNavBox li.hover > .navTitle {
+.header .header-banner .banner-nav .rightNavBox li.hover > a > .navTitle {
     display: block;
     color: #ff6824;
     font-size: 25px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.header .header-banner .banner-nav .rightNavBox li.hover > .navTitle:after {
+.header .header-banner .banner-nav > .rightNavBox > li.hover > a > .navTitle:after {
     content: '';
 }
 
-.header .header-banner .banner-nav li .navTitle:after {
+.header .header-banner .banner-nav > li > a > .navTitle:after {
     content: ':';
     font-size: 14px;
     font-weight: bold;
