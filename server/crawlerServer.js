@@ -145,7 +145,6 @@ function getTencentData() {
                 if (err) {
                 } else {
                     html = reg.exec(html)[1];
-                    console.log(html);
                     fs.exists('../json/top_hotSearchData', function (exists) {
                         if (exists) {
                             fs.writeFile('../json/top_hotSearchData/top_hotSearchData.json', html, function (err) {
