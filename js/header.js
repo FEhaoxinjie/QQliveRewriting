@@ -42,6 +42,12 @@ let QQVideo = (function () {
             };
         };
 
+        /*
+        * 接受两个参数
+        * cookie 如果是一个数组就判断第二个参数'del'删除cookie  'get'获取cookie
+        * 格式为['key','key',....] 'get/del'  get 会返回一个对象{key:value}
+        * 如果是个对象就写入cookie 格式{key:value}
+        * */
         function handleCookie(cookie, type) {
             let exp = new Date(),
                 arr = null,
@@ -139,6 +145,7 @@ let QQVideo = (function () {
             loginMore = document.getElementById('loginMore'),
             binWatchingMask = document.getElementsByClassName('binWatchingMask')[0],
             binWatchingMaskTips = binWatchingMask.getElementsByTagName('span')[0],
+            binWatchingMaskIcon = binWatchingMask.getElementsByTagName('i')[1],
             errorMsg = '';
 
         function loginMenuShow(e) {
@@ -147,6 +154,7 @@ let QQVideo = (function () {
         }
 
         function bindLoginEventsHandle() {
+            loginMore.addEventListener('click', loginMenuShow, false);
             loginTitleClose.addEventListener('click', function (e) {
                 loginIn.style.display = '';
             }, false);
@@ -296,14 +304,16 @@ let QQVideo = (function () {
                             <a href="javascript:;" id="userChange">切换</a>
                             <a href="javascript:;" id="userExit">退出</a>
                         </div>${data.data[0].isVip > -1 ? `<span>vip于${data.data[0].vipOutTime}到期</span>` : ``}
-                        <a href="" class="tvPrivilege">开通电视特权</a>
-                        <a href="" class="vipRenew">续费</a>`;
+                        <a href="javascript:;" class="tvPrivilege">开通电视特权</a>
+                        <a href="javascript:;" class="vipRenew">续费</a>`;
                                     let userBoxHeader = `${data.data[0].accountType === '0' ? `<i class="QQ"></i>` : `<i class="VX"></i>`}${parseFloat(data.data[0].isVip) > -1 ? `<i class="userVip"><i class="userVipNum${data.data[0].isVip}"></i></i>` : ``}<img src="${data.data[0].userPic}" alt=""><span></span>`;
 
                                     userBoxInfoTop.innerHTML = userBoxInfoStr;
                                     userBoxUserHeader.innerHTML = userBoxHeader;
                                     loginMore.innerText = '查看更多';
+                                    loginMore.removeEventListener('click', loginMenuShow);
                                     binWatchingMaskTips.innerText = '你观看的第18集的 猎场 更新啦';
+                                    binWatchingMaskIcon.style.left = '55.8%';
                                     userboxLogin.style.display = 'none';
                                     loginIn.style.display = 'none';
                                     userBoxUserHeader.removeEventListener('click', loginMenuShow)
@@ -320,7 +330,10 @@ let QQVideo = (function () {
                                     userboxLogin.addEventListener('click', loginMenuShow, false)
                                     userBoxInfoTopOpen.addEventListener('click', loginMenuShow, false);
                                     loginMore.innerText = '登录查看更多';
+                                    loginMore.addEventListener('click', loginMenuShow, false);
                                     binWatchingMaskTips.innerText = '我的追剧节目单';
+                                    binWatchingMaskIcon.style.left = '51%';
+
                                     window.location.reload();
                                 }, false);
                                 userChange.addEventListener('click', function (e) {
@@ -375,7 +388,10 @@ let QQVideo = (function () {
                                     userBoxInfoTop.innerHTML = userBoxInfoStr;
                                     userBoxUserHeader.innerHTML = userBoxHeader;
                                     loginMore.innerText = '查看更多';
+                                    loginMore.removeEventListener('click', loginMenuShow);
                                     binWatchingMaskTips.innerText = '你观看的第18集的 猎场 更新啦';
+                                    binWatchingMaskIcon.style.left = '55.8%';
+                   topFollowingHandle();
                                     userboxLogin.style.display = 'none';
                                     loginIn.style.display = 'none';
                                     userBoxUserHeader.removeEventListener('click', loginMenuShow)
@@ -386,15 +402,19 @@ let QQVideo = (function () {
                                 let userExit = document.getElementById('userExit');
                                 let userChange = document.getElementById('userChange');
                                 userExit.addEventListener('click', function (e) {
+                                    e.stopPropagation();
                                     handleCookie(['userName', 'password'], 'del');
                                     userBoxUserHeader.addEventListener('click', loginMenuShow, false)
                                     userboxLogin.addEventListener('click', loginMenuShow, false)
                                     userBoxInfoTopOpen.addEventListener('click', loginMenuShow, false)
                                     loginMore.innerText = '登录查看更多';
                                     binWatchingMaskTips.innerText = '我的追剧节目单';
+                                    binWatchingMaskIcon.style.left = '51%';
+                                    topFollowingHandle();
                                     window.location.reload();
                                 }, false);
                                 userChange.addEventListener('click', function (e) {
+                                    e.stopPropagation();
                                     loginMenuShow(e);
                                     if (handleCookie(['userLoginUse'], 'get')['userLoginUse'] === 'QQ') {
                                         loginChoose.style.display = 'none';
@@ -535,7 +555,9 @@ let QQVideo = (function () {
                 loginIn.style.display = 'block';
             }, false)
             oldNode = binWatchingInfoBox.childNodes[0].cloneNode(true);
+            console.log(handleCookie(['userLoginIn'], 'get')['userLoginIn']);
             if (handleCookie(['userLoginIn'], 'get')['userLoginIn']) {
+                console.log(1);
                 binWatchingInfoBox.removeChild(binWatchingInfoBox.childNodes[0]);
             } else {
                 if (binWatchingInfoBox.childElementCount > 11) {

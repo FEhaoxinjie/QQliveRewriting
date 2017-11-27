@@ -54,8 +54,6 @@
     bottom: 3.5%;
     z-index: 20;
 }
-.binWatching > .binWatchingInfo > .binWatchingMask > i:nth-of-type(3):hover{
-}
 .binWatching > .binWatchingInfo > .binWatchingMask > i:nth-of-type(3)>div{
     position: absolute;
     left: -177px;
@@ -69,7 +67,6 @@
     text-align: center;
     display: none;
 }
-.binWatching > .binWatchingInfo > .binWatchingMask > i:nth-of-type(3)
 .binWatching > .binWatchingInfo > .binWatchingMask > i:nth-of-type(2) {
     background: url(../css/images/header/topBinwatching/arrow_bottom.png) 0 0 no-repeat;
     display: inline-block;
@@ -78,7 +75,7 @@
     width: 15px;
     height: 15px;
     position: absolute;
-    left: 57.8%;
+    left: 51%;
     bottom: 3.5%;
     z-index: 20;
 }

@@ -1,10 +1,8 @@
 /*
 * context 是当前需要实现hoverVideo特效的盒子
 * data 是一个数据对象 填写需要填充的数据格式为：
-* {
-        videoDefaultImg: 'img/defaultVideo.png', 视频默认显示图片
-        videoSrc: 'http://223.111.251.83/vhot2.qqvideo.tc.qq.com/Alydvw0JWqp-xKYm7-Xc_FsZbJNRh3IAJCI7Q6pe9Vgw/r1516ng7qoi.mp4?vkey=12FF96B7BE9FAF2EC7DABD9C5F01B7F6D36583AF485EE995063B7C1797BE62BE295348A0E4935E17937ACA575FD5A556506CF1894E025DE05FE0A8DE76B48D43FE3605697D2F03945A3A625874F0E4046C225FC15EF56BA1&sdtfrom=v1095&guid=2a447f527f6a5cd0f735f3d65f328ef7',
-        短时频地址
+* { videoDefaultImg: 'img/defaultVideo.png', 视频默认显示图片
+        videoSrc:短时频地址
         videoTitle: {
             title: '李雷和李梅梅',  视频名字
             keywords: ['2017', '爱情', '喜剧']   类别标签
