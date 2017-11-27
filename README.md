@@ -16,9 +16,28 @@
   - JS特效模块
     + 这里用了前面单例模式 来写，后来发现es6 let的块级作用域 也能起到类似的作用所以有些逻辑就放到了一个个的块级作用域中
     + 写了一个cookie的通用处理函数 可以实现批量增加、删除、修改cookie操作；
+    ![](https://github.com/FEhaoxinjie/QQliveRewriting/blob/master/showImages/TIM%E6%88%AA%E5%9B%BE20171127193254.png)
     + 写了两个公有的函数处理之后同学需要大量使用的特效 只要传入参数自定义实现效果
+    ![](https://github.com/FEhaoxinjie/QQliveRewriting/blob/master/showImages/TIM%E6%88%AA%E5%9B%BE20171127193405.png)
+    ![](https://github.com/FEhaoxinjie/QQliveRewriting/blob/master/showImages/TIM%E6%88%AA%E5%9B%BE20171127193414.png)
      
 
 ####展示
 
-> 
+> 数据爬取代码
+![](https://github.com/FEhaoxinjie/QQliveRewriting/blob/master/showImages/TIM%E6%88%AA%E5%9B%BE20171127192339.png)
+![](https://github.com/FEhaoxinjie/QQliveRewriting/blob/master/showImages/TIM%E6%88%AA%E5%9B%BE20171127192348.png)
+> 界面展示
+![](https://github.com/FEhaoxinjie/QQliveRewriting/blob/master/showImages/TIM%E6%88%AA%E5%9B%BE20171127202704.png)
+![](https://github.com/FEhaoxinjie/QQliveRewriting/blob/master/showImages/TIM%E6%88%AA%E5%9B%BE20171127203203.png)
+![](https://github.com/FEhaoxinjie/QQliveRewriting/blob/master/showImages/TIM%E6%88%AA%E5%9B%BE20171127203213.png)
+![](https://github.com/FEhaoxinjie/QQliveRewriting/blob/master/showImages/TIM%E6%88%AA%E5%9B%BE20171127203222.png)
+![](https://github.com/FEhaoxinjie/QQliveRewriting/blob/master/showImages/TIM%E6%88%AA%E5%9B%BE20171127203234.png)
+![](https://github.com/FEhaoxinjie/QQliveRewriting/blob/master/showImages/TIM%E6%88%AA%E5%9B%BE20171127203312.png)
+![](https://github.com/FEhaoxinjie/QQliveRewriting/blob/master/showImages/TIM%E6%88%AA%E5%9B%BE20171127203324.png)
+![](https://github.com/FEhaoxinjie/QQliveRewriting/blob/master/showImages/TIM%E6%88%AA%E5%9B%BE20171127203337.png)
+![](https://github.com/FEhaoxinjie/QQliveRewriting/blob/master/showImages/TIM%E6%88%AA%E5%9B%BE20171127203514.png)
+![](https://github.com/FEhaoxinjie/QQliveRewriting/blob/master/showImages/TIM%E6%88%AA%E5%9B%BE20171127203552.png)
+![](https://github.com/FEhaoxinjie/QQliveRewriting/blob/master/showImages/TIM%E6%88%AA%E5%9B%BE20171127203643.png)
+![]()
+
