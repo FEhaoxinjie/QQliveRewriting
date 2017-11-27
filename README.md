@@ -28,6 +28,7 @@
 ![](https://github.com/FEhaoxinjie/QQliveRewriting/blob/master/showImages/TIM%E6%88%AA%E5%9B%BE20171127192339.png)
 ![](https://github.com/FEhaoxinjie/QQliveRewriting/blob/master/showImages/TIM%E6%88%AA%E5%9B%BE20171127192348.png)
 > 界面展示
+![](https://github.com/FEhaoxinjie/QQliveRewriting/blob/master/showImages/Animation.gif)
 ![](https://github.com/FEhaoxinjie/QQliveRewriting/blob/master/showImages/TIM%E6%88%AA%E5%9B%BE20171127202704.png)
 ![](https://github.com/FEhaoxinjie/QQliveRewriting/blob/master/showImages/TIM%E6%88%AA%E5%9B%BE20171127203203.png)
 ![](https://github.com/FEhaoxinjie/QQliveRewriting/blob/master/showImages/TIM%E6%88%AA%E5%9B%BE20171127203213.png)
