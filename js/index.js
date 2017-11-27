@@ -1197,5 +1197,241 @@ let QQVideo = (function () {
         curFn();
     }
 }
+//下部右侧底部固定工具
+let fixToolRender = function () {
+    var icon_cell_coin = document.getElementById('icon_cell_coin'),
+        c_coin_content = document.getElementById('c_coin_content'),
+        icon_min_chat = document.getElementById('icon_min_chat'),
+        chat = document.getElementById('chat'),
+        down_detail=document.getElementById('down_detail'),
+        icon_down = document.getElementById('icon_down'),
+        icon_feel_back = document.getElementById('icon_feel_back'),
+        commit = document.getElementById('commit'),
+        icon_back_up = document.getElementById('icon_back_up'),
+        toTop = document.getElementById('toTop');
+
+    //鼠标进入
+    function mouseEnter() {
+        icon_cell_coin.addEventListener('mouseenter', function (e) {
+            c_coin_content.style.display = 'block';
+            c_coin_content.style.webkitAnimationPlayState = 'running';
+        }, false)
+    };
+    icon_min_chat.addEventListener('mouseenter', function (e) {
+        chat.style.display = 'block';
+        chat.style.webkitAnimationPlayState = 'running';
+    });
+    icon_down.addEventListener('mouseenter', function (e) {
+        down_detail.style.display = 'block';
+        down_detail.style.webkitAnimationPlayState = 'running';
+    });
+    icon_feel_back.addEventListener('mouseenter', function (e) {
+        commit.style.display = 'block';
+        commit.style.webkitAnimationPlayState = 'running';
+    });
+    icon_back_up.addEventListener('mouseenter', function (e) {
+        toTop.style.display = 'block';
+        toTop.style.webkitAnimationPlayState = 'running';
+    });
+
+    //鼠标移除
+    function mouseLeave() {
+        icon_cell_coin.addEventListener('mouseleave', function (e) {
+            c_coin_content.style.display = 'none';
+            c_coin_content.style.webkitAnimationPlayState = 'paused';
+        }, false)
+    };
+    icon_min_chat.addEventListener('mouseleave', function (e) {
+        chat.style.display = 'none';
+        chat.style.webkitAnimationPlayState = 'paused';
+    });
+    icon_down.addEventListener('mouseleave', function (e) {
+        down_detail.style.display = 'none';
+        down_detail.style.webkitAnimationPlayState = 'paused';
+    });
+    icon_feel_back.addEventListener('mouseleave', function (e) {
+        commit.style.display = 'none';
+        commit.style.webkitAnimationPlayState = 'paused';
+    });
+    icon_back_up.addEventListener('mouseleave', function (e) {
+        toTop.style.display = 'none';
+        toTop.style.webkitAnimationPlayState = 'paused';
+    });
+
+    //滑轮滚动事件
+    function computedScroll() {
+        window.onscroll = function () {
+            var winH = document.documentElement.clientHeight || document.body.clientHeight,
+                scrollT = document.documentElement.scrollTop;
+            if (scrollT > winH) {
+                icon_back_up.style.display = "block";
+            }
+            else {
+                icon_back_up.style.display = "none"
+            }
+        };
+    }
+    return {
+        init() {
+            computedScroll();
+            mouseEnter();
+            mouseLeave();
+        }
+    }
+
+}();
+fixToolRender.init();
+let contentPro=(function () {
+    //变量的定义，以及对应栏目的获取
+    let prodata=null;
+    let wgh_figure_list=document.getElementById("wgh_figure_list");
+    let music=document.getElementById("music");
+    let game=document.getElementById("game");
+    let NBA=document.getElementById("NBA");
+    let imageList={
+        defaultUrl:"",
+        mouseEnterUrl:""
+    }
+
+
+
+    //数据获取
+    function getData() {
+        let xhr=new  XMLHttpRequest();
+        xhr.open("get","./json/contentColumnData/contentColumnData.json",false);
+        xhr.onreadystatechange=function () {
+            xhr.readyState===4&&xhr.status===200?prodata=JSON.parse(xhr.responseText):null;
+
+            /*            if(xhr.readyState===4&&xhr.status===200){
+                            prodata=JSON.parse(xhr.responseText);
+                            dataBind()
+                        }*/
+        };
+        xhr.send(null)
+        console.log(prodata);
+    }
+    //数据绑定
+    function dataBind() {
+        let str=``,
+            musicSrt=``,
+            gameStr=``,
+            NBAStr=``;
+        let hot=prodata[17],
+            musicData=prodata[18],
+            NBAData=prodata[19],
+            gameData=prodata[20];
+        //循环绑定，今日热点，音乐，NBA,游戏，采用的是Es6的模版字符串
+        for (let  i = 0; i < hot.length-1; i++) {
+            let obj = hot[i];
+            str+=`<li class="wgh_list_item" >
+                        <a href="" class="wgh_figure">
+                            <img src="${obj.lz_next}" alt="" class="wgh_figure_pic">
+                            <span class="wgh_mark_quick"></span>
+                            <div  class="wgh_figure_keyframe">
+                               <!-- <img src="{obj.figureImgSrc}" alt="" class="wgh_keyframe_img">-->
+                                &lt;!&ndash;进度条&ndash;&gt;
+                                <div class="figureImgBox">
+                                    <progress max="100"></progress>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="wgh_figure_detail">
+                            <strong class="wgh_detail_strong" >
+                                <a href="#" title="${obj.avatar.title}" class="wgh_strong_link">${obj.avatar.title}</a>
+                               <div class="wgh_link_two_row" title="${obj.detailDesc}">${obj.detailDesc}</div>
+                            </strong>
+                        </div>
+                    </li>`
+            wgh_figure_list.innerHTML=str;
+        }
+        console.log(imageList);
+        for (let  i = 0; i < musicData.length-1; i++) {
+            let obj = musicData[i];
+            musicSrt+=`<li class="wgh_list_item" >
+                        <a href="" class="wgh_figure">
+                            <img src="${obj.lz_next}" alt="" class="wgh_figure_pic">
+                            <span class="wgh_mark_quick"></span>
+                            <div  class="wgh_figure_keyframe">
+                                <img src="" alt="" class="wgh_keyframe_img">
+                                &lt;!&ndash;进度条&ndash;&gt;
+                                <div class="figureImgBox">
+                                    <progress max="100"></progress>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="wgh_figure_detail">
+                            <strong class="wgh_detail_strong" >
+                                <a href="#" title="${obj.avatar.title}" class="wgh_strong_link">${obj.avatar.title}</a>
+                                <div class="wgh_link_two_row" title="${obj.detailDesc}">${obj.detailDesc}</div>
+                            </strong>
+                        </div>
+                    </li>`
+            music.innerHTML=musicSrt;
+        }
+        for (let  i = 0; i < NBAData.length-1; i++) {
+            let obj = NBAData[i];
+            NBAStr+=`<li class="wgh_list_item" >
+                        <a href="" class="wgh_figure">
+                            <img src="${obj.lz_next}" alt="" class="wgh_figure_pic">
+                            <span class="wgh_mark_quick"></span>
+                            <div  class="wgh_figure_keyframe">
+                                <img src="" alt="" class="wgh_keyframe_img">
+                                &lt;!&ndash;进度条&ndash;&gt;
+                                <div class="figureImgBox">
+                                    <progress max="100"></progress>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="wgh_figure_detail">
+                            <strong class="wgh_detail_strong" >
+                                <a href="#" title="${obj.avatar.title}" class="wgh_strong_link">${obj.avatar.title}</a>
+                                <div class="wgh_link_two_row" title="${obj.detailDesc}">${obj.detailDesc}</div>
+                            </strong>
+                        </div>
+                    </li>`
+            NBA.innerHTML=NBAStr;
+        }
+        for (let  i = 0; i < gameData.length-1; i++) {
+            let obj = gameData[i];
+            gameStr+=`<li class="wgh_list_item" >
+                        <a href="" class="wgh_figure">
+                            <img src="${obj.lz_next}" alt="" class="wgh_figure_pic">
+                            <span class="wgh_mark_quick"></span>
+                            <div  class="wgh_figure_keyframe">
+                                <img src="" alt="" class="wgh_keyframe_img">
+                                &lt;!&ndash;进度条&ndash;&gt;
+                                <div class="figureImgBox">
+                                    <progress max="100"></progress>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="wgh_figure_detail">
+                            <strong class="wgh_detail_strong" >
+                                <a href="#" title="${obj.avatar.title}" class="wgh_strong_link">${obj.avatar.title}</a>
+                                <div class="wgh_link_two_row" title="${obj.detailDesc}">${obj.detailDesc}</div>
+                            </strong>
+                        </div>
+                    </li>`
+            game.innerHTML=gameStr;
+        }
+    }
+    return {
+        init:function () {
+            getData();
+            dataBind();
+            let wgh_figure_keyframe=document.getElementsByClassName("wgh_figure_keyframe");
+            console.log(wgh_figure_keyframe);
+            figureAnimation(wgh_figure_keyframe,imageList)
+
+        }
+    }
+})();
+contentPro.init();
+
+
+
+
+
+
 
 

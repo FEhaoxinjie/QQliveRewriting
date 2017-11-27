@@ -1,0 +1,627 @@
+/*公共样式区域*/
+.mod_row_box{
+    position:relative;
+    width:100%;
+    margin-bottom: 33px
+}/*每个区域的大盒子*/
+.wgh_header{
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+    height: 40px;
+}/*大盒子里面的div*/
+.wgh_title{
+    display: inline-block;
+    margin-right: 10px;
+    line-height: 40px;
+    font-weight: 500;
+    font-size: 28px;
+    color: #202020;
+}/*大盒子h2标签*/
+.wgh_title_link{
+    position: relative;
+    display: inline-block;
+    line-height: 40px;
+    padding-left: 46px;
+    width: 158px;
+}/*大盒子里面的a标签*/
+.wgh_title_link:hover{color:coral}/*a标签的hover样式*/
+.wgh_title_pic{
+    position: absolute;
+    left: 0;
+    top: 2px;
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+}/*a盒子里面的logo图标*/
+.wgh_logo_img{
+    display: block;
+    width:100%;
+    height: 100%;}/*图表的样式*/
+.wgh_title_action{
+    position: absolute;
+    right:0;
+    bottom:0;
+    width: 70%;
+    float: right;
+    height: 34px;
+}/*标题后面的小栏目div标签*/
+.wgh_action_list{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 18px;
+    font-size: 14px;
+
+}/*标题后面的小栏目div标签里面的ul*/
+.wgh_list_li{
+    position: relative;
+    height: 18px;
+    float: left;
+    margin-left: 26px;
+}/*标题后面的小栏目div标签里面的ul下面的li*/
+.wgh_list_li:after{
+    position: absolute;
+    content: '';
+    top: 7px;
+    left: -15px;
+    width: 4px;
+    height: 4px;
+    border-radius: 100%;
+    background: #afafaf;
+}/*::after来创建一个伪元素，通常配合content属性来为该元素添加内容，这个虚拟元素默认为行内元素,但是可以通过display属性改变其元素属性。*/
+.wgh_list_li:nth-of-type(1)::after{ content: '';
+    width: 0;
+    height: 0;
+}  /*让每一个为元素的第一个内容都为空，效果是让没一个li的小圆点隐藏*/
+.wgh_li_a{display: block;color: #202020;}/*li里面的a*/
+.wgh_li_a:hover{color:coral}/*li里面的a的选中样式*/
+.wgh_txt{display: block;line-height: 18px;}/*span样式*/
+.wgh_mod_bd{
+    position: relative;
+    margin: 10px auto;
+    width: 1200px;
+    height: 166px;}/*标题下面的内容区域大盒子div*/
+.wgh_mod_figure_default{
+    position: relative;
+    width: 1200px;
+    height: 166px;}/*div里面的小div*/
+.wgh_figure_list{
+
+    width: 1200px;  position: relative;
+    margin: 10px auto;
+    height: 166px;}/*标题下面的ul*/
+.wgh_list_item{  float: left;
+    margin:5px 5px 0 0 ;
+    width: 195px;
+    height: 161px;}/*ul下面的li*/
+.wgh_figure{ position: relative;
+    display: block;
+    width: 195px;
+    height: 111px;}/*li里面的a*/
+.wgh_figure_pic{ display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;}/*a里面的img*/
+.wgh_mark_quick{ position: absolute;
+    top: 6px;
+    left: 6px;
+    z-index: 999;
+    width: 14px;
+    height: 18px;
+    background:url(https://vm.gtimg.cn/tencentvideo/vstyle/web/v5/style/img/common/mark_quickplay.svg) 0 0 no-repeat ;
+}
+.wgh_figure_keyframe{
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 196px;
+    height: 111px;}/*进度条的大盒子*/
+.wgh_keyframe_img{
+    display: block;
+    width: 196px;
+    height: 111px;
+    background: url("//puui.qpic.cn/video_caps/0/h0024k5rxhx.q4.jpg/0") no-repeat;
+    background-size: 300%;
+    /*background-size是相对于自身的宽度和高度的扩大三倍后，和背景图就想照应了。*/}/*盒子里面的速播图片*/
+.figureImgBox{   position: absolute;
+    top: 4px;
+    width: 190px;
+    height: 4px;
+    left: 3px;
+    background-color: rgba(255,255,255,0.5);}/*进度条的大盒子*/
+progress{  position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: #fff;}/*真是的进度条*/
+progress::-webkit-progress-bar {
+    background-color: transparent;
+}
+
+progress::-webkit-progress-value {
+    background-color: white;
+}
+
+.wgh_figure_detail{ position: relative;
+    width: 195px;
+    height: 44px;
+    overflow: hidden;}/*对上面图片或者动画的简单表述的大盒子div*/
+.wgh_detail_strong{
+    display: block;
+    width: 195px;
+    height: 22px;
+}/*大盒子里面的strong*/
+.wgh_strong_link{
+    display: block;
+    width: 175px;
+    margin-top: 5px;
+    height: 22px;
+    font-size: 14px;
+    white-space: normal;
+    overflow: hidden;
+    color: #202020;
+    font-weight: 100;
+    cursor: pointer
+}/*strong里面的a标签*/
+.wgh_strong_link:hover{color:coral}
+.wgh_link_two_row{
+    display: block;
+    width: 100%;
+    line-height: 20px;
+    font-size: 13px;
+    color: #999;
+    cursor:default;
+
+}/*第二行表述*/
+/*底部广告区域*/
+.ad {
+    width: 100%;
+    height: 90px;
+    margin-top: 35px;
+}
+.ad .extra{
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+    height: 90px;
+}
+.ad .extra .ad_game{
+    float: left;
+    width: 960px;
+    height: 90px;
+}
+.ad .ad_game .ad_game1{
+    width: 960px;
+    height: 90px;
+}
+
+.ad .ad_nav{
+    position: absolute;
+    top:0;
+    right:0;
+    width: 220px;
+    height: 90px;
+    background: darkorchid;
+}
+.ad .ad_nav a{
+    display: block;
+    width: 220px;
+    height: 90px;
+}
+.ad .ad_nav a img{
+    width: 100%;
+    height: 100%;
+}
+/*底部样式*/
+.site_footer{
+    width: 100%;
+    height: 305px;
+    margin-top: 60px;
+    border-top: 1px solid #CCCCCC;
+}
+.site_footer .inner{
+    position: relative;
+    width: 1240px;
+    height: 254px;
+    margin: 40px auto 10px;
+}
+.site_footer .inner .footer_content{
+    width: 1150px;
+    height: 74px;
+    padding: 20px 20px 20px 70px ;
+}
+.site_footer .inner .footer_content div{
+    font-size: 14px;
+    color: #979797;
+}
+.site_footer .inner .footer_content ul li {
+    float: left;
+    margin-right: 20px;
+    font-size: 12px;
+    padding-top: 8px;
+    letter-spacing:normal;
+}
+.site_footer .inner .footer_content ul li a{
+    color: #555555;
+}
+.site_footer .inner .footer_content ul li a:hover{color:coral}
+.site_footer .inner .footer_content .hot_channel{
+    float: left;
+    width: 320px;
+    height: 74px;
+    padding:0 40px 0 0;
+    margin:0 40px 0 0;
+    border-right:1px solid #CCCCCC;
+}
+.site_footer .inner .footer_content .hot_channel .inner_title{
+    width: 320px;
+    height: 21px;
+    padding-bottom: 5px;
+}
+.site_footer .inner .footer_content .feature{
+    float: left;
+    width: 160px;
+    height: 74px;
+    padding:0 40px 0 0;
+    margin:0 40px 0 0;
+    border-right:1px solid #CCCCCC;
+}
+.site_footer .inner .footer_content .app_down{
+    float: left;
+    width: 245px;
+    height: 74px;
+    padding:0 40px 0 0;
+    margin:0 40px 0 0;
+    border-right:1px solid #CCCCCC;
+}
+.site_footer .inner .footer_content .service{
+    float: left;
+    width: 140px;
+    height: 74px;
+    padding:0 40px 0 0;
+}
+.site_footer .inner .mod_footer{
+    width: 1240px;
+    height: 90px;
+    padding: 25px 0;
+}
+.site_footer .inner .mod_footer .footer_menu{
+    width: 1240px;
+    height: 30px;
+    text-align: center;
+}
+.site_footer .inner .mod_footer .footer_menu a{
+    display: inline-block;
+    line-height: 30px;
+    color: #838383;
+}
+.site_footer .inner .mod_footer .footer_menu a:hover{
+    color:coral;
+}
+.site_footer .inner .mod_footer .copyright_en {
+    width: 1240px;
+    height: 30px;
+    text-align: center;
+    color: #838383;
+}
+.site_footer .inner .mod_footer .copyright_en a{
+    line-height: 30px;
+    color: #838383;
+    display: inline-block;
+}
+.site_footer .inner .mod_footer .copyright_en a:hover{color:coral}
+.site_footer .inner .mod_footer .copyright_zh{
+    width: 1240px;
+    height: 30px;
+    text-align: center;
+    color: #838383;
+}
+.site_footer .inner .mod_footer .copyright_zh a{
+    line-height: 30px;
+    color: #838383;
+}
+.site_footer .inner .mod_footer .copyright_zh a:hover{color:coral}
+/*底部工具栏区域*/
+.fix_tool{
+    position: fixed;
+    width: 40px;
+    right: 0;
+    bottom: 40px;
+    z-index: 20;
+    box-shadow:  0 2px 8px 0 rgba(0,0,0,.18);;
+    text-align: center;
+}
+.fix_tool .icon_cell_coin,.icon_down{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+.fix_tool .icon_cell_coin .c_coin_content{
+    position: absolute;
+    display: none;
+    z-index: 20;
+    right: 52px;
+    height: 113px;
+    width: 300px;
+    background: white;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,.18);
+    -webkit-animation: ani_x_fixed_tool_pop .3s 0s ease-out forwards paused;
+    animation: ani_x_fixed_tool_pop .3s 0s ease-out forwards paused;
+    /*当在 @keyframes 创建动画，把它绑定到一个选择器，否则动画不会有任何效果*/
+}
+.fix_tool .icon_cell_coin .c_coin_content .ct_detail .sendVip{
+    position: absolute;
+    right:7px;
+    top:9px;
+    width: 32px;
+    color: #fff;
+    padding:0 3px;
+    border-radius: 2px;
+    background: #fc3f4c;
+    line-height: 18px;
+    font-size: 12px;
+}
+@-webkit-keyframes ani_x_fixed_tool_pop {
+    0% {
+        opacity: .5;
+        transform: scale(.5) translate3d(0,0,0);
+        /*translated3d定义3d转换*/
+        transform-origin: right center ;
+        /*定义元素旋转的基点位置*/
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.1) translate3d(0,0,0);
+        transform-origin:right center;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translate3d(0,0,0);
+        transform-origin: right center;
+    }
+}
+@keyframes ani_x_fixed_tool_pop {
+    0% {
+        opacity: .5;
+        transform: scale(.5) translate3d(0,0,0);
+        transform-origin: right center;
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.1) translate3d(0,0,0);
+        transform-origin:right center;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translate3d(0,0,0);
+        transform-origin: right center ;
+    }
+}
+/*animation中的动画并不是简单的控制一个属性来完成的，而是结合多种属性来控制，从而达到我们需要的效果*/
+.fix_tool .icon_down,.icon_cell_coin{
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+.fix_tool .icon_down:hover{
+    background: #ff6428;
+}
+.fix_tool .icon_cell_coin:hover{
+    background: coral;
+    color: white;
+}
+.fix_tool>a {
+    /*子元素选择器，用来确定某一元素下面的子元素*/
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+.fix_tool>a:hover {
+    background:#ff6428;
+}
+/*下载区域*/
+.fix_tool .icon_down .down_detail{
+    position: absolute;
+    display:none;
+    right: 52px;
+    bottom: 0;
+    width: 220px;
+    height: 174px;
+    padding: 10px 5px;
+    background: #fff;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,.18);
+    text-align: center;
+    z-index: 999;
+    -webkit-animation: ani_x_fixed_tool_pop .3s 0s ease-out forwards paused;
+    animation: ani_x_fixed_tool_pop .3s 0s ease-out forwards paused;
+}
+.fix_tool .icon_down .down_detail .detail_list{
+    width: 220px;
+    height: 164px;
+}
+.fix_tool .icon_down .down_detail .detail_list>a{
+    display: inline-block;
+    width: 54px;
+    height: 57px;
+    padding:0 8px 5px 8px ;
+    color: #999;
+}
+.fix_tool .icon_down .down_detail .detail_list>a:hover{
+    color: #ff6428;
+}
+.fix_tool .icon_down .down_detail .detail_list>a>i{
+    width: 36px;
+    height: 36px;
+    margin: 0 9px;
+    font-size: 25px;
+}
+.fix_tool .icon_down .down_detail .detail_list>a>span{
+    text-align: center;
+    font-size: 14px;
+    white-space: nowrap;
+}
+.sw_down{
+    width: 128px;
+    line-height: 28px;
+    padding: 0 46px;
+}
+.sw_down .software_down{
+    display: block;
+    width: 128px;
+    line-height: 28px;
+    margin:10px 0 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    border: 1px solid #ff6428;
+    color: #ff6428;
+
+}
+.sw_down .software_down:hover{
+    background: #ff6428;
+    color: #fff;
+}
+.fix_tool .icon_feel_back{
+    position: relative;
+}
+.fix_tool .icon_back_up{
+    position: relative;
+    display: none;
+}
+/*vb商城区域*/
+.show_item{
+    position: relative;
+    float: left;
+    width: 100px;
+    height: 80px;
+    padding: 20px 0 13px;
+}
+.icon_lg{
+    display: block;
+    width: 100%;
+    margin: 0 32px 5px 32px;
+
+}
+.fx_t{
+    position: absolute;
+    width: 20px;
+    height:20px;
+    font-size:20px;
+    font-weight: 200;
+    color: #999;
+    left: 10px;
+    top: 10px;
+}
+.down_text{
+    display: inline-block;
+}
+.show_item .show_vb {
+    width: 36px;
+    height: 36px;
+    display: block;
+    font-size: 36px;
+    color: orange;
+}
+.show_item .show_shop{
+    width: 36px;
+    height: 36px;
+    display: block;
+    font-size: 36px;
+    color: coral;
+}
+.show_item .show_computer {
+    width: 36px;
+    height: 36px;
+    display: block;
+    font-size: 36px;
+    color: coral;
+}
+.show_item>span{
+    display: block;
+    width: 100%;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+}
+.show_item>span:nth-of-type(1){
+    color: #313131;
+    font-size: 14px;
+}
+.show_item>span:nth-of-type(2){
+    color: #999;
+    font-size: 12px;
+}
+/*微信小程序区域*/
+.fix_tool .icon_min_chat{
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+.fix_tool .icon_min_chat .chat{
+    position: absolute;
+    display: none;
+    right: 52px;
+    bottom: -5px;
+    width: 116px;
+    /*高度让内容撑开很东西别写死*/
+    margin-top: 7px;
+    background: #fff;
+    padding:9px 9px 6px 9px;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,.18);
+    -webkit-animation: ani_x_fixed_tool_pop .3s 0s ease-out forwards paused;
+    animation: ani_x_fixed_tool_pop .3s 0s ease-out forwards paused;
+}
+.fix_tool .icon_min_chat .chat .chat_img{
+    display: inline-block;
+    width: 100%;
+    height:100%;
+    vertical-align: bottom;
+}
+.fix_tool .icon_min_chat .chat_text{
+    color: #222;
+    margin-top: 7px;
+}
+/*意见反馈区域和返回顶部区域公共样式*/
+.shortPublic{
+    position: absolute;
+    display: none;
+    width: 85px;
+    height:20px;
+    right: 52px;
+    bottom:0;
+    padding: 10px 0;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,.18);
+    /*边框阴影css3新增加的效果*/
+    background: white;
+    -webkit-animation: ani_x_fixed_tool_pop .3s 0s ease-out forwards paused;
+    animation: ani_x_fixed_tool_pop .3s 0s ease-out forwards paused;
+}
+.txt{
+    text-align: center;
+    line-height: 20px;
+    color: #313131;
+    font-size: 14px;
+}
+/*公共向右小箭头*/
+.triangle_right{
+    position: absolute;
+    top: 12px;
+    right: -14px;
+    border: 7px solid transparent;
+    border-left-color:#fff ;
+    filter: drop-shadow(3px 0 1px rgba(0, 0, 0, .1));
+}
+/*微信小箭头*/
+.tr_right_chatDown {
+    position: absolute;
+    bottom: 15px;
+    right: -14px;
+    border: 7px solid transparent;
+    border-left-color:#fff ;
+    filter: drop-shadow(3px 0 1px rgba(0, 0, 0, .1));
+}
+/*由于vb、意见反馈、返回顶部的隐藏盒子和其对应的大div都是top值都是相同的，索引这三个箭头的样式是相同的，所在的位置也是相同的，在书写css代码的时候，一定要仔细的观察css样式的共同点，通过同一个类名来控制，可以简化css代码的书写量，从而提高开发效率*/
